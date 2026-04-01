@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Team — Connecticut Citizens' Assembly</title>
+<link rel="icon" type="image/png" href="media/ctca-logo.png" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1a237e;
+    --navy-dark: #0d1757;
+    --navy-light: #283593;
+    --purple: #7b2d8b;
+    --magenta: #c2185b;
+    --orange: #e64a19;
+    --yellow: #f9a825;
+    --coral: #ef5350;
+    --maroon: #880e4f;
+    --white: #ffffff;
+    --off-white: #f8f9fd;
+    --gray-light: #eef0f8;
+    --gray-mid: #c5cae9;
+    --gray-text: #5c6bc0;
+    --text: #1a237e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to right, #7b2d8b, #c2185b, #e64a19, #f9a825, #ef5350) 1;
+  }
+
+  .nav-logo img { height: 62px; display: block; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover { color: var(--purple); }
+  .nav-links a.active { color: var(--purple); }
+
+  .nav-cta {
+    background: var(--navy-dark);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+  }
+
+  .nav-cta:hover { background: var(--purple) !important; color: var(--white) !important; }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 9rem 2rem 4rem;
+    background: var(--off-white);
+    border-bottom: 1px solid var(--gray-mid);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle, rgba(123,45,139,0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .page-header-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+
+  .page-eyebrow {
+    display: inline-block;
+    background: rgba(123,45,139,0.1);
+    border: 1px solid rgba(123,45,139,0.3);
+    color: var(--purple);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.2rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--navy-dark);
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
+  }
+
+  .page-header h1 span { color: var(--magenta); }
+
+  .page-header p {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.75;
+  }
+
+  /* COLOR STRIPE */
+  .color-stripe {
+    display: flex;
+    height: 5px;
+  }
+
+  .color-stripe span {
+    flex: 1;
+  }
+
+  /* MAIN */
+  .team-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  /* PROFILE GRID */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .profile-card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--gray-mid);
+    box-shadow: 0 2px 16px rgba(26,35,126,0.06);
+  }
+
+  .profile-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--gray-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .profile-photo-placeholder {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--gray-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-photo-placeholder svg {
+    width: 40px;
+    height: 40px;
+    fill: rgba(92,107,192,0.4);
+  }
+
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .profile-accent {
+    height: 4px;
+    width: 100%;
+  }
+
+  .profile-body {
+    padding: 1.4rem 1.6rem 1.6rem;
+  }
+
+  .profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .profile-title {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+  }
+
+  .profile-org {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--purple);
+  }
+
+  .profile-bio {
+    margin-top: 0.8rem;
+    font-size: 0.875rem;
+    color: var(--gray-text);
+    line-height: 1.65;
+    border-top: 1px solid var(--gray-mid);
+    padding-top: 0.8rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #050d2a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+  }
+
+  footer span { color: var(--yellow); opacity: 0.8; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .profile-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 580px) {
+    nav { padding: 0 1.2rem; }
+    .nav-links { gap: 1rem; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .team-main { padding: 3rem 1.2rem 4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="index.html"><img src="media/CTCA-honeycomb.png" alt="Connecticut Citizens' Assembly" /></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#roadmap">Roadmap</a></li>
+    <li><a href="index.html#timeline">Timeline</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="team.html" class="active">Team</a></li>
+    <li><a href="login.html" id="nav-auth-link">Login</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-content">
+    <div class="page-eyebrow">Our People</div>
+    <h1>Interim Expert Governance<br/><span>Committee</span></h1>
+    <p>The committee is composed of leading scholars, practitioners, and civic leaders who guide the assembly's design, ensure methodological rigor, and bring deep expertise in public finance, deliberative democracy, and Connecticut policy.</p>
+  </div>
+</div>
+<div class="color-stripe">
+  <span style="background:#7b2d8b;"></span>
+  <span style="background:#c2185b;"></span>
+  <span style="background:#e64a19;"></span>
+  <span style="background:#f9a825;"></span>
+  <span style="background:#ef5350;"></span>
+</div>
+
+<!-- PROFILES -->
+<main class="team-main">
+  <div class="profile-grid">
+
+    <!-- accent colors cycle: purple, magenta, orange, yellow, coral, maroon -->
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#7b2d8b;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#c2185b;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#e64a19;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#f9a825;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#ef5350;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#880e4f;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#7b2d8b;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#c2185b;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#e64a19;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#f9a825;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#ef5350;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#880e4f;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#7b2d8b;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#c2185b;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#e64a19;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#f9a825;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#ef5350;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="profile-photo"><div class="profile-photo-placeholder"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div></div>
+      <div class="profile-accent" style="background:#880e4f;"></div>
+      <div class="profile-body">
+        <div class="profile-name">First Last</div>
+        <div class="profile-title">Title, Department</div>
+        <div class="profile-org">Institution Name</div>
+        <div class="profile-bio">Placeholder biography. This expert brings decades of experience in their field and will contribute to the assembly's work on public finance and deliberative process design.</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script>
+  (async () => {
+    const { data: { session } } = await db.auth.getSession();
+    const link = document.getElementById('nav-auth-link');
+    if (session) {
+      link.textContent = 'My Account';
+      link.href = 'dashboard.html';
+    }
+  })();
+</script>
+</body>
+</html>
