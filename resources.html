@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resource Library — Connecticut Citizens' Assembly</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1a3a6e;
+    --navy-dark: #0f2347;
+    --navy-light: #2a4f8f;
+    --gold: #f0a500;
+    --gold-light: #f5c040;
+    --gold-pale: #fef6e0;
+    --white: #ffffff;
+    --gray-light: #f4f6fb;
+    --gray-mid: #e0e6f0;
+    --gray-text: #5a6a85;
+    --text: #1a1a2e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    border-bottom: 2px solid var(--gray-mid);
+  }
+
+  .nav-logo img {
+    height: 62px;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy-dark) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy-dark) !important; }
+
+  /* PAGE HEADER */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    padding: 9rem 2rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 20% 80%, rgba(240,165,0,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 80% 20%, rgba(240,165,0,0.08) 0%, transparent 55%);
+  }
+
+  .page-header-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-header-eyebrow {
+    display: inline-block;
+    background: rgba(240,165,0,0.15);
+    border: 1px solid rgba(240,165,0,0.4);
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .page-header h1 span { color: var(--gold); }
+
+  .page-header p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* BACK LINK */
+  .back-bar {
+    background: var(--gold-pale);
+    border-bottom: 1px solid var(--gray-mid);
+    padding: 0.7rem 2.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .back-bar a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+  }
+
+  .back-bar a:hover { color: var(--gold); }
+
+  /* MAIN */
+  .resources-main {
+    padding: 5rem 2rem;
+    background: var(--white);
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--navy-dark);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title span { color: var(--gold); }
+
+  .section-lead {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    max-width: 680px;
+  }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .resource-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem 1.8rem;
+    background: var(--gray-light);
+    border-radius: 10px;
+    border: 1px solid var(--gray-mid);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .resource-card:hover {
+    border-color: var(--gold);
+    background: var(--gold-pale);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(26,58,110,0.1);
+  }
+
+  .resource-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--navy-dark);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .resource-text h4 {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--navy-dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .resource-text span {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #07152a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+  }
+
+  footer span { color: var(--gold); opacity: 0.8; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.2rem; }
+    .nav-links { gap: 1rem; }
+    .resource-grid { grid-template-columns: 1fr; }
+    .back-bar { padding: 0.7rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="media/ct-citizens-assembly-logo.png" alt="Connecticut Citizens' Assembly" />
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#roadmap">Roadmap</a></li>
+    <li><a href="index.html#timeline">Timeline</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-grid"></div>
+  <div class="page-header-content">
+    <div class="page-header-eyebrow">Downloads</div>
+    <h1>Resource <span>Library</span></h1>
+    <p>Access key research, policy briefs, and reports supporting the Connecticut Citizens' Assembly on local public services.</p>
+  </div>
+</div>
+
+<!-- BACK BAR -->
+<div class="back-bar">
+  <a href="index.html">← Back to Home</a>
+</div>
+
+<!-- RESOURCES -->
+<section class="resources-main">
+  <div class="container">
+    <div class="resource-grid">
+      <a class="resource-card" href="#" target="_blank">
+        <div class="resource-icon">📄</div>
+        <div class="resource-text">
+          <h4>Two-Page Overview of the Assembly</h4>
+          <span>Download PDF</span>
+        </div>
+      </a>
+      <a class="resource-card" href="#" target="_blank">
+        <div class="resource-icon">📋</div>
+        <div class="resource-text">
+          <h4>Process Plan for the Assembly</h4>
+          <span>Download PDF</span>
+        </div>
+      </a>
+      <a class="resource-card" href="#" target="_blank">
+        <div class="resource-icon">👥</div>
+        <div class="resource-text">
+          <h4>Biographies of the Expert Governance Committee</h4>
+          <span>Download PDF</span>
+        </div>
+      </a>
+      <a class="resource-card" href="#" target="_blank">
+        <div class="resource-icon">📖</div>
+        <div class="resource-text">
+          <h4>Citizens' Assembly Participant Guidebook</h4>
+          <span>Download PDF</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
