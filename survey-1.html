@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Survey — Connecticut Citizens' Assembly</title>
+<link rel="icon" type="image/png" href="media/ct-honeycomb.png" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1a237e;
+    --navy-dark: #0d1757;
+    --purple: #7b2d8b;
+    --magenta: #c2185b;
+    --orange: #e64a19;
+    --yellow: #f9a825;
+    --coral: #ef5350;
+    --white: #ffffff;
+    --off-white: #f8f9fd;
+    --gray-light: #eef0f8;
+    --gray-mid: #c5cae9;
+    --gray-text: #5c6bc0;
+    --text: #1a237e;
+    --red: #dc2626;
+    --green: #16a34a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--text);
+    background: var(--off-white);
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to right, #7b2d8b, #c2185b, #e64a19, #f9a825, #ef5350) 1;
+  }
+
+  .nav-logo img { height: 62px; display: block; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover { color: var(--purple); }
+
+  .nav-cta {
+    background: var(--navy-dark);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover { background: var(--purple) !important; color: var(--white) !important; }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--navy);
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 1100px) {
+    .nav-hamburger { display: block; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.5rem 2rem;
+      gap: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border-top: 3px solid var(--purple);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+  }
+
+  /* SURVEY LAYOUT */
+  .survey-page {
+    padding: 7rem 1.5rem 4rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .survey-wrap {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  /* PROGRESS */
+  .progress-bar-wrap {
+    background: var(--gray-mid);
+    border-radius: 99px;
+    height: 6px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(to right, var(--purple), var(--magenta));
+    width: 20%;
+  }
+
+  .progress-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gray-text);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  /* SURVEY CARD */
+  .survey-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(26,35,126,0.08);
+    border: 1px solid var(--gray-mid);
+    margin-bottom: 1.2rem;
+  }
+
+  .survey-card .section-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 0.6rem;
+  }
+
+  .survey-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+
+  .survey-card .card-lead {
+    font-size: 0.92rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  /* QUESTIONS */
+  .question-block {
+    margin-bottom: 2rem;
+  }
+
+  .question-block:last-child { margin-bottom: 0; }
+
+  .question-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .question-label .q-num {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.4rem;
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  /* Radio / Checkbox options */
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .option-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.92rem;
+    color: var(--navy);
+    font-weight: 500;
+    background: white;
+  }
+
+  .option-item:hover {
+    border-color: var(--purple);
+    background: rgba(123,45,139,0.04);
+  }
+
+  .option-item input[type="radio"],
+  .option-item input[type="checkbox"] {
+    accent-color: var(--purple);
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  /* Scale */
+  .scale-wrap {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .scale-btn {
+    flex: 1;
+    min-width: 2.5rem;
+    padding: 0.6rem 0.3rem;
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 6px;
+    background: white;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--navy);
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .scale-btn:hover { border-color: var(--purple); background: rgba(123,45,139,0.04); }
+  .scale-btn.selected { border-color: var(--purple); background: var(--purple); color: white; }
+
+  .scale-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--gray-text);
+    font-weight: 600;
+  }
+
+  /* Textarea */
+  .survey-textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 6px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text);
+    resize: vertical;
+    min-height: 90px;
+    outline: none;
+  }
+
+  .survey-textarea:focus { border-color: var(--navy); }
+
+  /* Text input */
+  .survey-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 6px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.92rem;
+    color: var(--text);
+    outline: none;
+  }
+
+  .survey-input:focus { border-color: var(--navy); }
+
+  /* DIVIDER */
+  .q-divider {
+    border: none;
+    border-top: 1px solid var(--gray-light);
+    margin: 1.8rem 0;
+  }
+
+  /* NAVIGATION BUTTONS */
+  .survey-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+
+  .btn-back {
+    background: transparent;
+    border: 2px solid var(--gray-mid);
+    color: var(--navy);
+    padding: 0.75rem 1.8rem;
+    border-radius: 6px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+
+  .btn-back:hover { border-color: var(--navy); }
+
+  .btn-next {
+    background: var(--navy-dark);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+
+  .btn-next:hover { background: var(--purple); }
+
+  .save-note {
+    font-size: 0.78rem;
+    color: var(--gray-text);
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #050d2a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+  }
+
+  footer span { color: var(--yellow); opacity: 0.8; }
+
+  @media (max-width: 580px) {
+    nav { padding: 0 1.2rem; }
+    .survey-card { padding: 1.5rem; }
+    .scale-wrap { gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="index.html"><img src="media/CTCA-honeycomb.png" alt="Connecticut Citizens' Assembly" /></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#roadmap">Roadmap</a></li>
+    <li><a href="index.html#timeline">Timeline</a></li>
+    <!-- <li><a href="resources.html">Resources</a></li> -->
+    <li><a href="governance.html">Governance</a></li>
+    <li><a href="login.html" id="nav-auth-link">Login</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
+</nav>
+
+<!-- SURVEY -->
+<div class="survey-page">
+  <div class="survey-wrap">
+
+    <!-- Progress -->
+    <div class="progress-label">Section 1 of 5 — Background</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill"></div>
+    </div>
+
+    <!-- Card 1: Intro -->
+    <div class="survey-card">
+      <div class="section-tag">Welcome</div>
+      <h2>About This Survey</h2>
+      <p class="card-lead">
+        Thank you for taking part in the Connecticut Citizens' Assembly. This survey helps us understand your background and initial views before the assembly sessions begin. There are no right or wrong answers — we want to hear your honest perspective. This should take approximately 10–15 minutes to complete.
+      </p>
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+        <div style="background:var(--gray-light);border-radius:8px;padding:0.8rem 1.2rem;font-size:0.82rem;font-weight:700;color:var(--navy-dark);">⏱ ~10–15 minutes</div>
+        <div style="background:var(--gray-light);border-radius:8px;padding:0.8rem 1.2rem;font-size:0.82rem;font-weight:700;color:var(--navy-dark);">🔒 Responses are confidential</div>
+        <div style="background:var(--gray-light);border-radius:8px;padding:0.8rem 1.2rem;font-size:0.82rem;font-weight:700;color:var(--navy-dark);">5 sections total</div>
+      </div>
+    </div>
+
+    <!-- Card 2: Section 1 Questions -->
+    <div class="survey-card">
+      <div class="section-tag">Section 1 — Your Background</div>
+      <h2>Tell Us About Yourself</h2>
+      <p class="card-lead">This information helps ensure the assembly reflects the diversity of Connecticut residents. All responses are confidential.</p>
+
+      <!-- Q1 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">1</span> Which county do you live in?</div>
+        <div class="options-list">
+          <label class="option-item"><input type="radio" name="county" value="fairfield" /> Fairfield County</label>
+          <label class="option-item"><input type="radio" name="county" value="hartford" /> Hartford County</label>
+          <label class="option-item"><input type="radio" name="county" value="litchfield" /> Litchfield County</label>
+          <label class="option-item"><input type="radio" name="county" value="middlesex" /> Middlesex County</label>
+          <label class="option-item"><input type="radio" name="county" value="newhaven" /> New Haven County</label>
+          <label class="option-item"><input type="radio" name="county" value="newlondon" /> New London County</label>
+          <label class="option-item"><input type="radio" name="county" value="tolland" /> Tolland County</label>
+          <label class="option-item"><input type="radio" name="county" value="windham" /> Windham County</label>
+        </div>
+      </div>
+
+      <hr class="q-divider" />
+
+      <!-- Q2 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">2</span> How would you describe the area where you live?</div>
+        <div class="options-list">
+          <label class="option-item"><input type="radio" name="area-type" value="urban" /> Urban (city center)</label>
+          <label class="option-item"><input type="radio" name="area-type" value="suburban" /> Suburban</label>
+          <label class="option-item"><input type="radio" name="area-type" value="rural" /> Rural</label>
+        </div>
+      </div>
+
+      <hr class="q-divider" />
+
+      <!-- Q3 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">3</span> What is your current housing situation?</div>
+        <div class="options-list">
+          <label class="option-item"><input type="radio" name="housing" value="own" /> I own my home</label>
+          <label class="option-item"><input type="radio" name="housing" value="rent" /> I rent</label>
+          <label class="option-item"><input type="radio" name="housing" value="other" /> Other</label>
+          <label class="option-item"><input type="radio" name="housing" value="prefer-not" /> Prefer not to say</label>
+        </div>
+      </div>
+
+      <hr class="q-divider" />
+
+      <!-- Q4 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">4</span> What is the highest level of education you have completed?</div>
+        <div class="options-list">
+          <label class="option-item"><input type="radio" name="education" value="hs" /> High school diploma or GED</label>
+          <label class="option-item"><input type="radio" name="education" value="some-college" /> Some college, no degree</label>
+          <label class="option-item"><input type="radio" name="education" value="associates" /> Associate's degree</label>
+          <label class="option-item"><input type="radio" name="education" value="bachelors" /> Bachelor's degree</label>
+          <label class="option-item"><input type="radio" name="education" value="graduate" /> Graduate or professional degree</label>
+          <label class="option-item"><input type="radio" name="education" value="prefer-not" /> Prefer not to say</label>
+        </div>
+      </div>
+
+      <hr class="q-divider" />
+
+      <!-- Q5 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">5</span> Do you or a member of your household work in any of the following sectors? <em style="font-weight:400;color:var(--gray-text)">(Select all that apply)</em></div>
+        <div class="options-list">
+          <label class="option-item"><input type="checkbox" name="sector" value="local-gov" /> Local or state government</label>
+          <label class="option-item"><input type="checkbox" name="sector" value="education" /> Education (K-12 or higher ed)</label>
+          <label class="option-item"><input type="checkbox" name="sector" value="public-safety" /> Public safety (police, fire, EMS)</label>
+          <label class="option-item"><input type="checkbox" name="sector" value="healthcare" /> Healthcare</label>
+          <label class="option-item"><input type="checkbox" name="sector" value="private" /> Private sector / business</label>
+          <label class="option-item"><input type="checkbox" name="sector" value="nonprofit" /> Nonprofit / civic organization</label>
+          <label class="option-item"><input type="checkbox" name="sector" value="none" /> None of the above</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Initial Views -->
+    <div class="survey-card">
+      <div class="section-tag">Section 1 — Initial Views</div>
+      <h2>Your Starting Perspective</h2>
+      <p class="card-lead">Before the assembly sessions, we'd like to capture your initial views. These will be compared with your responses at the end of the process.</p>
+
+      <!-- Q6 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">6</span> How satisfied are you with the quality of local public services in your town? (1 = Very dissatisfied, 5 = Very satisfied)</div>
+        <div class="scale-wrap" id="scale-q6">
+          <button class="scale-btn" onclick="selectScale('q6', this)">1</button>
+          <button class="scale-btn" onclick="selectScale('q6', this)">2</button>
+          <button class="scale-btn" onclick="selectScale('q6', this)">3</button>
+          <button class="scale-btn" onclick="selectScale('q6', this)">4</button>
+          <button class="scale-btn" onclick="selectScale('q6', this)">5</button>
+        </div>
+        <div class="scale-labels"><span>Very dissatisfied</span><span>Very satisfied</span></div>
+      </div>
+
+      <hr class="q-divider" />
+
+      <!-- Q7 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">7</span> How fair do you think Connecticut's current property tax system is? (1 = Very unfair, 5 = Very fair)</div>
+        <div class="scale-wrap" id="scale-q7">
+          <button class="scale-btn" onclick="selectScale('q7', this)">1</button>
+          <button class="scale-btn" onclick="selectScale('q7', this)">2</button>
+          <button class="scale-btn" onclick="selectScale('q7', this)">3</button>
+          <button class="scale-btn" onclick="selectScale('q7', this)">4</button>
+          <button class="scale-btn" onclick="selectScale('q7', this)">5</button>
+        </div>
+        <div class="scale-labels"><span>Very unfair</span><span>Very fair</span></div>
+      </div>
+
+      <hr class="q-divider" />
+
+      <!-- Q8 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">8</span> In your view, which local service is most in need of improved or more equitable funding? <em style="font-weight:400;color:var(--gray-text)">(Select one)</em></div>
+        <div class="options-list">
+          <label class="option-item"><input type="radio" name="service" value="education" /> K–12 Education</label>
+          <label class="option-item"><input type="radio" name="service" value="roads" /> Roads &amp; Infrastructure</label>
+          <label class="option-item"><input type="radio" name="service" value="public-safety" /> Public Safety (police, fire, EMS)</label>
+          <label class="option-item"><input type="radio" name="service" value="housing" /> Affordable Housing</label>
+          <label class="option-item"><input type="radio" name="service" value="social" /> Social &amp; Human Services</label>
+          <label class="option-item"><input type="radio" name="service" value="environment" /> Environmental &amp; Parks</label>
+          <label class="option-item"><input type="radio" name="service" value="other" /> Other</label>
+        </div>
+      </div>
+
+      <hr class="q-divider" />
+
+      <!-- Q9 -->
+      <div class="question-block">
+        <div class="question-label"><span class="q-num">9</span> In your own words, what is the biggest challenge facing your community when it comes to local public services? <em style="font-weight:400;color:var(--gray-text)">(Optional)</em></div>
+        <textarea class="survey-textarea" placeholder="Share your thoughts here…"></textarea>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="survey-nav">
+      <button class="btn-back" onclick="history.back()">← Back</button>
+      <button class="btn-next" onclick="alert('Placeholder — next section coming soon.')">Next Section →</button>
+    </div>
+    <p class="save-note">Your progress is saved automatically. You can return to this survey at any time.</p>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script>
+  (async () => {
+    const { data: { session } } = await db.auth.getSession();
+    const link = document.getElementById('nav-auth-link');
+    if (session) {
+      link.textContent = 'My Account';
+      link.href = 'dashboard.html';
+    }
+  })();
+
+  function selectScale(id, btn) {
+    const wrap = document.getElementById('scale-' + id);
+    wrap.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+
+  function toggleMobileNav() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Register Your Interest — Connecticut Citizens' Assembly</title>
+<link rel="icon" type="image/png" href="media/ct-honeycomb.png" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1a237e;
+    --navy-dark: #0d1757;
+    --navy-light: #283593;
+    --purple: #7b2d8b;
+    --magenta: #c2185b;
+    --orange: #e64a19;
+    --yellow: #f9a825;
+    --coral: #ef5350;
+    --maroon: #880e4f;
+    --white: #ffffff;
+    --off-white: #f8f9fd;
+    --gray-light: #eef0f8;
+    --gray-mid: #c5cae9;
+    --gray-text: #5c6bc0;
+    --text: #1a237e;
+    --red: #dc2626;
+    --green: #16a34a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to right, #7b2d8b, #c2185b, #e64a19, #f9a825, #ef5350) 1;
+  }
+
+  .nav-logo img { height: 62px; display: block; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover { color: var(--purple); }
+
+  .nav-cta {
+    background: var(--navy-dark);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover { background: var(--purple) !important; color: var(--white) !important; }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--navy);
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 1100px) {
+    .nav-hamburger { display: block; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.5rem 2rem;
+      gap: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border-top: 3px solid var(--purple);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+  }
+
+  /* COLOR STRIPE */
+  .color-stripe { display: flex; height: 5px; }
+  .color-stripe span { flex: 1; }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 9rem 2rem 5rem;
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--purple) 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .page-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.9);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.2rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .page-header h1 span { color: var(--yellow); }
+
+  .page-header p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+  }
+
+  /* MAIN LAYOUT */
+  .register-main {
+    padding: 5rem 2rem;
+    background: var(--off-white);
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+  .container-narrow { max-width: 780px; margin: 0 auto; }
+
+  .register-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* INFO SIDE */
+  .info-block {
+    background: white;
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 2px 16px rgba(26,35,126,0.06);
+    border: 1px solid var(--gray-mid);
+    margin-bottom: 1.2rem;
+  }
+
+  .info-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .info-block h3::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .info-block:nth-child(1) h3::before { background: var(--purple); }
+  .info-block:nth-child(2) h3::before { background: var(--magenta); }
+  .info-block:nth-child(3) h3::before { background: var(--orange); }
+  .info-block:nth-child(4) h3::before { background: var(--yellow); }
+
+  .info-block p {
+    font-size: 0.92rem;
+    color: var(--gray-text);
+    line-height: 1.75;
+  }
+
+  .info-block ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .info-block ul li {
+    font-size: 0.92rem;
+    color: var(--gray-text);
+    line-height: 1.65;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .info-block ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--gray-mid);
+  }
+
+  .compensation-badge {
+    display: inline-block;
+    background: rgba(249,168,37,0.12);
+    border: 1px solid rgba(249,168,37,0.4);
+    color: #b8860b;
+    font-weight: 800;
+    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .blockquote-topic {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--navy-dark);
+    border-left: 3px solid var(--magenta);
+    padding: 0.7rem 1rem;
+    background: var(--gray-light);
+    border-radius: 0 6px 6px 0;
+    line-height: 1.6;
+    margin-top: 0.6rem;
+  }
+
+  /* FORM SIDE */
+  .form-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(26,35,126,0.1);
+    border: 1px solid var(--gray-mid);
+  }
+
+  .form-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .form-card .form-subtitle {
+    font-size: 0.88rem;
+    color: var(--gray-text);
+    margin-bottom: 1.8rem;
+    line-height: 1.6;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--gray-mid);
+    border-radius: 6px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: white;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--navy); }
+
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .form-note {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    margin-top: 0.3rem;
+    line-height: 1.5;
+  }
+
+  .btn-submit {
+    background: var(--navy-dark);
+    color: white;
+    border: none;
+    padding: 0.95rem 2rem;
+    border-radius: 6px;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-submit:hover { background: var(--purple); }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .form-message {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    display: none;
+  }
+
+  .form-message.error {
+    background: #fef2f2;
+    color: var(--red);
+    border: 1px solid #fecaca;
+    display: block;
+  }
+
+  .form-message.success {
+    background: #f0fdf4;
+    color: var(--green);
+    border: 1px solid #bbf7d0;
+    display: block;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #050d2a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+  }
+
+  footer span { color: var(--yellow); opacity: 0.8; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .register-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  @media (max-width: 580px) {
+    nav { padding: 0 1.2rem; }
+    .form-card { padding: 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="index.html"><img src="media/CTCA-honeycomb.png" alt="Connecticut Citizens' Assembly" /></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#roadmap">Roadmap</a></li>
+    <li><a href="index.html#timeline">Timeline</a></li>
+    <!-- <li><a href="resources.html">Resources</a></li> -->
+    <li><a href="governance.html">Governance</a></li>
+    <li><a href="login.html" id="nav-auth-link">Login</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-content">
+    <div class="page-eyebrow">Participation Invitation</div>
+    <h1>Help Shape the Future of <span>Connecticut</span></h1>
+    <p>100 residents will be chosen by lottery to deliberate on how Connecticut funds and delivers local public services — and your voice could be one of them.</p>
+  </div>
+</div>
+<div class="color-stripe">
+  <span style="background:#7b2d8b;"></span>
+  <span style="background:#c2185b;"></span>
+  <span style="background:#e64a19;"></span>
+  <span style="background:#f9a825;"></span>
+  <span style="background:#ef5350;"></span>
+</div>
+
+<!-- MAIN -->
+<section class="register-main">
+  <div class="container">
+    <div class="register-grid">
+
+      <!-- LEFT: INFO -->
+      <div>
+        <div class="info-block">
+          <h3>The Question</h3>
+          <div class="blockquote-topic">"Should Connecticut change how we pay for and deliver local services like education, road maintenance, or public safety?"</div>
+          <p style="margin-top:0.8rem;">You do not need any special background knowledge. Participants will learn together — hearing from experts, community members, and one another — before reaching conclusions.</p>
+        </div>
+
+        <div class="info-block">
+          <h3>Compensation</h3>
+          <span class="compensation-badge">$1,200</span>
+          <p>for full participation, plus support to make sure everyone can take part fully.</p>
+        </div>
+
+        <div class="info-block">
+          <h3>When &amp; How</h3>
+          <ul>
+            <li>Assembly sessions run July – September 2026.</li>
+            <li>100 participants chosen by random lottery from all who respond.</li>
+            <li>Recommendations presented directly to the Connecticut Legislature.</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>Who Is Behind This</h3>
+          <p>A nonpartisan effort led by Connecticut Comptroller Sean Scanlon and the Connecticut Conference of Municipalities, in partnership with Yale University and the University of Connecticut.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="form-card">
+        <h2>Express Your Interest</h2>
+        <p class="form-subtitle">Complete this short form to be included in the pool from which we will randomly select the final 100 participants. Please respond before the deadline.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" id="reg-first" placeholder="Jane" />
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" id="reg-last" placeholder="Smith" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="reg-email" placeholder="jane@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="reg-phone" placeholder="(860) 555-0100" />
+        </div>
+
+        <div class="form-group">
+          <label>Town / City *</label>
+          <input type="text" id="reg-town" placeholder="Hartford" />
+        </div>
+
+        <div class="form-group">
+          <label>ZIP Code *</label>
+          <input type="text" id="reg-zip" placeholder="06101" maxlength="10" />
+        </div>
+
+        <div class="form-group">
+          <label>Age Range *</label>
+          <select id="reg-age">
+            <option value="">Select your age range</option>
+            <option>18–24</option>
+            <option>25–34</option>
+            <option>35–44</option>
+            <option>45–54</option>
+            <option>55–64</option>
+            <option>65+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Anything you'd like to share? (optional)</label>
+          <textarea id="reg-message" placeholder="Tell us why you're interested in participating…"></textarea>
+        </div>
+
+        <p class="form-note">* Required fields. Your information will only be used for the purposes of this assembly selection process and will not be shared with third parties.</p>
+
+        <button class="btn-submit" id="submit-btn" type="button" onclick="submitRegistration()">Submit My Interest →</button>
+        <div id="form-message" class="form-message"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script>
+  (async () => {
+    const { data: { session } } = await db.auth.getSession();
+    const link = document.getElementById('nav-auth-link');
+    if (session) {
+      link.textContent = 'My Account';
+      link.href = 'dashboard.html';
+    }
+  })();
+
+  function showMessage(msg, type) {
+    const el = document.getElementById('form-message');
+    el.textContent = msg;
+    el.className = 'form-message ' + type;
+  }
+
+  async function submitRegistration() {
+    const first   = document.getElementById('reg-first').value.trim();
+    const last    = document.getElementById('reg-last').value.trim();
+    const email   = document.getElementById('reg-email').value.trim();
+    const phone   = document.getElementById('reg-phone').value.trim();
+    const town    = document.getElementById('reg-town').value.trim();
+    const zip     = document.getElementById('reg-zip').value.trim();
+    const age     = document.getElementById('reg-age').value;
+    const message = document.getElementById('reg-message').value.trim();
+    const btn     = document.getElementById('submit-btn');
+
+    if (!first || !last || !email || !town || !zip || !age) {
+      showMessage('Please fill in all required fields.', 'error');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    const { error } = await db.from('form_submissions').insert([{
+      name: `${first} ${last}`,
+      email,
+      topic: 'Participation Interest',
+      message: `Phone: ${phone || 'N/A'} | Town: ${town} | ZIP: ${zip} | Age: ${age}${message ? ' | Notes: ' + message : ''}`
+    }]);
+
+    if (error) {
+      showMessage('Something went wrong. Please try again or email us directly.', 'error');
+      btn.disabled = false;
+      btn.textContent = 'Submit My Interest →';
+    } else {
+      showMessage('Thank you! Your interest has been recorded. We will be in touch with next steps.', 'success');
+      btn.disabled = true;
+      btn.textContent = 'Submitted ✓';
+    }
+  }
+
+  function toggleMobileNav() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
