@@ -712,6 +712,430 @@
     gap: 1.2rem;
   }
 
+  /* INVITATION */
+  .invitation-section {
+    background: var(--off-white);
+    border-top: 1px solid var(--gray-mid);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .invitation-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top left, rgba(123,45,139,0.1), transparent 34%),
+      radial-gradient(circle at top right, rgba(230,74,25,0.1), transparent 28%);
+    pointer-events: none;
+  }
+
+  .invitation-section .container {
+    max-width: 1180px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .invitation-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .invitation-header {
+    text-align: center;
+  }
+
+  .invitation-header .section-lead {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .invitation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.92);
+    color: var(--navy);
+    padding: 0.85rem 1.6rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    border: 1px solid rgba(26,35,126,0.18);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: rgba(123,45,139,0.35);
+    color: var(--purple);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(26,35,126,0.12);
+  }
+
+  .invitation-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.95fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .invitation-sidebar {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .invite-page {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, #fcfcff 100%);
+    border: 1px solid rgba(26,35,126,0.14);
+    border-radius: 22px;
+    padding: 2.1rem;
+    overflow: hidden;
+    box-shadow: 0 22px 48px rgba(26,35,126,0.12);
+  }
+
+  .invite-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(123,45,139,0.06), transparent 34%),
+      linear-gradient(315deg, rgba(249,168,37,0.08), transparent 28%);
+    pointer-events: none;
+  }
+
+  .invite-page > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .invite-watermark {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 108px;
+    opacity: 0.08;
+    filter: grayscale(1);
+    z-index: 0;
+  }
+
+  .invite-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.38rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(194,24,91,0.1);
+    color: var(--magenta);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .invite-letterhead {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.1rem 0 1.5rem;
+  }
+
+  .invite-seal {
+    width: 74px;
+    height: 74px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 0.35rem;
+    background: rgba(26,35,126,0.04);
+    border: 1px solid rgba(26,35,126,0.08);
+    flex-shrink: 0;
+  }
+
+  .invite-kicker {
+    font-size: 0.77rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    margin-bottom: 0.45rem;
+  }
+
+  .invite-letterhead-copy h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3vw, 2.45rem);
+    line-height: 1.1;
+    color: var(--navy-dark);
+    margin-bottom: 0.45rem;
+  }
+
+  .invite-letterhead-copy p {
+    color: var(--gray-text);
+    line-height: 1.7;
+    max-width: 42rem;
+  }
+
+  .invite-divider {
+    width: 100%;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--purple), var(--magenta), var(--orange), var(--yellow), var(--coral));
+    margin-bottom: 1.5rem;
+  }
+
+  .invite-body {
+    display: grid;
+    gap: 1rem;
+    color: #33406f;
+    font-size: 1rem;
+    line-height: 1.82;
+  }
+
+  .invite-body p strong {
+    color: var(--navy-dark);
+  }
+
+  .invite-response {
+    margin-top: 1.7rem;
+    padding: 1.55rem;
+    border-radius: 18px;
+    background: rgba(248,249,253,0.96);
+    border: 1px solid rgba(26,35,126,0.1);
+  }
+
+  .invite-response h4,
+  .invite-section-heading {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy-dark);
+    margin-bottom: 0.85rem;
+  }
+
+  .invite-response > p,
+  .invite-page-secondary > p,
+  .invite-mini-section p,
+  .invite-signoff > p {
+    color: #33406f;
+    line-height: 1.75;
+  }
+
+  .invite-response-grid {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .invite-qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px dashed rgba(26,35,126,0.16);
+    min-height: 150px;
+  }
+
+  .invite-qr svg {
+    width: 118px;
+    height: 118px;
+    display: block;
+  }
+
+  .invite-response-copy p {
+    margin-bottom: 0.5rem;
+  }
+
+  .invite-response-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .invite-page a {
+    color: var(--magenta);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .invite-page a:hover {
+    text-decoration: underline;
+  }
+
+  .invite-question {
+    margin: 1rem 0 1.4rem;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid var(--yellow);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: inset 0 0 0 1px rgba(26,35,126,0.08);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.42rem;
+    line-height: 1.45;
+    color: var(--navy-dark);
+  }
+
+  .invite-mini-section {
+    margin-top: 1.45rem;
+  }
+
+  .invite-signoff {
+    margin-top: 1.6rem;
+    padding-top: 1.3rem;
+    border-top: 1px solid rgba(26,35,126,0.1);
+  }
+
+  .invite-signatures {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem 1rem;
+    margin-top: 0.9rem;
+  }
+
+  .invite-signatures p {
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
+    background: rgba(248,249,253,0.94);
+    border: 1px solid rgba(26,35,126,0.08);
+    color: #33406f;
+    line-height: 1.55;
+  }
+
+  .invite-contact {
+    margin-top: 1rem;
+    color: var(--gray-text);
+    font-size: 0.96rem;
+    line-height: 1.75;
+  }
+
+  .invite-collaboration {
+    margin-top: 1.65rem;
+    padding-top: 1.3rem;
+    border-top: 1px solid rgba(26,35,126,0.1);
+  }
+
+  .invite-collaboration span {
+    display: block;
+    margin-bottom: 0.9rem;
+    color: var(--gray-text);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .invite-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .invite-logos img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .invite-summary {
+    position: sticky;
+    top: 96px;
+    padding: 1.8rem;
+    border-radius: 22px;
+    background: linear-gradient(180deg, var(--navy-dark) 0%, #152066 100%);
+    color: #ffffff;
+    box-shadow: 0 24px 50px rgba(13,23,87,0.25);
+  }
+
+  .invite-summary .invite-chip {
+    background: rgba(255,255,255,0.12);
+    color: #ffffff;
+  }
+
+  .invite-summary h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.95rem;
+    line-height: 1.08;
+    margin: 1rem 0 0.8rem;
+  }
+
+  .invite-summary p {
+    color: rgba(255,255,255,0.74);
+    line-height: 1.72;
+  }
+
+  .invite-summary ul {
+    list-style: none;
+    display: grid;
+    gap: 0.95rem;
+    margin: 1.35rem 0 1.5rem;
+  }
+
+  .invite-summary li {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .invite-summary li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    margin-top: 0.45rem;
+    border-radius: 50%;
+    background: var(--yellow);
+    box-shadow: 0 0 0 6px rgba(249,168,37,0.16);
+    flex-shrink: 0;
+  }
+
+  .invite-summary li strong {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .invite-summary-actions {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1.2rem;
+  }
+
+  .invite-summary .btn-primary,
+  .invite-summary .btn-secondary {
+    width: 100%;
+  }
+
+  .invite-summary .btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+    border-color: rgba(255,255,255,0.16);
+  }
+
+  .invite-summary .btn-secondary:hover {
+    background: rgba(255,255,255,0.15);
+    color: #ffffff;
+    border-color: rgba(255,255,255,0.28);
+  }
+
+  .invite-summary-note {
+    margin-top: 1rem;
+    color: rgba(255,255,255,0.62);
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -816,6 +1240,17 @@
     .form-row { grid-template-columns: 1fr; }
     .about-accent { display: none; }
     .stat-bar { gap: 2rem; }
+    .invitation-section { padding: 4rem 1.2rem; }
+    .invite-page { padding: 1.35rem; border-radius: 18px; }
+    .invite-letterhead { flex-direction: column; align-items: flex-start; }
+    .invite-response { padding: 1.2rem; }
+    .invite-response-grid { grid-template-columns: 1fr; }
+    .invite-qr { min-height: 132px; }
+    .invite-question { font-size: 1.2rem; }
+    .invite-signatures { grid-template-columns: 1fr; }
+    .invite-logos { gap: 1rem; }
+    .invite-logos img { height: 32px; }
+    .invite-summary { padding: 1.35rem; }
   }
 
   /* HAMBURGER */
@@ -847,6 +1282,8 @@
       z-index: 99;
     }
     .nav-links.open { display: flex; }
+    .invitation-layout { grid-template-columns: 1fr; }
+    .invite-summary { position: relative; top: auto; }
   }
 </style>
 </head>
@@ -946,25 +1383,129 @@
 </section>
 
 <!-- INVITATION LETTER -->
-<section id="invitation" style="background:var(--off-white);padding:5rem 2rem;border-top:1px solid var(--gray-mid);">
-  <div class="container" style="max-width:860px;">
-    <div style="text-align:center;margin-bottom:2.5rem;">
-      <!-- <div class="section-eyebrow">Official Correspondence</div> -->
-      <h2 class="section-title">Invitation Letter</h2>
-      <p class="section-lead" style="max-width:100%;">The official invitation sent to selected Connecticut residents to participate in the Citizens' Assembly.</p>
-    </div>
-    <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(26,35,126,0.1);border:1px solid var(--gray-mid);">
-      <object
-        data="media/invitation-letter.pdf"
-        type="application/pdf"
-        width="100%"
-        height="800"
-        style="display:block;">
-        <div style="padding:2rem;text-align:center;background:var(--gray-light);">
-          <p style="color:var(--gray-text);margin-bottom:1rem;">Your browser cannot display the PDF inline.</p>
-          <a href="media/invitation-letter.pdf" download style="background:var(--navy-dark);color:white;padding:0.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:0.9rem;">Download Invitation Letter</a>
+<section class="invitation-section" id="invitation">
+  <div class="container">
+    <div class="invitation-shell">
+      <div class="invitation-header">
+        <h2 class="section-title">Invitation Letter</h2>
+        <p class="section-lead">The mailed invitation is now available as an accessible web preview, with the original PDF still available for download.</p>
+      </div>
+      <div class="invitation-actions">
+        <a href="media/invitation-letter.pdf" class="btn-primary" download>Download Original PDF</a>
+        <a href="https://osc.ct.gov/ctassembly/" class="btn-secondary" target="_blank" rel="noreferrer">Verify Invitation</a>
+      </div>
+      <div class="invitation-layout">
+        <article class="invite-page invite-page-primary">
+          <img src="media/Connecticut_State_Comptroller_Seal.png" alt="" class="invite-watermark" aria-hidden="true" />
+          <div class="invite-chip">Public Copy</div>
+          <div class="invite-letterhead">
+            <img src="media/Connecticut_State_Comptroller_Seal.png" alt="Office of the Connecticut State Comptroller seal" class="invite-seal" />
+            <div class="invite-letterhead-copy">
+              <div class="invite-kicker">Official Invitation</div>
+              <h3>Help Shape the Future of Connecticut.</h3>
+              <p>This responsive preview preserves the contents of the mailed invitation in an easy-to-read format for web and mobile visitors.</p>
+            </div>
+          </div>
+          <div class="invite-divider"></div>
+          <div class="invite-body">
+            <p><strong>Dear [Recipient Name],</strong></p>
+            <p>How we fund and deliver local public services, like our schools, roads, and police, affects every community in Connecticut. We want to hear from people across the state on this issue and we need your help.</p>
+            <p>We invite you to be part of the Connecticut Citizens' Assembly on Property Taxes.</p>
+            <p>This is a nonpartisan effort led by Connecticut Comptroller Sean Scanlon and the Connecticut Conference of Municipalities, in partnership with Yale University and the University of Connecticut.</p>
+            <p>From everyone who responds to this invitation, 100 residents will be chosen by lottery to take part. If selected, you will receive <strong>$1,200</strong> for full participation.</p>
+            <p>As a participant, you will work with fellow residents from across Connecticut to learn about these issues and develop recommendations for state leaders.</p>
+          </div>
+          <div class="invite-response">
+            <h4>How Do I Participate?</h4>
+            <p>To be included in the pool from which we will randomly select the final list of 100 participants, please complete a short survey at your personal response link.</p>
+            <div class="invite-response-grid">
+              <div class="invite-qr">
+                <svg viewBox="0 0 120 120" role="img" aria-label="Redacted QR code placeholder">
+                  <title>Redacted QR code placeholder</title>
+                  <rect width="120" height="120" rx="18" fill="#f8f9fd"></rect>
+                  <rect x="10" y="10" width="32" height="32" rx="8" fill="#1a237e"></rect>
+                  <rect x="18" y="18" width="16" height="16" rx="3" fill="#ffffff"></rect>
+                  <rect x="78" y="10" width="32" height="32" rx="8" fill="#c2185b"></rect>
+                  <rect x="86" y="18" width="16" height="16" rx="3" fill="#ffffff"></rect>
+                  <rect x="10" y="78" width="32" height="32" rx="8" fill="#e64a19"></rect>
+                  <rect x="18" y="86" width="16" height="16" rx="3" fill="#ffffff"></rect>
+                  <rect x="53" y="18" width="10" height="10" rx="2" fill="#1a237e"></rect>
+                  <rect x="53" y="34" width="10" height="18" rx="2" fill="#f9a825"></rect>
+                  <rect x="53" y="60" width="10" height="10" rx="2" fill="#c2185b"></rect>
+                  <rect x="70" y="52" width="10" height="10" rx="2" fill="#1a237e"></rect>
+                  <rect x="86" y="52" width="10" height="10" rx="2" fill="#ef5350"></rect>
+                  <rect x="53" y="78" width="10" height="10" rx="2" fill="#e64a19"></rect>
+                  <rect x="69" y="78" width="26" height="10" rx="2" fill="#1a237e"></rect>
+                  <rect x="53" y="94" width="42" height="10" rx="2" fill="#7b2d8b"></rect>
+                </svg>
+              </div>
+              <div class="invite-response-copy">
+                <div class="invite-chip">Redacted for web</div>
+                <p><strong>Personal QR code and unique URL:</strong> removed from the public version of this letter.</p>
+                <p><strong>Your personal login PIN:</strong> [XXXX]</p>
+                <p><strong>Please respond by:</strong> [DATE]</p>
+                <p><strong>Compensation:</strong> $1,200 for full participation if selected by lottery.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="invitation-sidebar">
+          <aside class="invite-summary">
+            <div class="invite-chip">At a Glance</div>
+            <h3>100 residents. Six sessions. One shared challenge.</h3>
+            <p>The Citizens' Assembly brings together a representative group of Connecticut residents to study local service funding and deliver recommendations directly to state leaders.</p>
+            <ul>
+              <li><div><strong>Selection</strong> Residents are chosen by lottery from everyone who responds to the invitation.</div></li>
+              <li><div><strong>Participation</strong> Assembly members receive $1,200 for full participation.</div></li>
+              <li><div><strong>Schedule</strong> Sessions run between July and September 2026.</div></li>
+              <li><div><strong>Outcome</strong> Final recommendations are presented to the Connecticut Legislature.</div></li>
+            </ul>
+            <div class="invite-summary-actions">
+              <a href="media/invitation-letter.pdf" class="btn-primary" download>Download PDF</a>
+              <a href="https://osc.ct.gov/ctassembly/" class="btn-secondary" target="_blank" rel="noreferrer">Verify Invitation</a>
+            </div>
+            <p class="invite-summary-note">This web version is easier to read on phones, searchable, and more accessible than an embedded PDF while keeping the printable source one click away.</p>
+          </aside>
+
+          <article class="invite-page invite-page-secondary">
+            <h4 class="invite-section-heading">What Is the Topic?</h4>
+            <div class="invite-question">Should Connecticut change how we pay for and deliver local services like education, road maintenance, or public safety?</div>
+            <p>You do not need any special background knowledge on these issues. Participants will learn together, hearing from experts, community members, and one another before reaching conclusions.</p>
+
+            <div class="invite-mini-section">
+              <h4 class="invite-section-heading">What Is a Citizens' Assembly?</h4>
+              <p>A Citizens' Assembly brings together a group of everyday people to study an important public issue. With the help of professional facilitators, participants learn about the issue, discuss it together, and develop recommendations.</p>
+              <p>Citizens' Assemblies have been used around the world to tackle difficult questions because they give ordinary people the time and resources needed to reach thoughtful conclusions.</p>
+            </div>
+
+            <div class="invite-mini-section">
+              <h4 class="invite-section-heading">When Will the Assembly Meet?</h4>
+              <p>The Assembly will meet over several sessions between July and September 2026. The full schedule is available at <a href="https://ct-citizens-assembly.org" target="_blank" rel="noreferrer">ct-citizens-assembly.org</a>.</p>
+            </div>
+
+            <div class="invite-signoff">
+              <p>We hope you will consider joining us.</p>
+              <div class="invite-signatures">
+                <p><strong>Joe DeLong</strong><br />Executive Director &amp; CEO, Connecticut Conference of Municipalities</p>
+                <p><strong>Josh Kalla and H&eacute;l&egrave;ne Landemore</strong><br />Professors of Political Science, Yale University</p>
+                <p><strong>Michael Morrell</strong><br />Professor of Political Science, University of Connecticut</p>
+              </div>
+              <p class="invite-contact">Questions? <a href="mailto:info@ct-citizens-assembly.org">info@ct-citizens-assembly.org</a><br />Verify this invitation at <a href="https://osc.ct.gov/ctassembly/" target="_blank" rel="noreferrer">osc.ct.gov/ctassembly</a>.</p>
+            </div>
+
+            <div class="invite-collaboration">
+              <span>A Collaboration Of</span>
+              <div class="invite-logos">
+                <img src="media/Connecticut_State_Comptroller_Seal.png" alt="Office of the Connecticut State Comptroller" />
+                <img src="media/CCM-logo.png" alt="Connecticut Conference of Municipalities" />
+                <img src="media/Yale-ISPS-logo.png" alt="Yale University" />
+                <img src="media/uconn-ps.png" alt="University of Connecticut" />
+              </div>
+            </div>
+          </article>
         </div>
-      </object>
+      </div>
     </div>
   </div>
 </section>
