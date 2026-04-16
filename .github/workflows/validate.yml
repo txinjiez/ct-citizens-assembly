@@ -1,0 +1,40 @@
+name: Validate Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install html-validate
+        run: npm install -g html-validate
+
+      - name: Validate HTML files
+        run: html-validate *.html
+        continue-on-error: true
+
+      - name: Check for missing media files
+        run: |
+          echo "Checking for referenced media files..."
+          missing=0
+          for f in *.html; do
+            grep -oP 'src="media/[^"]+"|href="media/[^"]+"' "$f" | grep -oP 'media/[^"]+' | while read path; do
+              if [ ! -f "$path" ]; then
+                echo "MISSING: $path (referenced in $f)"
+                missing=1
+              fi
+            done
+          done
+          echo "Media check complete."
