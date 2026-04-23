@@ -276,6 +276,91 @@
     .team-main { padding: 3rem 1.2rem 4rem; }
   }
 
+  /* COMMITTEE CARD GRID */
+  .cmember-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 900px) { .cmember-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 640px) { .cmember-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .cmember-card {
+    background: white;
+    border: 1px solid var(--gray-mid);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cmember-card-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .cmember-card-avatar {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .cmember-card-body {
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  .cmember-card-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    line-height: 1.3;
+  }
+
+  .cmember-card-aff {
+    font-size: 0.75rem;
+    color: var(--gray-text);
+    line-height: 1.4;
+  }
+
+  .cmember-card-toggle {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--purple);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    letter-spacing: 0.03em;
+  }
+
+  .cmember-card-bio {
+    display: none;
+    padding: 0.8rem 1rem 1rem;
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    border-top: 1px solid var(--gray-light);
+    background: #f9f7fd;
+  }
+
   /* COLLABORATORS */
   .collaborators {
     background: var(--gray-light);
@@ -391,7 +476,7 @@
 
       <!-- Hélène Landemore -->
       <div class="profile-card" style="width:calc(33.333% - 1.4rem);min-width:260px;">
-        <div class="profile-photo"><img src="media/committee/Landemore_headshot.jpg" alt="Hélène Landemore" /></div>
+        <div class="profile-photo"><img src="media/committee/Landemore_headshot.png" alt="Hélène Landemore" /></div>
         <div class="profile-accent" style="background:#7b2d8b;"></div>
         <div class="profile-body">
           <div class="profile-name">Hélène Landemore</div>
@@ -427,7 +512,7 @@
 
       <!-- Joshua Kalla -->
       <div class="profile-card" style="width:calc(33.333% - 1.4rem);min-width:260px;">
-        <div class="profile-photo"><img src="media/committee/Kalla_Headshot.jpg" alt="Joshua Kalla" /></div>
+        <div class="profile-photo"><img src="media/committee/Kalla_headshot.png" alt="Joshua Kalla" /></div>
         <div class="profile-accent" style="background:#f9a825;"></div>
         <div class="profile-body">
           <div class="profile-name">Joshua Kalla</div>
@@ -471,179 +556,191 @@
     </div>
   </div>
 
-  <!-- COMMITTEE MEMBERS — under construction -->
-  <div style="max-width:860px;margin:0 auto;">
-    <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:1.2rem;text-align:center;">Committee Members</div>
+  <!-- COMMITTEE MEMBERS -->
+  <div style="max-width:1060px;margin:0 auto;">
+    <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:2rem;text-align:center;">Committee Members</div>
 
-    <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:12px;padding:1.2rem 1.8rem;margin-bottom:1.8rem;text-align:center;">
-      <p style="font-size:0.88rem;color:var(--gray-text);line-height:1.6;">The full committee roster is currently being finalized. Member profiles and bios will be added shortly.</p>
-    </div>
-
-    <div style="border:1px solid var(--gray-mid);border-radius:12px;overflow:hidden;">
-      <div style="display:grid;grid-template-columns:1fr 1fr 2rem;background:var(--navy-dark);padding:0.75rem 1.4rem;gap:1rem;">
-        <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Name</div>
-        <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Affiliation</div>
-        <div></div>
-      </div>
+    <div class="cmember-grid">
 
       <!-- Alexander Guerrero -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Alexander Guerrero</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Rutgers University</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Guerrero_headshot.jpeg" alt="Alexander Guerrero" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Alexander Guerrero</div>
+          <div class="cmember-card-aff">Rutgers University</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Alexander Guerrero is a Professor of Philosophy at Rutgers University - New Brunswick, with a secondary appointment at Rutgers Law School.  His research and teaching focuses on political philosophy, ethics, legal philosophy, and epistemology.  He also has research and teaching interests in Native American and Indigenous Philosophy, Mesoamerican Philosophy, Chinese Philosophy, Latin American Philosophy, and African Philosophy.  He is the author of Lottocracy: Democracy Without Elections (Oxford University Press, 2024), which presents and defends a political system that operates entirely through the use of randomly selected citizens, rather than elected political representatives.  He is an Associate Editor for Ethics and was previously Editor-in-Chief of Philosophy Compass (2018-24) and the NYU Law Review (2005-06).  He served as a judicial clerk for the Honorable Marjorie O. Rendell on the U.S. Court of Appeals for the Third Circuit in 2009-2010.  He has a JD and PhD from New York University and an AB from Harvard.</div>
+        <div class="cmember-card-bio">Alexander Guerrero is a Professor of Philosophy at Rutgers University – New Brunswick. He is the author of <em>Lottocracy: Democracy Without Elections</em> (Oxford University Press, 2024), defending a political system that operates entirely through randomly selected citizens. He has a JD and PhD from NYU and an AB from Harvard.</div>
       </div>
 
       <!-- Ariel Procaccia -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Ariel Procaccia</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Harvard University</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Procaccia_headshot.jpeg" alt="Ariel Procaccia" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Ariel Procaccia</div>
+          <div class="cmember-card-aff">Harvard University</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Ariel Procaccia is the Alfred and Rebecca Lin Professor of Computer Science at Harvard University. He works on problems related to AI, algorithms, economics, and society. He has helped create systems widely used to solve fair division problems, resettle refugees, distribute food, and select citizens' assemblies. He is an ACM Fellow (2025), AAAI Fellow (2024), and recipient of the Guggenheim Fellowship (2018) and Sloan Research Fellowship (2015), among other honors.</div>
+        <div class="cmember-card-bio">Ariel Procaccia is the Alfred and Rebecca Lin Professor of Computer Science at Harvard University. He has helped create systems widely used to solve fair division problems, resettle refugees, and select citizens’ assemblies. He is an ACM Fellow (2025) and AAAI Fellow (2024), and has received the Guggenheim Fellowship (2018) and Sloan Research Fellowship (2015).</div>
       </div>
 
       <!-- Audrey Tang -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Audrey Tang</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Cyber Ambassador, Taiwan</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Tang_headshot.png" alt="Audrey Tang" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Audrey Tang</div>
+          <div class="cmember-card-aff">Cyber Ambassador, Taiwan</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Audrey Tang is a civic hacker and technologist who rewires systems for the public good. As Taiwan’s cyber ambassador and first digital minister, she showed how technology could deepen trust, giving millions a direct role in shaping policy. Having proven these systems in Taiwan, Tang now shares this playbook worldwide, using openness and co-creation to fight polarisation and renew democracy.
-Emerging from Taiwan’s open-source movement, Tang and the g0v community — a leaderless civic-tech collective building tools for government transparency — reimagined government as collaborative. This helped shape the 2014 Sunflower Movement, which connected citizens and lawmakers in real time. From this grew vTaiwan, a participatory platform mapping agreement across diverse opinions. As digital minister, she declared broadband a human right, launched the pandemic-era “Mask Map,” and mobilised hackathons to counter disinformation and deepfakes.
-Tang works with governments, civic groups and tech platforms to turn conflict into the fuel of collaboration and give people everywhere the power to shape their shared future. Across Asia, Europe and the United States, her methods are being adapted to local needs. She also pioneers civic-minded approaches to AI, from Oxford’s Institute for Ethics in AI to safety collaborations with global platforms.
-</div>
+        <div class="cmember-card-bio">Audrey Tang is a civic hacker and technologist who rewires systems for the public good. As Taiwan’s first digital minister, she helped shape the 2014 Sunflower Movement and created vTaiwan, a participatory platform mapping agreement across diverse opinions. She now pioneers civic-minded approaches to AI, from Oxford’s Institute for Ethics in AI to safety collaborations with global platforms.</div>
       </div>
 
       <!-- Cynthia Farrar -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Cynthia Farrar</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Purple States TV</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Farrar_headshot.png" alt="Cynthia Farrar" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Cynthia Farrar</div>
+          <div class="cmember-card-aff">Purple States TV</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Cynthia Farrar is an independent scholar and civic entrepreneur.  She has lived in New Haven for 40 years, and has pursued a variety of strategies to engage citizens as full partners in American democracy and to bridge political and social divides.  Working with James Fishkin, she organized the Citizens Forum, a series of public deliberations among randomly invited citizens from across Greater New Haven (2002-2007) and -- with MacNeil/Lehrer Productions and local public media -- in communities across the U.S.   
-In 2007, Farrar co-founded Purple States TV to bring the voices and stories of people affected in different ways by an issue or a political choice into public discussion about what’s at stake.  She is currently working with the Community Foundation for Greater New Haven on a civic leagues framework designed to build relationships across neighborhood and town lines.
-She has co-authored articles based on field experiments within Deliberative Polls and written about the implications of ancient democracy for modern practice.The 2nd edition of Farrar’s book on the Origins of Democratic Thinking has just been published by Cambridge University Press.</div>
+        <div class="cmember-card-bio">Cynthia Farrar is an independent scholar and civic entrepreneur. She organized the Citizens Forum (2002–2007), a series of public deliberations among randomly invited citizens across Greater New Haven. In 2007 she co-founded Purple States TV. She is co-author of the 2nd edition of <em>The Origins of Democratic Thinking</em> (Cambridge University Press).</div>
       </div>
 
       <!-- Daniel Selz -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Daniel Selz</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">$1 Billion for Trust</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Selz_headshot.png" alt="Daniel Selz" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Daniel Selz</div>
+          <div class="cmember-card-aff">$1 Billion for Trust</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Dan Selz is co-founder of $1 Billion for Trust, a nonprofit focused on growing a 9-million-person community to collectively fund solutions that rebuild trust in information, institutions, and each other. Previously he was Director of Innovation at the Leadership Now Project and spent nearly a decade at the XPRIZE Foundation, including designing the $100M Carbon Removal XPRIZE.</div>
+        <div class="cmember-card-bio">Dan Selz is co-founder of $1 Billion for Trust, a nonprofit focused on rebuilding trust in information, institutions, and each other. Previously he was Director of Innovation at the Leadership Now Project and spent nearly a decade at the XPRIZE Foundation, including designing the $100M Carbon Removal XPRIZE.</div>
+      </div>
+
+      <!-- Hélène Landemore -->
+      <div class="cmember-card">
+        <img src="media/committee/Landemore_headshot.jpg" alt="Hélène Landemore" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Hélène Landemore</div>
+          <div class="cmember-card-aff">Yale University</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
+        </div>
+        <div class="cmember-card-bio">Hélène Landemore is a professor of political science at Yale University specializing in democratic theory and political epistemology. She is a fellow at Oxford’s Ethics in AI Institute, an advisor to OpenAI’s Democratic Inputs to AI program, and served on the Governance Committee of the most recent French Citizens’ Convention.</div>
       </div>
 
       <!-- Jane Suiter -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Jane Suiter</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Dublin City University</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Suiter_headshot.png" alt="Jane Suiter" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Jane Suiter</div>
+          <div class="cmember-card-aff">Dublin City University</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Jane Suiter is Professor of Political Communication at Dublin City University director of DCU's  Institute for Future Media, Democracy and Society., her research focus is on the information environment in the public sphere and in particular on scaling up  deliberation and tackling disinformation. 
+        <div class="cmember-card-bio">Jane Suiter is Professor of Political Communication at Dublin City University and Director of DCU’s Institute for Future Media, Democracy and Society. She has been involved in the Irish Citizens’ Assembly (2012–2022), was a founding member of We the Citizens (2011), and was named the Irish Research Council’s Researcher of the Year in 2020.</div>
+      </div>
 
-She has been involved in various research and oversight capacities on the Irish Citizens' Assembly (2012-2022) ) and was a founder member of We the Citizens (2011), Ireland’s first deliberative experiment. She is a member of the OECD's FutureDemocracy network and on the advisory board of the Federation of Innovation in Democracy Europe (FIDE)  and has also advised in Scotland and elsewhere on citizens' assemblies. Jane has testified at the OECD, the European Parliament, the UN and the UNDP as well as the  Oireachtas. She was the joint winner of the Brown Democracy Medal in 2019 and the President's Award for Research. She was awarded the prestigious title of the Irish Research Council's Researcher of the Year in 2020.
-</div>
+      <!-- Joshua Kalla -->
+      <div class="cmember-card">
+        <img src="media/committee/Kalla_Headshot.jpg" alt="Joshua Kalla" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Joshua Kalla</div>
+          <div class="cmember-card-aff">Yale University</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
+        </div>
+        <div class="cmember-card-bio">Josh Kalla is Associate Professor of Political Science at Yale University with a secondary appointment in Statistics and Data Science. His research studies political persuasion, prejudice reduction, and decision-making among voters and political elites, primarily through the use of randomized field experiments.</div>
       </div>
 
       <!-- JT Flowers -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">JT Flowers</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Albina Vision Trust</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Flowers_headshot.png" alt="JT Flowers" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">JT Flowers</div>
+          <div class="cmember-card-aff">Albina Vision Trust</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">JT Flowers is a lifelong Portlander born and bred in the heart of inner-NE Portland's historic Albina district. Raised by a single mother and grandmother, neither of whom graduated from college, JT went on to earn his BA in Political Science with distinction from Yale University.​ A Truman Scholar, Flowers also made history by becoming the first Black and first Native Hawaiian Rhodes Scholar in Oregon's history. He holds master's degrees in U.S. History and Music Performance from the University of Oxford.​ JT serves as Senior Advisor at the Albina Vision Trust in addition to representing District 5 on TriMet's Board of Directors, which encompasses large portions of North and Northeast Portland. He also serves as a Board member of the Big Yard Foundation and the Board Vice Chair of the Williams & Russell CDC.
-</div>
+        <div class="cmember-card-bio">JT Flowers earned his BA from Yale and made history as the first Black and first Native Hawaiian Rhodes Scholar in Oregon’s history, holding master’s degrees in U.S. History and Music Performance from Oxford. He serves as Senior Advisor at the Albina Vision Trust and on TriMet’s Board of Directors.</div>
       </div>
 
       <!-- Lunda Asmani -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Lunda Asmani</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Norwalk Public Schools; GFOA</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Asmani_headshot.png" alt="Lunda Asmani" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Lunda Asmani</div>
+          <div class="cmember-card-aff">Norwalk Public Schools; GFOA</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Lunda Asmani, CPFO, is Chief Financial Officer for Norwalk Public Schools in Connecticut, leading financial strategy and operations for a $300 million budget. With nearly two decades of municipal leadership experience across Connecticut and Kansas, he also serves as President of both the national Government Finance Officers Association and the Connecticut Government Finance Officers Association. He is a champion for advancing best practices in public finance.</div>
+        <div class="cmember-card-bio">Lunda Asmani, CPFO, is Chief Financial Officer for Norwalk Public Schools, leading financial strategy for a $300 million budget. He serves as President of both the national Government Finance Officers Association and the Connecticut GFOA, and is a champion for advancing best practices in public finance.</div>
       </div>
 
       <!-- Michiel Bakker -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Michiel Bakker</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">MIT; Google DeepMind</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Bakker_headshot.png" alt="Michiel Bakker" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Michiel Bakker</div>
+          <div class="cmember-card-aff">MIT; Google DeepMind</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Michiel Bakker is an Assistant Professor at MIT and a Research Scientist at Google DeepMind. His research focuses on large language models (LLMs), AI safety, the societal impacts of AI, and AI's role in both human-human and human-computer interaction. His most relevant work is on the "Habermas Machine," published in Science, where Michiel and co-authors showed that AI can help humans find common ground in democratic deliberation. Previously, he was a Computer Science PhD student at MIT, working with Alex "Sandy" Pentland at the MIT Media Lab. He also hold a bachelor's and master's degree in physics from TU Delft, where he worked on quantum computing at QuTech and IBM Quantum.</div>
+        <div class="cmember-card-bio">Michiel Bakker is an Assistant Professor at MIT and Research Scientist at Google DeepMind. His most prominent work is the "Habermas Machine," published in <em>Science</em>, showing that AI can help humans find common ground in democratic deliberation. He holds degrees in physics from TU Delft and a Computer Science PhD from MIT.</div>
       </div>
 
       <!-- Michael E. Morrell -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Michael E. Morrell</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">University of Connecticut</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Morrell_headshot.jpeg" alt="Michael E. Morrell" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Michael E. Morrell</div>
+          <div class="cmember-card-aff">University of Connecticut</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Michael E. Morrell is an Associate Professor in the Department of Political Science at the University of Connecticut who has been studying democracy and deliberation for a he-can't-believe-it three decades. His major area of interest is the interplay between deliberation and emotions, and especially the role of empathy in democracy: Empathy and Democracy: Feeling, Thinking, and Deliberation. He has examined other areas related to deliberation including acceptance of collective decisions, political efficacy, participant bias in mini-publics, and listening. He has observed deliberative mini-publics in New Haven and been engaged in the Citizens Initiative Review Research Project headed by Professor John Gastil (Mini-Public Replication: Emotions and Deliberation in the Citizens' Initiative Review Redux). As part of the CIR project, he contributed to the design of mini-public participant surveys and observed citizens as they have seriously and effectively discussed referenda that were going before the voters of their communities. Professor Morrell received his Ph.D. from Arizona State University in 1998 and taught at Arizona State University and Arkansas State University before joining UConn. michael.morrell@uconn.edu</div>
+        <div class="cmember-card-bio">Michael E. Morrell is Associate Professor of Political Science at the University of Connecticut, studying democracy and deliberation for three decades. His focus is the interplay between deliberation and emotions — especially the role of empathy. He contributed to the Citizens Initiative Review Research Project and received his PhD from Arizona State University in 1998.</div>
       </div>
 
       <!-- Oliver Hart -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Oliver Hart</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Harvard University</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Hart_headshot.png" alt="Oliver Hart" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Oliver Hart</div>
+          <div class="cmember-card-aff">Harvard University</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Oliver Hart is currently the Lewis P. and Linda L. Geyser University Professor at Harvard University, where he has taught since 1993. He is the 2016 co-recipient of the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel.  Hart’s research centers on the roles that ownership structure and contractual arrangements play in the governance and boundaries of corporations. His recent work focuses on how parties can write better contracts, and on the social responsibility of business. He has published a book (Firms, Contracts, and Financial Structure, Oxford University Press, 1995) and numerous journal articles. He has used his theoretical work on firms and contracts in several legal cases. He is a Fellow of the Econometric Society, the American Academy of Arts and Sciences, the British Academy, and the American Finance Association, a member of the National Academy of Sciences, a Distinguished Fellow of the American Economic Association, and has several honorary degrees. He has been president of the American Law and Economics Association and a vice president of the American Economic Association.</div>
+        <div class="cmember-card-bio">Oliver Hart is the Lewis P. and Linda L. Geyser University Professor at Harvard, where he has taught since 1993. He is the 2016 co-recipient of the Nobel Prize in Economic Sciences. His research centers on the governance and boundaries of corporations, and his recent work focuses on the social responsibility of business.</div>
       </div>
 
       <!-- Peter MacLeod -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Peter MacLeod</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">MASS LBP</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/MacLeod_headshot.png" alt="Peter MacLeod" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Peter MacLeod</div>
+          <div class="cmember-card-aff">MASS LBP</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Peter MacLeod is the co-founder and principal of Mass LBP, and one of Canada's leading experts in public engagement and deliberative democracy. Under his leadership, Mass LBP has led some of Canada's most original and ambitious efforts to engage citizens in tackling tough policy options while pioneering the use of Civic Lotteries and Citizen Reference Panels on behalf of a wide array of clients.
-He is a former researcher at Britain's Demos think tank, and a long-time friend to Denmark's Kaospilots, a school for business design and social innovation. A graduate of the University of Toronto and Queen's University, he writes and speaks frequently about the citizen's experience of the state, the importance of public imagination, and the future of responsible government.
-He is an Action Canada fellow (2003) and also the 2008 recipient of the Public Policy Forum's Emerging Leaders Award. In 2013, he launched Wagemark, the first international wage certification standard aimed at reducing workplace pay disparities while promoting corporate competitiveness. He was also appointed to serve on the Ontario government's open government task force. He currently serves on the board of Tides Canada, an environmental charity, and in 2015, he was elected co-chair of Toronto's Wellesley Institute for Urban Health.
-</div>
+        <div class="cmember-card-bio">Peter MacLeod is co-founder and principal of Mass LBP, one of Canada’s leading experts in public engagement and deliberative democracy. Under his leadership, Mass LBP pioneered the use of Civic Lotteries and Citizen Reference Panels. He is an Action Canada fellow and 2008 recipient of the Public Policy Forum’s Emerging Leaders Award.</div>
       </div>
 
       <!-- Sophie Guillain -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Sophie Guillain</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Res publica</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Guillain_headshot.png" alt="Sophie Guillain" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Sophie Guillain</div>
+          <div class="cmember-card-aff">Res publica</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Trained as an urban planner, Sophie Guillain is Managing Director and Partner of Res publica, a consulting firm specializing in collective intelligence and public participation. She specializes in consultation, public communication and issues related to territorial development. She leads stakeholder management missions for the implementation of national and regional public policies, particularly in the areas of sustainable development, transportation, food, and sports. She works on a daily basis with the public, technicians and elected officials at all levels of local government, in France and abroad. She is also a trainer for elected officials and local government executives: in consultation and public speaking. She coordinates Res publica’s teams in the implementation of missions in order to mobilize the appropriate skills for each client. She teaches at the Sorbonne - Paris I in public participation engineering, as well as in communication and institutional relations.</div>
+        <div class="cmember-card-bio">Trained as an urban planner, Sophie Guillain is Managing Director and Partner of Res publica, a consulting firm specializing in collective intelligence and public participation. She leads stakeholder management for national and regional public policies across France and abroad, and teaches public participation engineering at the Sorbonne – Paris I.</div>
       </div>
 
       <!-- Zephyr Teachout -->
-      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
-        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
-          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Zephyr Teachout</div>
-          <div style="font-size:0.9rem;color:var(--gray-text);">Fordham Law School</div>
-          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+      <div class="cmember-card">
+        <img src="media/committee/Teachout_headshot.png" alt="Zephyr Teachout" class="cmember-card-photo" />
+        <div class="cmember-card-body">
+          <div class="cmember-card-name">Zephyr Teachout</div>
+          <div class="cmember-card-aff">Fordham Law School</div>
+          <button class="cmember-card-toggle" onclick="toggleCardBio(this)">Read more ↓</button>
         </div>
-        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Zephyr Teachout is a Professor at Law at Fordham Law School where she focuses on the intersection of corporate power and political power. She teaches corporations, election law, antitrust, and prosecuting white collar crime. Her most recent book, Break 'em Up (2020), makes a case for reimagining the relationship between democracy and antimonopoly law. Her prior book, Corruption in America (2014), argued that the American constitutional system has an embedded anti-corruption principle that has been discarded by the modern Court. Her public writings have appeared in the New York Times, Foreign Affairs, New York Review of Books, Washington Post, The Nation and The New Republic. In 2021, she took a leave to work as Special Advisor and Senior Counsel for Economic Justice at the New York Attorney General's Office. Before Law School, Zephyr Teachout had a career as a digital consultant and nonprofit entrepreneur, and represented clients on death row in North Carolina. </div>
-      </div>
-
-      <!-- More to come -->
-      <div style="padding:0.85rem 1.4rem;background:var(--off-white);text-align:center;border-top:1px dashed var(--gray-mid);">
-        <div style="font-size:0.85rem;font-style:italic;color:var(--gray-text);">More members to be announced...</div>
+        <div class="cmember-card-bio">Zephyr Teachout is Professor of Law at Fordham Law School, focusing on corporate power and political power. Her books include <em>Break ‘em Up</em> (2020) and <em>Corruption in America</em> (2014). In 2021 she served as Special Advisor and Senior Counsel for Economic Justice at the New York Attorney General’s Office.</div>
       </div>
 
     </div>
+
+    <p style="text-align:center;font-size:0.85rem;font-style:italic;color:var(--gray-text);margin-top:2rem;">More members to be announced...</p>
   </div>
 
 </main>
@@ -658,6 +755,53 @@ He is an Action Canada fellow (2003) and also the 2008 recipient of the Public P
       <div class="collab-item"><a href="https://isps.yale.edu"><img src="media/Yale-ISPS-logo.png" alt="Yale ISPS" /></a></div>
       <div class="collab-item"><a href="https://www.uconn.edu"><img src="media/uconn-ps.png" alt="UConn" /></a></div>
       <div class="collab-item"><a href="https://www.ccm-ct.org"><img src="media/CCM-logo.png" alt="CCM" /></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORS -->
+<section style="background:var(--white);padding:4rem 2rem;border-top:1px solid var(--gray-mid);">
+  <div style="max-width:1060px;margin:0 auto;text-align:center;">
+    <div class="section-eyebrow" style="color:var(--purple);font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem;">Our Advisors</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--navy-dark);margin-bottom:2.5rem;">Advisors</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Alice el-Wakil</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Alice Siu</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Andrew Konya</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Antoine Vergne</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Audrey Tang</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Claire Mellier-Wilson</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Claudia Chwalisz</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Colin Megill</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Cynthia Farrar</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">David Schechter</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Emmeline Cooper</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Emily Thielmann</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Felipe Rey</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Gilles-Laurent Rayssac</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Hollie Russon Gilman</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Iain Walker</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Jillian Youngblood</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Jim Fishkin</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Justin Reedy</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Kalypso Nicolaidis</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Kara Jarzynski</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Kristin Hansen</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Lex Paulson</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Linn Davis</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Marjan Ehsassi</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Matt Byrne</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Michael Gallagher</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Nick Gill</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Nicole Curato</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Peter McLeod</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Rachel Happe</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Rahmin Sarabi</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Richard Wilson</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Sophie Guillain</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Suzette Brooks Masters</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Yves Mathieu</div>
+      <div style="background:var(--gray-light);border:1px solid var(--gray-mid);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.88rem;font-weight:600;color:var(--navy-dark);">Yves Sintomer</div>
     </div>
   </div>
 </section>
@@ -689,6 +833,14 @@ He is an Action Canada fellow (2003) and also the 2008 recipient of the Public P
     const isOpen = panel.style.display !== 'none';
     panel.style.display = isOpen ? 'none' : 'block';
     toggle.textContent = isOpen ? '+' : '−';
+  }
+
+  function toggleCardBio(btn) {
+    const card = btn.closest('.cmember-card');
+    const bio = card.querySelector('.cmember-card-bio');
+    const isOpen = bio.style.display === 'block';
+    bio.style.display = isOpen ? 'none' : 'block';
+    btn.textContent = isOpen ? 'Read more ↓' : 'Read less ↑';
   }
 </script>
 </body>
