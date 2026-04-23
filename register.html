@@ -24,15 +24,12 @@
     --orange: #e64a19;
     --yellow: #f9a825;
     --coral: #ef5350;
-    --maroon: #880e4f;
     --white: #ffffff;
     --off-white: #f8f9fd;
     --gray-light: #eef0f8;
     --gray-mid: #c5cae9;
     --gray-text: #5c6bc0;
     --text: #1a237e;
-    --red: #dc2626;
-    --green: #16a34a;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -193,10 +190,18 @@
   .container-narrow { max-width: 780px; margin: 0 auto; }
 
   .register-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .info-blocks-grid {
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 4rem;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 860px;
   }
 
   /* INFO SIDE */
@@ -206,7 +211,6 @@
     padding: 2rem;
     box-shadow: 0 2px 16px rgba(26,35,126,0.06);
     border: 1px solid var(--gray-mid);
-    margin-bottom: 1.2rem;
   }
 
   .info-block h3 {
@@ -290,117 +294,72 @@
     margin-top: 0.6rem;
   }
 
-  /* FORM SIDE */
-  .form-card {
+  /* SURVEY CTA SIDE */
+  .survey-card {
     background: white;
     border-radius: 16px;
     padding: 2.5rem;
     box-shadow: 0 4px 30px rgba(26,35,126,0.1);
     border: 1px solid var(--gray-mid);
-  }
-
-  .form-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--navy-dark);
-    margin-bottom: 0.3rem;
-  }
-
-  .form-card .form-subtitle {
-    font-size: 0.88rem;
-    color: var(--gray-text);
-    margin-bottom: 1.8rem;
-    line-height: 1.6;
-  }
-
-  .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
   }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+  .survey-card-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--navy-dark), var(--purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
   }
 
-  .form-group label {
-    font-size: 0.75rem;
-    font-weight: 700;
+  .survey-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
     color: var(--navy-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    line-height: 1.2;
   }
 
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 0.8rem 1rem;
-    border: 1.5px solid var(--gray-mid);
-    border-radius: 6px;
-    font-family: 'Public Sans', sans-serif;
-    font-size: 0.95rem;
-    color: var(--text);
-    background: white;
-    outline: none;
-  }
+  .survey-card h2 span { color: var(--magenta); }
 
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--navy); }
-
-  .form-group textarea { resize: vertical; min-height: 80px; }
-
-  .form-note {
-    font-size: 0.8rem;
+  .survey-card p {
+    font-size: 0.97rem;
     color: var(--gray-text);
-    margin-top: 0.3rem;
-    line-height: 1.5;
+    line-height: 1.75;
+    max-width: 420px;
   }
 
-  .btn-submit {
+  .survey-card .survey-note {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    background: var(--gray-light);
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  .btn-survey {
+    display: inline-block;
     background: var(--navy-dark);
     color: white;
-    border: none;
-    padding: 0.95rem 2rem;
+    padding: 1rem 2.4rem;
     border-radius: 6px;
-    font-family: 'Public Sans', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 0.5rem;
+    font-size: 1.05rem;
+    text-decoration: none;
     letter-spacing: 0.02em;
+    transition: background 0.2s;
   }
 
-  .btn-submit:hover { background: var(--purple); }
-  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
-
-  .form-message {
-    padding: 0.8rem 1rem;
-    border-radius: 6px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    margin-top: 1rem;
-    display: none;
-  }
-
-  .form-message.error {
-    background: #fef2f2;
-    color: var(--red);
-    border: 1px solid #fecaca;
-    display: block;
-  }
-
-  .form-message.success {
-    background: #f0fdf4;
-    color: var(--green);
-    border: 1px solid #bbf7d0;
-    display: block;
-  }
+  .btn-survey:hover { background: var(--purple); }
 
   /* FOOTER */
   footer {
@@ -414,14 +373,13 @@
   footer span { color: var(--yellow); opacity: 0.8; }
 
   /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .register-grid { grid-template-columns: 1fr; gap: 2rem; }
+  @media (max-width: 700px) {
+    .info-blocks-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 580px) {
     nav { padding: 0 1.2rem; }
-    .form-card { padding: 1.5rem; }
-    .form-row { grid-template-columns: 1fr; }
+    .survey-card { padding: 1.5rem; }
   }
 </style>
 </head>
@@ -468,8 +426,17 @@
   <div class="container">
     <div class="register-grid">
 
-      <!-- LEFT: INFO -->
-      <div>
+      <!-- TOP: SURVEY CTA -->
+      <div class="survey-card" style="width:100%;max-width:600px;">
+        <div class="survey-card-icon">&#128221;</div>
+        <h2>Take the <span>Survey</span></h2>
+        <p>Complete this short survey to be included in the pool from which we will randomly select the final 100 participants. The survey takes about 10 minutes and will open in a new tab.</p>
+        <a href="https://yalesurvey.ca1.qualtrics.com/jfe/form/SV_50HmnZwI2VX9R8a" target="_blank" rel="noopener" class="btn-survey">Begin the Survey &rarr;</a>
+        <div class="survey-note">Your information will only be used for the purposes of this assembly selection process and will not be shared with third parties. Please respond before the application deadline.</div>
+      </div>
+
+      <!-- BOTTOM: INFO BLOCKS -->
+      <div class="info-blocks-grid">
         <div class="info-block">
           <h3>The Question</h3>
           <div class="blockquote-topic">"Should Connecticut change how we pay for and deliver local services like education, road maintenance, or public safety?"</div>
@@ -497,66 +464,6 @@
         </div>
       </div>
 
-      <!-- RIGHT: FORM -->
-      <div class="form-card">
-        <h2>Express Your Interest</h2>
-        <p class="form-subtitle">Complete this short form to be included in the pool from which we will randomly select the final 100 participants. Please respond before the deadline.</p>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name *</label>
-            <input type="text" id="reg-first" placeholder="Jane" />
-          </div>
-          <div class="form-group">
-            <label>Last Name *</label>
-            <input type="text" id="reg-last" placeholder="Smith" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" id="reg-email" placeholder="jane@example.com" />
-        </div>
-
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" id="reg-phone" placeholder="(860) 555-0100" />
-        </div>
-
-        <div class="form-group">
-          <label>Town / City *</label>
-          <input type="text" id="reg-town" placeholder="Hartford" />
-        </div>
-
-        <div class="form-group">
-          <label>ZIP Code *</label>
-          <input type="text" id="reg-zip" placeholder="06101" maxlength="10" />
-        </div>
-
-        <div class="form-group">
-          <label>Age Range *</label>
-          <select id="reg-age">
-            <option value="">Select your age range</option>
-            <option>18–24</option>
-            <option>25–34</option>
-            <option>35–44</option>
-            <option>45–54</option>
-            <option>55–64</option>
-            <option>65+</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Anything you'd like to share? (optional)</label>
-          <textarea id="reg-message" placeholder="Tell us why you're interested in participating…"></textarea>
-        </div>
-
-        <p class="form-note">* Required fields. Your information will only be used for the purposes of this assembly selection process and will not be shared with third parties.</p>
-
-        <button class="btn-submit" id="submit-btn" type="button" onclick="submitRegistration()">Submit My Interest →</button>
-        <div id="form-message" class="form-message"></div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -577,49 +484,6 @@
       link.href = 'dashboard.html';
     }
   })();
-
-  function showMessage(msg, type) {
-    const el = document.getElementById('form-message');
-    el.textContent = msg;
-    el.className = 'form-message ' + type;
-  }
-
-  async function submitRegistration() {
-    const first   = document.getElementById('reg-first').value.trim();
-    const last    = document.getElementById('reg-last').value.trim();
-    const email   = document.getElementById('reg-email').value.trim();
-    const phone   = document.getElementById('reg-phone').value.trim();
-    const town    = document.getElementById('reg-town').value.trim();
-    const zip     = document.getElementById('reg-zip').value.trim();
-    const age     = document.getElementById('reg-age').value;
-    const message = document.getElementById('reg-message').value.trim();
-    const btn     = document.getElementById('submit-btn');
-
-    if (!first || !last || !email || !town || !zip || !age) {
-      showMessage('Please fill in all required fields.', 'error');
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = 'Submitting…';
-
-    const { error } = await db.from('form_submissions').insert([{
-      name: `${first} ${last}`,
-      email,
-      topic: 'Participation Interest',
-      message: `Phone: ${phone || 'N/A'} | Town: ${town} | ZIP: ${zip} | Age: ${age}${message ? ' | Notes: ' + message : ''}`
-    }]);
-
-    if (error) {
-      showMessage('Something went wrong. Please try again or email us directly.', 'error');
-      btn.disabled = false;
-      btn.textContent = 'Submit My Interest →';
-    } else {
-      showMessage('Thank you! Your interest has been recorded. We will be in touch with next steps.', 'success');
-      btn.disabled = true;
-      btn.textContent = 'Submitted ✓';
-    }
-  }
 
   function toggleMobileNav() {
     document.querySelector('.nav-links').classList.toggle('open');

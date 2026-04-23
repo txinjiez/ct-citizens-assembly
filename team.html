@@ -480,65 +480,167 @@
     </div>
 
     <div style="border:1px solid var(--gray-mid);border-radius:12px;overflow:hidden;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:var(--navy-dark);padding:0.75rem 1.4rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 2rem;background:var(--navy-dark);padding:0.75rem 1.4rem;gap:1rem;">
         <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Name</div>
         <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Affiliation</div>
+        <div></div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:white;">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Alex Guerrero</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Rutgers University</div>
+
+      <!-- Alexander Guerrero -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Alexander Guerrero</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Rutgers University</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Alexander Guerrero is a Professor of Philosophy at Rutgers University – New Brunswick, with a secondary appointment at Rutgers Law School. His research and teaching focuses on political philosophy, ethics, legal philosophy, and epistemology. He is the author of <em>Lottocracy: Democracy Without Elections</em> (Oxford University Press, 2024), which presents and defends a political system that operates entirely through the use of randomly selected citizens. He has a JD and PhD from New York University and an AB from Harvard.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:var(--off-white);">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Ariel Procaccia</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Harvard University</div>
+
+      <!-- Ariel Procaccia -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Ariel Procaccia</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Harvard University</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Ariel Procaccia is the Alfred and Rebecca Lin Professor of Computer Science at Harvard University. He works on problems related to AI, algorithms, economics, and society. He has helped create systems widely used to solve fair division problems, resettle refugees, distribute food, and select citizens' assemblies. He is an ACM Fellow (2025), AAAI Fellow (2024), and recipient of the Guggenheim Fellowship (2018) and Sloan Research Fellowship (2015), among other honors.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:white;">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Audrey Tang</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Former Digital Minister, Taiwan</div>
+
+      <!-- Audrey Tang -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Audrey Tang</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Cyber Ambassador, Taiwan</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Audrey Tang is a civic hacker and technologist who rewires systems for the public good. As Taiwan's cyber ambassador and first digital minister, she showed how technology could deepen trust, giving millions a direct role in shaping policy. She co-shaped the 2014 Sunflower Movement and created vTaiwan, a participatory platform mapping agreement across diverse opinions. She now pioneers civic-minded approaches to AI, from Oxford's Institute for Ethics in AI to safety collaborations with global platforms.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:var(--off-white);">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Claire Priest</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Yale Law School</div>
+
+      <!-- Claire Priest -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Claire Priest</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Yale Law School</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Claire Priest is Dean and Sol & Lillian Goldman Professor of Law at Yale Law School. Her scholarship focuses on American legal history, property law, and the intersection of law and democracy. She brings expertise in institutional governance and legal scholarship to the Interim Expert Governance Committee.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:white;">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Cynthia Farrar</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Purple States</div>
+
+      <!-- Cynthia Farrar -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Cynthia Farrar</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Purple States TV</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Cynthia Farrar is an independent scholar and civic entrepreneur who has lived in New Haven for 40 years. Working with James Fishkin, she organized the Citizens Forum, a series of public deliberations among randomly invited citizens across Greater New Haven (2002–2007). In 2007 she co-founded Purple States TV to bring the voices of people affected by policy choices into public discussion. She is co-author of the 2nd edition of <em>The Origins of Democratic Thinking</em> (Cambridge University Press).</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:var(--off-white);">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Daniel Selz</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">$1 Billion for Trust</div>
+
+      <!-- Daniel Selz -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Daniel Selz</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">$1 Billion for Trust</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Dan Selz is co-founder of $1 Billion for Trust, a nonprofit focused on growing a 9-million-person community to collectively fund solutions that rebuild trust in information, institutions, and each other. Previously he was Director of Innovation at the Leadership Now Project and spent nearly a decade at the XPRIZE Foundation, including designing the $100M Carbon Removal XPRIZE.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:white;">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Jane Suiter</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Dublin City University</div>
+
+      <!-- Jane Suiter -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Jane Suiter</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Dublin City University</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Jane Suiter is Professor of Political Communication at Dublin City University and Director of DCU's Institute for Future Media, Democracy and Society. Her research focuses on scaling up deliberation and tackling disinformation. She has been involved in the Irish Citizens' Assembly (2012–2022), was a founding member of We the Citizens (2011), and has advised on citizens' assemblies in Scotland and elsewhere. She was named the Irish Research Council's Researcher of the Year in 2020.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:var(--off-white);">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Luigi Zingales</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">University of Chicago, Booth School of Business</div>
+
+      <!-- JT Flowers -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">JT Flowers</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Albina Vision Trust</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">JT Flowers is a lifelong Portlander born in inner-NE Portland's historic Albina district. He earned his BA in Political Science with distinction from Yale University and made history as the first Black and first Native Hawaiian Rhodes Scholar in Oregon's history, earning master's degrees in U.S. History and Music Performance from Oxford. He serves as Senior Advisor at the Albina Vision Trust and on TriMet's Board of Directors representing District 5.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:white;">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Michiel Bakker</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">MIT; Google DeepMind</div>
+
+      <!-- Lunda Asmani -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Lunda Asmani</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Norwalk Public Schools; GFOA</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Lunda Asmani, CPFO, is Chief Financial Officer for Norwalk Public Schools in Connecticut, leading financial strategy and operations for a $300 million budget. With nearly two decades of municipal leadership experience across Connecticut and Kansas, he also serves as President of both the national Government Finance Officers Association and the Connecticut Government Finance Officers Association. He is a champion for advancing best practices in public finance.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:var(--off-white);">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Oliver Hart</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Harvard University</div>
+
+      <!-- Michiel Bakker -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Michiel Bakker</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">MIT; Google DeepMind</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Michiel Bakker is an Assistant Professor at MIT and Research Scientist at Google DeepMind. His research focuses on large language models, AI safety, and AI's role in human-human interaction. His most prominent work is the "Habermas Machine," published in <em>Science</em>, showing that AI can help humans find common ground in democratic deliberation. He holds a bachelor's and master's in physics from TU Delft and a Computer Science PhD from MIT.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:white;">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Peter MacLeod</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">MASS LBP</div>
+
+      <!-- Michael E. Morrell -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Michael E. Morrell</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">University of Connecticut</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Michael E. Morrell is Associate Professor of Political Science at the University of Connecticut, where he has studied democracy and deliberation for three decades. His major area of interest is the interplay between deliberation and emotions, especially the role of empathy in democracy. He has observed deliberative mini-publics in New Haven and contributed to the Citizens Initiative Review Research Project, designing participant surveys and observing citizens discussing ballot referenda. He received his PhD from Arizona State University in 1998.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:var(--off-white);">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Sophie Guillain</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Res publica</div>
+
+      <!-- Oliver Hart -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Oliver Hart</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Harvard University</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Oliver Hart is the Lewis P. and Linda L. Geyser University Professor at Harvard University, where he has taught since 1993. He is the 2016 co-recipient of the Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel. His research centers on the roles that ownership structure and contractual arrangements play in the governance and boundaries of corporations, and his recent work focuses on the social responsibility of business.</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);background:white;">
-        <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Zephyr Teachout</div>
-        <div style="font-size:0.9rem;color:var(--gray-text);">Fordham Law School</div>
+
+      <!-- Peter MacLeod -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Peter MacLeod</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">MASS LBP</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Peter MacLeod is co-founder and principal of Mass LBP, one of Canada's leading experts in public engagement and deliberative democracy. Under his leadership, Mass LBP has pioneered the use of Civic Lotteries and Citizen Reference Panels for governments across Canada. A former researcher at Britain's Demos think tank, he writes and speaks about the citizen's experience of the state and the future of responsible government. He is an Action Canada fellow and 2008 recipient of the Public Policy Forum's Emerging Leaders Award.</div>
       </div>
-      <div style="padding:0.85rem 1.4rem;background:var(--off-white);text-align:center;">
+
+      <!-- Sophie Guillain -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:var(--off-white);">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Sophie Guillain</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Res publica</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Trained as an urban planner, Sophie Guillain is Managing Director and Partner of Res publica, a consulting firm specializing in collective intelligence and public participation. She leads stakeholder management missions for national and regional public policies across sustainable development, transportation, food, and sports. She works with public officials at all levels of local government in France and abroad, and teaches public participation engineering at the Sorbonne – Paris I.</div>
+      </div>
+
+      <!-- Zephyr Teachout -->
+      <div class="cmember-row" onclick="toggleBio(this)" style="background:white;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 2rem;padding:0.85rem 1.4rem;border-bottom:1px solid var(--gray-mid);cursor:pointer;align-items:center;gap:1rem;">
+          <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);">Zephyr Teachout</div>
+          <div style="font-size:0.9rem;color:var(--gray-text);">Fordham Law School</div>
+          <div class="bio-toggle" style="font-size:1.1rem;color:var(--purple);font-weight:700;text-align:center;user-select:none;">+</div>
+        </div>
+        <div class="bio-panel" style="display:none;padding:0.9rem 1.4rem 1.1rem;background:#f4f0f8;border-bottom:1px solid var(--gray-mid);font-size:0.88rem;color:var(--gray-text);line-height:1.75;">Zephyr Teachout is Professor of Law at Fordham Law School, focusing on the intersection of corporate power and political power. She teaches corporations, election law, antitrust, and prosecuting white collar crime. Her books include <em>Break 'em Up</em> (2020) and <em>Corruption in America</em> (2014). In 2021 she served as Special Advisor and Senior Counsel for Economic Justice at the New York Attorney General's Office.</div>
+      </div>
+
+      <!-- More to come -->
+      <div style="padding:0.85rem 1.4rem;background:var(--off-white);text-align:center;border-top:1px dashed var(--gray-mid);">
         <div style="font-size:0.85rem;font-style:italic;color:var(--gray-text);">More members to be announced...</div>
       </div>
+
     </div>
   </div>
 
@@ -577,6 +679,14 @@
 
   function toggleMobileNav() {
     document.querySelector('.nav-links').classList.toggle('open');
+  }
+
+  function toggleBio(row) {
+    const panel = row.querySelector('.bio-panel');
+    const toggle = row.querySelector('.bio-toggle');
+    const isOpen = panel.style.display !== 'none';
+    panel.style.display = isOpen ? 'none' : 'block';
+    toggle.textContent = isOpen ? '+' : '−';
   }
 </script>
 </body>
