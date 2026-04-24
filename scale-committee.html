@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Topic Committee: Scale — Connecticut Citizens' Assembly</title>
+<link rel="icon" type="image/png" href="media/ct-honeycomb.png" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CYXQ157GLP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CYXQ157GLP');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1a237e;
+    --navy-dark: #0d1757;
+    --navy-light: #283593;
+    --purple: #7b2d8b;
+    --magenta: #c2185b;
+    --orange: #e64a19;
+    --yellow: #f9a825;
+    --coral: #ef5350;
+    --white: #ffffff;
+    --off-white: #f8f9fd;
+    --gray-light: #eef0f8;
+    --gray-mid: #c5cae9;
+    --gray-text: #5c6bc0;
+    --text: #1a237e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem; height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to right, #7b2d8b, #c2185b, #e64a19, #f9a825, #ef5350) 1;
+  }
+  .nav-logo img { height: 62px; display: block; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a { color: var(--navy); text-decoration: none; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .nav-links a:hover { color: var(--purple); }
+  .nav-links a.active { color: var(--purple); }
+  .nav-cta { background: var(--navy-dark); color: var(--white) !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 700 !important; white-space: nowrap; }
+  .nav-cta:hover { background: var(--purple) !important; color: var(--white) !important; }
+  .nav-hamburger { display: none; background: none; border: none; font-size: 1.6rem; color: var(--navy); cursor: pointer; padding: 0.4rem 0.6rem; line-height: 1; }
+  @media (max-width: 1100px) {
+    .nav-hamburger { display: block; }
+    .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; flex-direction: column; align-items: flex-start; padding: 1.5rem 2rem; gap: 1.2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-top: 3px solid var(--purple); z-index: 99; }
+    .nav-links.open { display: flex; }
+  }
+  .color-stripe { display: flex; height: 5px; }
+  .color-stripe span { flex: 1; }
+  .page-header {
+    padding: 9rem 2rem 5rem;
+    background: var(--off-white);
+    border-bottom: 1px solid var(--gray-mid);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(123,45,139,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .page-header-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 900; color: var(--navy-dark); line-height: 1.15; margin-bottom: 1rem; }
+  .page-header h1 span { color: var(--magenta); }
+  .page-header p { font-size: 1.05rem; color: var(--gray-text); line-height: 1.8; }
+  .under-construction {
+    max-width: 700px;
+    margin: 6rem auto;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .uc-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  .uc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+    margin-bottom: 1rem;
+  }
+  .uc-body {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  .chair-card {
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    border-left: 5px solid var(--magenta);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    margin: 0 auto 2rem;
+    max-width: 420px;
+  }
+  .chair-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--magenta); margin-bottom: 0.3rem; }
+  .chair-name { font-size: 1rem; font-weight: 700; color: var(--navy-dark); }
+  .chair-role { font-size: 0.82rem; color: var(--gray-text); margin-top: 0.1rem; }
+  .btn-back {
+    display: inline-block;
+    background: var(--navy-dark);
+    color: white;
+    padding: 0.7rem 1.6rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  .btn-back:hover { background: var(--purple); }
+  footer { background: #050d2a; color: rgba(255,255,255,0.45); text-align: center; padding: 2rem; font-size: 0.85rem; }
+  footer span { color: var(--yellow); opacity: 0.8; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <a href="index.html"><img src="media/CTCA-honeycomb.png" alt="Connecticut Citizens' Assembly" /></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#invitation">Invitation</a></li>
+    <li><a href="index.html#timeline">Timeline</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="team.html" class="active">Team</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="donors.html">Donors</a></li>
+    <li><a href="login.html" id="nav-auth-link">Login</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
+</nav>
+
+<div class="color-stripe">
+  <span style="background:#7b2d8b;"></span>
+  <span style="background:#c2185b;"></span>
+  <span style="background:#e64a19;"></span>
+  <span style="background:#f9a825;"></span>
+  <span style="background:#ef5350;"></span>
+</div>
+
+<div class="page-header" style="padding-top:6rem;">
+  <div class="page-header-content">
+    <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:0.75rem;">Topic Committee</p>
+    <h1>Topic Committee: Scale</h1>
+  </div>
+</div>
+
+<div class="under-construction">
+  <span class="uc-icon">&#128679;</span>
+  <div class="uc-title">Under Construction</div>
+  <p class="uc-body">This committee page is being built. Members will be updated soon.</p>
+
+  <div class="chair-card">
+    <div class="chair-label">Committee Chair</div>
+    <div class="chair-name">Daniel Selz</div>
+    <div class="chair-role">$1 Billion for Trust</div>
+  </div>
+
+  <a href="team.html" class="btn-back">&#8592; Back to Team</a>
+</div>
+
+<footer>
+  <p>&#169; 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script>
+  (async () => {
+    const { data: { session } } = await db.auth.getSession();
+    const link = document.getElementById('nav-auth-link');
+    if (session) {
+      link.textContent = 'My Account';
+      link.href = 'dashboard.html';
+    }
+  })();
+  function toggleMobileNav() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
