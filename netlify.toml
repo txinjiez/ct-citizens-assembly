@@ -14,3 +14,8 @@
   from = "/login"
   to = "/login.html"
   status = 200
+
+[[redirects]]
+  from = "/heard"
+  to = "/heard.html"
+  status = 200
