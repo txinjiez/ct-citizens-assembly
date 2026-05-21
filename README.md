@@ -8,10 +8,19 @@ The site is a no-build static site: ~16 standalone HTML files, one shared JS fil
 
 Two flows coexist:
 
-- **Public brochure** (the working flow): hero, about, team, press, donors, resources, committee pages, and a landing page with an embedded invitation PDF and a Google Form contact iframe. `register.html` funnels participant applications to a Yale Qualtrics survey.
+- **Public brochure** (the working flow): hero, about, team, press, donors, resources, committee pages, and a landing page with an embedded invitation PDF and a Google Form contact iframe. `register.html` funnels participant applications to a Yale Qualtrics survey. The landing page also has a `#propose` section whose CTA links to `/heard`, a redirect page that sends visitors to an off-site proposal/consultation tool.
 - **Member area** (wired, currently inert in production): `login.html` and `dashboard.html` talk to Supabase for auth, session registration, and a personal message archive. The schema is documented as commented-out SQL in `js/supabase-config.js`.
 
 Dependencies are all loaded via CDN: Google Fonts (Playfair Display, Public Sans), Google Tag (`G-CYXQ157GLP`), and `@supabase/supabase-js@2`.
+
+### Propose / `/heard` redirect
+
+The "Propose Your Own Ideas" section on `index.html` (`#propose`) links its CTA to `/heard`, which is `heard.html` (Netlify rewrite). `heard.html` is a no-content page that runs an inline script to redirect to a proposal site:
+
+- Currently: 100% to the make.org consultation (`https://ct-citizens-assembly.make.org`).
+- Planned: 50/50 between make.org and the MIT "Ideas for Change" experiment (`https://ideasforchange.org/ct-citizens-assembly`) once the MIT site is live. The split is intentionally implemented on `/heard` rather than inline in `#propose` so that third parties (e.g. the MIT team) can also share `/heard` links and get the same A/B behavior.
+
+To flip on the 50/50 split, change the `Math.random() <= 1` in `heard.html` to `<= 0.5`.
 
 ### Layout
 
@@ -26,6 +35,7 @@ research-committee.html  Committee stubs (under construction)
 scale-committee.html
 stakeholders-committee.html
 register.html            Participant signup — links out to Qualtrics
+heard.html               Redirect page for the landing-page "Propose" CTA
 survey-1.html            UI mockup of a survey (non-functional)
 login.html               Supabase auth
 dashboard.html           Member area (auth-gated, Supabase-backed)
@@ -37,14 +47,14 @@ prototype/               Earlier design iteration (kept for reference)
 
 ## Getting Started
 
-No install step. Clone the repo and serve the directory with any static server:
+No install step. Clone the repo and serve the directory with a static server:
 
 ```bash
-# Option 1: Python (simplest)
-python3 -m http.server 8000
-
-# Option 2: Netlify CLI (honors /dashboard and /login pretty URLs)
+# Option 1: Netlify CLI (honors /dashboard and /login pretty URLs)
 npx netlify-cli dev
+
+# Option 2: Python (simplest but not all pages supported)
+python3 -m http.server 8000
 ```
 
 Then open http://localhost:8000.

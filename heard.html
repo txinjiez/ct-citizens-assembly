@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Redirecting&hellip; &middot; Connecticut Citizens' Assembly</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #1a237e; background: #fafafa; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+    main { max-width: 32rem; }
+    a { color: #7b2d8b; }
+  </style>
+  <script>
+    (function () {
+      var target = Math.random() <= 1 // TODO: make it 0.5 instead of 1 when MIT experiment is rdy
+        ? 'https://ct-citizens-assembly.make.org'
+        : 'https://ideasforchange.org/ct-citizens-assembly';
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <main>
+    <p>Taking you to the Connecticut Citizens' Assembly proposal site&hellip;</p>
+    <noscript>
+      <p>JavaScript is required for the automatic redirect. Please choose one of the proposal sites:</p>
+      <p>
+        <a href="https://ct-citizens-assembly.make.org">ct-citizens-assembly.make.org</a><br />
+        <a href="https://ideasforchange.org/ct-citizens-assembly">ideasforchange.org/ct-citizens-assembly</a>
+      </p>
+    </noscript>
+  </main>
+</body>
+</html>
