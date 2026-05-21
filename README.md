@@ -37,14 +37,14 @@ prototype/               Earlier design iteration (kept for reference)
 
 ## Getting Started
 
-No install step. Clone the repo and serve the directory with any static server:
+No install step. Clone the repo and serve the directory with a static server:
 
 ```bash
-# Option 1: Python (simplest)
-python3 -m http.server 8000
-
-# Option 2: Netlify CLI (honors /dashboard and /login pretty URLs)
+# Option 1: Netlify CLI (honors /dashboard and /login pretty URLs)
 npx netlify-cli dev
+
+# Option 2: Python (simplest but not all pages supported)
+python3 -m http.server 8000
 ```
 
 Then open http://localhost:8000.

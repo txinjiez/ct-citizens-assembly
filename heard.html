@@ -12,7 +12,7 @@
   </style>
   <script>
     (function () {
-      var target = Math.random() < 0.5
+      var target = Math.random() <= 1 // TODO: make it 0.5 instead of 1 when MIT experiment is rdy
         ? 'https://ct-citizens-assembly.make.org'
         : 'https://ideasforchange.org/ct-citizens-assembly';
       window.location.replace(target);
