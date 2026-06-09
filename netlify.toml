@@ -19,3 +19,8 @@
   from = "/heard"
   to = "/heard.html"
   status = 200
+
+[[redirects]]
+  from = "/engage"
+  to = "/engage.html"
+  status = 200
