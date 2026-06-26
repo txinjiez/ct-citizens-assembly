@@ -308,6 +308,14 @@
     max-width: 680px;
   }
 
+  .section-lead a {
+    color: var(--magenta);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .section-lead a:hover { text-decoration: underline; }
+
   /* ABOUT */
   .about { background: var(--off-white); }
 
@@ -1297,424 +1305,78 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="resources.html#invitation">Invitation</a></li>
-    <li><a href="#timeline">Timeline</a></li>
-    <li><a href="engage.html">Engage</a></li>
+    <li><a href="index.html#invitation">Invitation</a></li>
+    <li><a href="index.html#timeline">Timeline</a></li>
+    <li><a href="engage.html" style="color:var(--purple);">Engage</a></li>
     <li><a href="resources.html">Resources</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="press.html">Press</a></li>
     <li><a href="donors.html">Donors</a></li>
-    <li><a href="#contact" class="nav-cta">Support the Assembly</a></li>
+    <li><a href="login.html" id="nav-auth-link">Login</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <!-- <div class="hero-badge">A Democratic Initiative for Connecticut</div> -->
-    <h1>Connecticut<br/>Citizens' Assembly</h1>
-    <div class="hero-sub">on Property Taxes</div>
-    <p>Support a statewide conversation on approaches to funding essential community services.</p>
-    <div class="hero-buttons">
-      <a href="about.html" class="btn-primary">Learn More →</a>
-      <!-- <a href="#contact" class="btn-outline">Support the Assembly</a> -->
-    </div>
-    <div class="hero-hex-bars">
-      <div class="hero-hex-bar" style="background:var(--purple);"></div>
-      <div class="hero-hex-bar" style="background:var(--magenta);"></div>
-      <div class="hero-hex-bar" style="background:var(--orange);"></div>
-      <div class="hero-hex-bar" style="background:var(--yellow);"></div>
-      <div class="hero-hex-bar" style="background:var(--coral);"></div>
-    </div>
-  </div>
-  <div class="hex-cluster" aria-hidden="true">
-    <img src="media/ct-honeycomb.png" alt="" />
-  </div>
-  <!-- <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div> -->
-</section>
-
-<!-- STAT BAR -->
-<div class="stat-bar">
-  <!-- <div class="stat-item">
-    <span class="stat-num">169</span>
-    <span class="stat-label">Connecticut Towns</span>
-  </div> -->
-  <div class="stat-item">
-    <span class="stat-num">100</span>
-    <span class="stat-label">Assembly Members</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">6</span>
-    <span class="stat-label">Assembly Sessions</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">1</span>
-    <span class="stat-label">Shared Goal</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
+<!-- ENGAGE HERO -->
+<section class="invitation-section" id="engage-hero">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-eyebrow">Our Mission</div>
-        <h2 class="section-title">An Assembly of Everyday CT Residents to Define the <span>Future of Local Funding</span></h2>
-        <p class="section-lead">The Connecticut Citizens' Assembly is a groundbreaking democratic initiative designed to give residents a direct voice in state policy. By bringing together a representative group of citizens from across the state, we aim to solve the complex challenge of funding local public services.</p>
-        <br/>
-        <p class="section-lead" style="margin-top:0.5rem;">From transportation and infrastructure to education and emergency response, local public services are the backbone of our communities. Our mission is to give a representative sample of the people of Connecticut a chance to set their priorities for public service provision and funding.</p>
-      </div>
-      <div class="about-visual">
-        <div class="about-card">
-          <div class="about-card-icon">🏛️</div>
-          <h3>169 Towns, One Goal</h3>
-          <p>Every corner of Connecticut — from coastal towns to rural communities — deserves a seat at the table. Our assembly ensures diverse, representative voices shape the future of how we fund the services that matter most.</p>
-        </div>
-        <!-- <div class="about-accent">
-          <span>CT</span>
-          <span>All Voices Heard</span>
-        </div> -->
-      </div>
+    <div class="invitation-header">
+      <div class="section-eyebrow">Get Involved</div>
+      <h2 class="section-title"> Help <span>Shape This Conversation</span></h2>
+      <p class="section-lead">You don't need to be one of the 100 selected Assembly members to make your voice heard. The conversation about how we fund schools, public safety, and the services our communities rely on belongs to all Connecticut residents &mdash; and there are some innovative ways to take part.</p>
+      <p class="section-lead" style="margin-top:1rem;">See below for some different options and bookmark this page as we have other exciting plans for engaging lots of people across the state coming soon</p>
     </div>
   </div>
 </section>
 
-<!-- ASSEMBLY SCHEDULE -->
-<section style="padding:4rem 2rem;background:white;border-top:1px solid var(--gray-mid);">
-  <div style="max-width:860px;margin:0 auto;">
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--navy-dark);text-align:center;margin-bottom:1rem;">Assembly Schedule</div>
-    <p style="text-align:center;font-size:0.95rem;color:#5c6bc0;line-height:1.75;margin-bottom:2rem;">In person days will run roughly 9–5, with dinner and hotel provided on Saturday night for two day sessions. <br>Virtual days will run roughly 9–1.</p>
-
-    <!-- HORIZONTAL TIMELINE -->
-    <div style="position:relative;margin-bottom:3rem;overflow-x:auto;padding-bottom:1rem;">
-      <!-- legend -->
-      <div style="display:flex;gap:1.5rem;justify-content:center;margin-bottom:1.8rem;flex-wrap:wrap;">
-        <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:700;color:#0d1757;"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#7b2d8b;"></span>2-Day In-Person</div>
-        <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:700;color:#0d1757;"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#c2185b;"></span>1-Day In-Person</div>
-        <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:700;color:#0d1757;"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#e64a19;"></span>Virtual</div>
-      </div>
-      <!-- timeline track -->
-      <div style="min-width:600px;position:relative;padding:0 1rem;">
-        <!-- connecting line -->
-        <div style="position:absolute;top:28px;left:calc(1rem + 40px);right:calc(1rem + 40px);height:3px;background:linear-gradient(to right,#7b2d8b,#c2185b,#e64a19,#7b2d8b,#e64a19,#c2185b);border-radius:2px;"></div>
-        <!-- nodes -->
-        <div style="display:flex;justify-content:space-between;position:relative;">
-
-          <!-- Jul 11–12 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;width:80px;">
-            <div style="width:56px;height:56px;border-radius:50%;background:#7b2d8b;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;position:relative;z-index:1;box-shadow:0 2px 8px rgba(123,45,139,0.35);">
-              <span style="font-size:0.6rem;font-weight:700;opacity:0.85;text-transform:uppercase;letter-spacing:0.05em;">Jul</span>
-              <span style="font-size:1rem;">11–12</span>
-            </div>
-            <div style="font-size:0.68rem;font-weight:700;color:#0d1757;text-align:center;line-height:1.3;">In-Person<br>New Haven</div>
-          </div>
-
-          <!-- Jul 25 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;width:80px;">
-            <div style="width:56px;height:56px;border-radius:50%;background:#c2185b;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;position:relative;z-index:1;box-shadow:0 2px 8px rgba(194,24,91,0.35);">
-              <span style="font-size:0.6rem;font-weight:700;opacity:0.85;text-transform:uppercase;letter-spacing:0.05em;">Jul</span>
-              <span style="font-size:1rem;">25</span>
-            </div>
-            <div style="font-size:0.68rem;font-weight:700;color:#0d1757;text-align:center;line-height:1.3;">In-Person<br>New Haven</div>
-          </div>
-
-          <!-- Aug 8 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;width:80px;">
-            <div style="width:56px;height:56px;border-radius:50%;background:#e64a19;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;position:relative;z-index:1;box-shadow:0 2px 8px rgba(230,74,25,0.35);">
-              <span style="font-size:0.6rem;font-weight:700;opacity:0.85;text-transform:uppercase;letter-spacing:0.05em;">Aug</span>
-              <span style="font-size:1rem;">8</span>
-            </div>
-            <div style="font-size:0.68rem;font-weight:700;color:#0d1757;text-align:center;line-height:1.3;">Virtual<br>Online</div>
-          </div>
-
-          <!-- Aug 29–30 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;width:80px;">
-            <div style="width:56px;height:56px;border-radius:50%;background:#7b2d8b;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;position:relative;z-index:1;box-shadow:0 2px 8px rgba(123,45,139,0.35);">
-              <span style="font-size:0.6rem;font-weight:700;opacity:0.85;text-transform:uppercase;letter-spacing:0.05em;">Aug</span>
-              <span style="font-size:1rem;">29–30</span>
-            </div>
-            <div style="font-size:0.68rem;font-weight:700;color:#0d1757;text-align:center;line-height:1.3;">In-Person<br>New Haven</div>
-          </div>
-
-          <!-- Sep 19 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;width:80px;">
-            <div style="width:56px;height:56px;border-radius:50%;background:#e64a19;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;position:relative;z-index:1;box-shadow:0 2px 8px rgba(230,74,25,0.35);">
-              <span style="font-size:0.6rem;font-weight:700;opacity:0.85;text-transform:uppercase;letter-spacing:0.05em;">Sep</span>
-              <span style="font-size:1rem;">19</span>
-            </div>
-            <div style="font-size:0.68rem;font-weight:700;color:#0d1757;text-align:center;line-height:1.3;">Virtual<br>Online</div>
-          </div>
-
-          <!-- Sep 26 -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;width:80px;">
-            <div style="width:56px;height:56px;border-radius:50%;background:#c2185b;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;position:relative;z-index:1;box-shadow:0 2px 8px rgba(194,24,91,0.35);">
-              <span style="font-size:0.6rem;font-weight:700;opacity:0.85;text-transform:uppercase;letter-spacing:0.05em;">Sep</span>
-              <span style="font-size:1rem;">26</span>
-            </div>
-            <div style="font-size:0.68rem;font-weight:700;color:#0d1757;text-align:center;line-height:1.3;">In-Person<br>Hartford</div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;flex-direction:column;gap:0.75rem;">
-
-      <div style="display:flex;align-items:center;gap:1.2rem;background:#f8f9fd;border:1px solid #c5cae9;border-radius:10px;padding:1rem 1.4rem;">
-        <div style="flex-shrink:0;background:#7b2d8b;color:white;border-radius:8px;padding:0.5rem 1rem;text-align:center;min-width:100px;">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;">July</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;line-height:1;">11–12</div>
-        </div>
-        <div style="flex:1;">
-          <div style="font-weight:700;color:#0d1757;font-size:0.95rem;">2-Day In-Person Session</div>
-          <div style="font-size:0.85rem;color:#5c6bc0;margin-top:0.15rem;">New Haven — Yale Campus</div>
-        </div>
-      </div>
-
-      <div style="display:flex;align-items:center;gap:1.2rem;background:#f8f9fd;border:1px solid #c5cae9;border-radius:10px;padding:1rem 1.4rem;">
-        <div style="flex-shrink:0;background:#c2185b;color:white;border-radius:8px;padding:0.5rem 1rem;text-align:center;min-width:100px;">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;">July</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;line-height:1;">25</div>
-        </div>
-        <div style="flex:1;">
-          <div style="font-weight:700;color:#0d1757;font-size:0.95rem;">1-Day In-Person Session</div>
-          <div style="font-size:0.85rem;color:#5c6bc0;margin-top:0.15rem;">New Haven — Yale Campus</div>
-        </div>
-      </div>
-
-      <div style="display:flex;align-items:center;gap:1.2rem;background:#f8f9fd;border:1px solid #c5cae9;border-radius:10px;padding:1rem 1.4rem;">
-        <div style="flex-shrink:0;background:#e64a19;color:white;border-radius:8px;padding:0.5rem 1rem;text-align:center;min-width:100px;">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;">August</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;line-height:1;">8</div>
-        </div>
-        <div style="flex:1;">
-          <div style="font-weight:700;color:#0d1757;font-size:0.95rem;">1-Day Virtual Session</div>
-          <div style="font-size:0.85rem;color:#5c6bc0;margin-top:0.15rem;">Online</div>
-        </div>
-      </div>
-
-      <div style="display:flex;align-items:center;gap:1.2rem;background:#f8f9fd;border:1px solid #c5cae9;border-radius:10px;padding:1rem 1.4rem;">
-        <div style="flex-shrink:0;background:#7b2d8b;color:white;border-radius:8px;padding:0.5rem 1rem;text-align:center;min-width:100px;">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;">August</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;line-height:1;">29–30</div>
-        </div>
-        <div style="flex:1;">
-          <div style="font-weight:700;color:#0d1757;font-size:0.95rem;">2-Day In-Person Session</div>
-          <div style="font-size:0.85rem;color:#5c6bc0;margin-top:0.15rem;">New Haven — Yale Campus</div>
-        </div>
-      </div>
-
-      <div style="display:flex;align-items:center;gap:1.2rem;background:#f8f9fd;border:1px solid #c5cae9;border-radius:10px;padding:1rem 1.4rem;">
-        <div style="flex-shrink:0;background:#e64a19;color:white;border-radius:8px;padding:0.5rem 1rem;text-align:center;min-width:100px;">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;">September</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;line-height:1;">19</div>
-        </div>
-        <div style="flex:1;">
-          <div style="font-weight:700;color:#0d1757;font-size:0.95rem;">1-Day Virtual Session</div>
-          <div style="font-size:0.85rem;color:#5c6bc0;margin-top:0.15rem;">Online</div>
-        </div>
-      </div>
-
-      <div style="display:flex;align-items:center;gap:1.2rem;background:#f8f9fd;border:1px solid #c5cae9;border-radius:10px;padding:1rem 1.4rem;">
-        <div style="flex-shrink:0;background:#c2185b;color:white;border-radius:8px;padding:0.5rem 1rem;text-align:center;min-width:100px;">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.85;">September</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;line-height:1;">26</div>
-        </div>
-        <div style="flex:1;">
-          <div style="font-weight:700;color:#0d1757;font-size:0.95rem;">1-Day In-Person Session</div>
-          <div style="font-size:0.85rem;color:#5c6bc0;margin-top:0.15rem;">Hartford</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="timeline-section" id="timeline">
+<!-- ENGAGE: Review & Vote on Proposals (LIVE) -->
+<section class="invitation-section" id="propose" style="background:var(--white);">
   <div class="container">
-    <div>
-      <div class="section-eyebrow" style="color:rgba(255,255,255,0.7)">Our Path Forward</div>
-      <h2 class="section-title">Timeline</h2>
-      <p class="section-lead" style="color:rgba(255,255,255,0.6)">Our path from design to implementation to lasting impact on Connecticut's communities.</p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="tl-content">
-          <h4>Design & Preparation</h4>
-          <p>3 months of preparatory work — forming the expert governance committee, designing the assembly process, and recruiting a representative sample of Connecticut residents.</p>
-        </div>
-        <div class="tl-dot"></div>
-        <div class="tl-empty"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-empty"></div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <h4>Recruitment</h4>
-          <p>A randomly selected group of citizens from across the state will be invited to participate, ensuring the assembly reflects Connecticut's full geographic and demographic diversity.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-content">
-          <h4>Summer Sessions 2026</h4>
-          <p>Assembly participants meet for 6 structured sessions — hearing from experts, deliberating in small groups, and building consensus around funding priorities.</p>
-        </div>
-        <div class="tl-dot"></div>
-        <div class="tl-empty"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-content">
-          <h4>Draft Recommendations</h4>
-          <p>Citizens collectively draft a set of clear, actionable recommendations for how Connecticut should fund local public services equitably and sustainably.</p>
-        </div>
-        <div class="tl-dot"></div>
-        <div class="tl-empty"></div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-empty"></div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <h4>Legislative Impact</h4>
-          <p>State Comptroller Sean Scanlon presents the assembly's findings at a State Legislature hearing, where they serve as a primary evidence base for municipal funding reform.</p>
-        </div>
+    <div class="invitation-shell">
+      <div class="invitation-header">
+        <span style="display:inline-block;background:rgba(46,125,50,0.12);color:#2e7d32;font-weight:800;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.35rem 0.85rem;border-radius:999px;margin-bottom:1rem;">&bull; Open Now</span>
+        <div class="section-eyebrow">Open to Every Resident</div>
+        <h2 class="section-title">Review and Vote on <span>Proposals</span></h2>
+        <p class="section-lead">You don't have to have to be an expert on policy to react to things you like or don't like. The Connecticut Citizens Assembly has partnered with Make.org to run a online consultation and people across the state have already submitted lots of ideas for how Connecticut might change how it funds and delivers local public services. <a href="/heard">Click here</a> to review them, upvote the ones you support and downvote the ones you don't</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- POLICY -->
-<section class="policy" id="policy">
+<!-- ENGAGE: PROPOSE / MAKE.ORG (LIVE) -->
+<section class="invitation-section" id="propose" style="background:var(--white);">
   <div class="container">
-    <div class="policy-inner">
-      <div>
-        <div class="section-eyebrow" style="color:rgba(255,255,255,0.7)">Legislative Partnership</div>
-        <h2 class="section-title">From Citizens to <span>State Policy</span></h2>
-        <p>The Connecticut Citizens' Assembly works in direct partnership with elected officials to ensure that the voices of everyday residents shape real policy outcomes.</p>
-        <div class="policy-highlight">
-          <p>"Assembly recommendations will be brought by State Comptroller Sean Scanlon to a hearing in the State Legislature, serving as the primary evidence base for municipal funding reforms."</p>
-        </div>
-      </div>
-      <div>
-        <div class="section-eyebrow" style="color:rgba(255,255,255,0.7)">Our Commitment</div>
-        <h2 class="section-title" style="font-size:1.8rem;">Empowering Citizens with the Information to Shape Connecticut's Future</h2>
-        <p>We are committed to transparency, rigorous process design, and genuine civic engagement. Every participant receives the expert knowledge and deliberative support needed to make meaningful, informed recommendations.</p>
-        <a href="#contact" class="btn-primary" style="display:inline-block; margin-top:1rem;">Support the Assembly</a>
+    <div class="invitation-shell">
+      <div class="invitation-header">
+        <span style="display:inline-block;background:rgba(46,125,50,0.12);color:#2e7d32;font-weight:800;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.35rem 0.85rem;border-radius:999px;margin-bottom:1rem;">&bull; Open Now</span>
+        <div class="section-eyebrow">Open to Every Resident</div>
+        <h2 class="section-title">Propose Your Own <span>Ideas</span></h2>
+        <p class="section-lead">Are you feeling inspired by reading other people's proposals? In addition to upvoting or downvoting on others' ideas, you can also share your own ideas in the same <a href="/heard">make.org</a> online consultation. <a href="/heard">Click here to get started</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESOURCES -->
-<!-- <section class="resources" id="resources">
+<!-- ENGAGE: CHECK BACK SOON -->
+<section class="invitation-section" id="check-back-soon">
   <div class="container">
-    <div style="text-align:center;">
-      <div class="section-eyebrow" style="color:var(--orange)">Downloads</div>
-      <h2 class="section-title">Resource <span>Library</span></h2>
-      <p class="section-lead" style="margin:0 auto 2rem;">Access key research, policy briefs, and reports supporting the Connecticut Citizens' Assembly on local public services.</p>
-      <a href="resources.html" class="btn-primary">Browse the Resource Library →</a>
-    </div>
-  </div>
-</section> -->
-
-<!-- COLLABORATORS -->
-<section class="collaborators" id="collaborators">
-  <div class="container">
-    <div>
-      <div class="section-eyebrow">Partners</div>
-      <h2 class="section-title">Our <span>Collaborators</span></h2>
-    </div>
-    <div class="collab-grid">
-      <div class="collab-item"><a href="https://osc.ct.gov"><img src="media/Connecticut_State_Comptroller_Seal.png" alt="Connecticut State Comptroller" /></a></div>
-      <div class="collab-item"><a href="https://isps.yale.edu"><img src="media/Yale-ISPS-logo.png" alt="Yale ISPS" /></a></div>
-      <div class="collab-item"><a href="https://www.uconn.edu"><img src="media/uconn-ps.png" alt="UConn" /></a></div>
-      <div class="collab-item"><a href="https://www.ccm-ct.org"><img src="media/CCM-logo.png" alt="CCM" /></a></div>
+    <div class="invitation-shell">
+      <div class="invitation-header">
+        <h2 class="section-title">Check Back Soon</h2>
+        <p class="section-lead">We&rsquo;ll be rolling out other exciting engagement opportunities, open to all CT residents, very soon, so bookmark this page and come back to see the latest</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- GOVERNANCE COMMITTEE -->
-<section style="background:var(--off-white);padding:5rem 2rem;border-top:1px solid var(--gray-mid);">
+<!-- ENGAGE: STAY IN TOUCH / NEWSLETTER -->
+<section class="contact" id="stay-in-touch">
   <div class="container" style="text-align:center;">
-    <div class="section-eyebrow" style="color:var(--purple);">Expert Oversight</div>
-    <h2 class="section-title">Our Interim Expert <span>Governance Committee</span></h2>
-    <p class="section-lead" style="margin:0 auto 2.5rem;max-width:620px;">A distinguished group of scholars, practitioners, and civic leaders guiding the assembly's design — ensuring methodological rigor, independence, and deep expertise in deliberative democracy and Connecticut policy.</p>
-    <a href="team.html" class="btn-primary">Meet the Committee →</a>
-  </div>
-</section>
-
-<!-- DONORS -->
-<section style="background:var(--white);padding:5rem 2rem;border-top:1px solid var(--gray-mid);">
-  <div class="container" style="text-align:center;">
-    <div class="section-eyebrow" style="color:var(--purple);">With Gratitude</div>
-    <h2 class="section-title">Our <span>Donors</span></h2>
-    <p class="section-lead" style="margin:0 auto 3rem;max-width:620px;">The Connecticut Citizens' Assembly is made possible by the generous support of individuals and organizations committed to strengthening democracy in Connecticut.</p>
-
-    <div style="margin-top:0;">
-      <a href="donors.html" class="btn-primary">View Full Donor Acknowledgement →</a>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED NEWS -->
-<section style="background:var(--off-white);padding:5rem 2rem;border-top:1px solid var(--gray-mid);">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:2.5rem;">
-      <div class="section-eyebrow">In the News</div>
-      <h2 class="section-title">Featured <span>Coverage</span></h2>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;">
-      <a href="https://www.theguardian.com/us-news/2026/may/21/elected-officials-civic-assemblies-la?CMP=oth_b-aplnews_d-1" target="_blank" rel="noopener" style="text-decoration:none;background:var(--white);border:1px solid var(--gray-mid);border-radius:12px;padding:1.8rem;display:flex;flex-direction:column;gap:0.75rem;flex:1;min-width:240px;max-width:340px;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(26,35,126,0.12)';this.style.borderColor='var(--purple)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--gray-mid)'">
-        <span style="background:var(--purple);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:20px;align-self:flex-start;">The Guardian</span>
-        <div style="font-size:0.8rem;color:var(--gray-text);">May 21, 2026</div>
-        <div style="font-weight:700;color:var(--navy-dark);line-height:1.45;font-size:0.95rem;">Elected officials don't always understand their constituents. Citizens' assemblies might help.</div>
-      </a>
-      <a href="https://www.ctpublic.org/show/the-colin-mcenroe-show/2026-05-20/we-dont-need-politicians-helene-landemore-makes-the-case" target="_blank" rel="noopener" style="text-decoration:none;background:var(--white);border:1px solid var(--gray-mid);border-radius:12px;padding:1.8rem;display:flex;flex-direction:column;gap:0.75rem;flex:1;min-width:240px;max-width:340px;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(26,35,126,0.12)';this.style.borderColor='var(--purple)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--gray-mid)'">
-        <span style="background:var(--magenta);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:20px;align-self:flex-start;">CT Public Radio</span>
-        <div style="font-size:0.8rem;color:var(--gray-text);">May 20, 2026</div>
-        <div style="font-weight:700;color:var(--navy-dark);line-height:1.45;font-size:0.95rem;">We don't need politicians. Hélène Landemore makes the case</div>
-      </a>
-      <a href="https://www.nbcconnecticut.com/news/politics/face-the-facts/face-the-facts-comptroller-scanlon-on-the-new-ct-citizens-assembly/3731952/" target="_blank" rel="noopener" style="text-decoration:none;background:var(--white);border:1px solid var(--gray-mid);border-radius:12px;padding:1.8rem;display:flex;flex-direction:column;gap:0.75rem;flex:1;min-width:240px;max-width:340px;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(26,35,126,0.12)';this.style.borderColor='var(--purple)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--gray-mid)'">
-        <span style="background:var(--orange);color:white;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:20px;align-self:flex-start;">NBC Connecticut</span>
-        <div style="font-size:0.8rem;color:var(--gray-text);">May 3, 2026</div>
-        <div style="font-weight:700;color:var(--navy-dark);line-height:1.45;font-size:0.95rem;">Face the Facts: Comptroller Scanlon on the new CT Citizens Assembly</div>
-      </a>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem;">
-      <a href="press.html" class="btn-primary">View All Press Coverage →</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container" style="text-align:center;">
-    <div class="section-eyebrow" style="color:rgba(249,168,37,0.8)">Connect With Us</div>
-    <h2 class="section-title"><span>Get in Touch</span></h2>
-    <p class="section-lead" style="color:rgba(255,255,255,0.6);margin:0 auto 2.5rem;">Have questions about the assembly or want to provide input? Want to offer financial or in-kind support, or looking for opportunities for research? We are committed to transparency and citizen engagement throughout this process.</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3rem;margin-bottom:3rem;">
-      <div>
-        <h3 style="margin-bottom:0.6rem;">General Inquiries</h3>
-        <a href="mailto:info@ct-citizens-assembly.org" class="contact-email">
-          <div class="email-dot"></div>
-          info@ct-citizens-assembly.org
-        </a>
-      </div>
-      <div>
-        <h3 style="margin-bottom:0.6rem;">Media Relations</h3>
-        <a href="mailto:press@ct-citizens-assembly.org" class="contact-email">
-          <div class="email-dot"></div>
-          press@ct-citizens-assembly.org
-        </a>
-      </div>
-    </div>
+    <div class="section-eyebrow" style="color:rgba(249,168,37,0.8)">Don't Miss What's Next</div>
+    <h2 class="section-title"><span>Stay in the Loop</span></h2>
+    <p class="section-lead" style="color:rgba(255,255,255,0.6);margin:0 auto 2.5rem;max-width:640px;">New ways to get involved are opening up over the coming weeks. Sign up to be the first to know when the Ben &amp; Jerry's Experience, online deliberations, and other opportunities go live</p>
     <div style="max-width:700px;margin:0 auto;">
-      <h3 style="margin-bottom:0.5rem;color:white;">Sign Up for Announcements</h3>
-      <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:1.2rem;">Stay informed about assembly updates, recruitment, and results.</p>
       <div style="border-radius:10px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.3);">
         <iframe
           src="https://forms.gle/8yqa4zty9wpCo8H16"
@@ -1724,16 +1386,17 @@
           marginheight="0"
           marginwidth="0"
           style="display:block;border:none;">
-          Loading…
+          Loading&hellip;
         </iframe>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved</p>
 </footer>
 
 <script>
@@ -1754,8 +1417,18 @@
     });
   });
 
-
+  // Auth nav state
+  (async () => {
+    const { data: { session } } = await db.auth.getSession();
+    const link = document.getElementById('nav-auth-link');
+    if (session) {
+      link.textContent = 'My Account';
+      link.href = 'dashboard.html';
+    }
+  })();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
 <script>
   function toggleMobileNav() {
     document.querySelector('.nav-links').classList.toggle('open');
