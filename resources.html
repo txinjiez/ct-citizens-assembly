@@ -346,14 +346,13 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="index.html#invitation">Invitation</a></li>
+    <li><a href="#invitation">Invitation</a></li>
     <li><a href="index.html#timeline">Timeline</a></li>
     <li><a href="index.html#propose">Propose</a></li>
     <li><a href="resources.html" class="active">Resources</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="press.html">Press</a></li>
     <li><a href="donors.html">Donors</a></li>
-    <li><a href="login.html" id="nav-auth-link">Login</a></li>
     <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
@@ -382,6 +381,36 @@
   <a href="index.html">← Back to Home</a>
 </div>
 
+<!-- INVITATION LETTER -->
+<section id="invitation" style="background:var(--white);padding:5rem 2rem;border-bottom:1px solid var(--gray-mid);">
+  <div class="container" style="max-width:900px;">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <div class="section-eyebrow">Official Document</div>
+      <h2 class="section-title">Invitation <span>Letter</span></h2>
+      <p class="section-lead" style="margin:0 auto 1.5rem;">The official invitation sent to selected Connecticut residents to participate in the Citizens' Assembly.</p>
+      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <a href="media/invitation-letter.pdf" download style="display:inline-block;background:var(--navy-dark);color:white;padding:0.85rem 2rem;border-radius:5px;font-weight:700;font-size:1rem;text-decoration:none;">Download PDF</a>
+        <a href="https://osc.ct.gov/ctassembly/" target="_blank" rel="noreferrer" style="display:inline-block;background:transparent;color:var(--navy-dark);border:2px solid var(--navy-dark);padding:0.85rem 2rem;border-radius:5px;font-weight:700;font-size:1rem;text-decoration:none;">Verify Invitation</a>
+      </div>
+    </div>
+    <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(26,35,126,0.1);border:1px solid var(--gray-mid);">
+      <object data="media/invitation-letter.pdf" type="application/pdf" width="100%" height="900" style="display:block;">
+        <iframe
+          src="https://docs.google.com/viewer?url=https://ct-citizens-assembly.org/media/invitation-letter.pdf&embedded=true"
+          width="100%"
+          height="900"
+          style="display:block;border:none;"
+          title="CT Citizens' Assembly Invitation Letter">
+          <div style="padding:2rem;text-align:center;background:var(--gray-light);">
+            <p style="color:var(--gray-text);margin-bottom:1rem;">Your browser cannot display the PDF inline.</p>
+            <a href="media/invitation-letter.pdf" download style="background:var(--navy-dark);color:white;padding:0.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:0.9rem;">Download Invitation Letter</a>
+          </div>
+        </iframe>
+      </object>
+    </div>
+  </div>
+</section>
+
 <!-- RESOURCES -->
 <section class="resources-main">
   <div class="container">
@@ -401,83 +430,6 @@
       </div>
     </div>
 
-    <!-- Meeting Minutes -->
-    <div>
-      <div class="section-eyebrow">Official Records</div>
-      <h2 class="section-title">IEGC Meeting <span>Minutes</span></h2>
-      <p class="section-lead" style="margin-bottom:2rem;">Official minutes and decisions from Interim Expert Governance Committee meetings. Publishing these records is a core part of our commitment to transparency — ensuring that all assembly participants and the public can follow the committee's deliberations and decisions as they unfold. Subsequent meeting minutes are forthcoming and will be posted here as they are finalized.</p>
-
-      <!-- Meeting 1 -->
-      <div style="border:1px solid var(--gray-mid);border-radius:12px;overflow:hidden;margin-bottom:1.5rem;">
-        <div style="background:var(--navy-dark);padding:1rem 1.6rem;display:flex;align-items:center;gap:0.8rem;">
-          <span style="background:var(--purple);color:white;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:0.3rem 0.8rem;border-radius:20px;text-transform:uppercase;">Meeting #1</span>
-          <span style="color:white;font-weight:600;font-size:0.95rem;">March 10, 2026</span>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;background:white;">
-          <a href="media/minutes/IEGC-1-March-10-Minutes.docx" download style="display:flex;align-items:center;gap:1rem;padding:1.2rem 1.6rem;text-decoration:none;color:var(--navy-dark);border-right:1px solid var(--gray-mid);transition:background 0.15s;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background='white'">
-            <div>
-              <div style="font-weight:700;font-size:0.9rem;">Meeting Minutes</div>
-              <div style="font-size:0.8rem;color:var(--gray-text);">Download .docx</div>
-            </div>
-          </a>
-          <a href="media/minutes/IEGC-1-March-10-Decisions.docx" download style="display:flex;align-items:center;gap:1rem;padding:1.2rem 1.6rem;text-decoration:none;color:var(--navy-dark);transition:background 0.15s;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background='white'">
-            <div>
-              <div style="font-weight:700;font-size:0.9rem;">Decisions</div>
-              <div style="font-size:0.8rem;color:var(--gray-text);">Download .docx</div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Meeting 2 -->
-      <div style="border:1px solid var(--gray-mid);border-radius:12px;overflow:hidden;margin-bottom:1.5rem;">
-        <div style="background:var(--navy-dark);padding:1rem 1.6rem;display:flex;align-items:center;gap:0.8rem;">
-          <span style="background:var(--magenta);color:white;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:0.3rem 0.8rem;border-radius:20px;text-transform:uppercase;">Meeting #2</span>
-          <span style="color:white;font-weight:600;font-size:0.95rem;">March 18, 2026</span>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;background:white;">
-          <a href="media/minutes/IEGC-2-March-18-Minutes.docx" download style="display:flex;align-items:center;gap:1rem;padding:1.2rem 1.6rem;text-decoration:none;color:var(--navy-dark);border-right:1px solid var(--gray-mid);transition:background 0.15s;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background='white'">
-            <div>
-              <div style="font-weight:700;font-size:0.9rem;">Meeting Minutes</div>
-              <div style="font-size:0.8rem;color:var(--gray-text);">Download .docx</div>
-            </div>
-          </a>
-          <a href="media/minutes/IEGC-2-March-18-Decisions-and-Votes.docx" download style="display:flex;align-items:center;gap:1rem;padding:1.2rem 1.6rem;text-decoration:none;color:var(--navy-dark);transition:background 0.15s;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background='white'">
-            <div>
-              <div style="font-weight:700;font-size:0.9rem;">Decisions &amp; Votes</div>
-              <div style="font-size:0.8rem;color:var(--gray-text);">Download .docx</div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Meeting 3 -->
-      <div style="border:1px solid var(--gray-mid);border-radius:12px;overflow:hidden;margin-bottom:1.5rem;">
-        <div style="background:var(--navy-dark);padding:1rem 1.6rem;display:flex;align-items:center;gap:0.8rem;">
-          <span style="background:var(--orange);color:white;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;padding:0.3rem 0.8rem;border-radius:20px;text-transform:uppercase;">Meeting #3</span>
-          <span style="color:white;font-weight:600;font-size:0.95rem;">March 24, 2026</span>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;background:white;">
-          <a href="media/minutes/IEGC-3-March-24-Minutes.docx" download style="display:flex;align-items:center;gap:1rem;padding:1.2rem 1.6rem;text-decoration:none;color:var(--navy-dark);border-right:1px solid var(--gray-mid);transition:background 0.15s;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background='white'">
-            <div>
-              <div style="font-weight:700;font-size:0.9rem;">Meeting Minutes</div>
-              <div style="font-size:0.8rem;color:var(--gray-text);">Download .docx</div>
-            </div>
-          </a>
-          <a href="media/minutes/IEGC-3-March-24-Decisions-and-Votes.docx" download style="display:flex;align-items:center;gap:1rem;padding:1.2rem 1.6rem;text-decoration:none;color:var(--navy-dark);transition:background 0.15s;" onmouseover="this.style.background='var(--gray-light)'" onmouseout="this.style.background='white'">
-            <div>
-              <div style="font-weight:700;font-size:0.9rem;">Decisions &amp; Votes</div>
-              <div style="font-size:0.8rem;color:var(--gray-text);">Download .docx</div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Forthcoming notice -->
-      <div style="border:1px dashed var(--gray-mid);border-radius:12px;padding:1.2rem 1.6rem;background:var(--off-white);color:var(--gray-text);font-size:0.88rem;">
-        Minutes from subsequent meetings will be posted here as they are approved and finalized.
-      </div>
-    </div>
 
   </div>
 </section>
@@ -487,18 +439,7 @@
   <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase-config.js"></script>
 <script>
-  (async () => {
-    const { data: { session } } = await db.auth.getSession();
-    const link = document.getElementById('nav-auth-link');
-    if (session) {
-      link.textContent = 'My Account';
-      link.href = 'dashboard.html';
-    }
-  })();
-
   function toggleMobileNav() {
     document.querySelector('.nav-links').classList.toggle('open');
   }

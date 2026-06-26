@@ -398,14 +398,14 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="index.html#invitation">Invitation</a></li>
+    <li><a href="resources.html#invitation">Invitation</a></li>
     <li><a href="index.html#timeline">Timeline</a></li>
     <li><a href="index.html#propose">Propose</a></li>
     <li><a href="resources.html">Resources</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="press.html" class="active">Press</a></li>
     <li><a href="donors.html">Donors</a></li>
-    <li><a href="login.html" id="nav-auth-link">Login</a></li>
+    
     <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
@@ -434,6 +434,66 @@
     <h2 class="section-title">Latest <span>News</span></h2>
 
     <div class="press-list">
+
+      <!-- News 12 — June 12, 2026 -->
+      <a class="press-item" href="https://connecticut.news12.com/connecticut-lottery-selects-members-for-property-tax-assembly" target="_blank">
+        <span class="press-source-badge">News 12</span>
+        <div class="press-item-body">
+          <div class="press-item-date">June 12, 2026</div>
+          <div class="press-item-headline">Connecticut Lottery selects members for property tax citizens' assembly</div>
+        </div>
+        <span class="press-arrow">→</span>
+      </a>
+
+      <!-- Driscoll Globe — June 12, 2026 -->
+      <a class="press-item" href="https://www.driscollglobe.com/p/connecticut-property-tax-citizens-assembly" target="_blank">
+        <span class="press-source-badge">Driscoll Globe</span>
+        <div class="press-item-body">
+          <div class="press-item-date">June 12, 2026</div>
+          <div class="press-item-headline">Connecticut Picks 100 Residents by Lottery to Take On Property Tax Reform</div>
+        </div>
+        <span class="press-arrow">→</span>
+      </a>
+
+      <!-- New York Focus — June 12, 2026 -->
+      <a class="press-item" href="https://nysfocus.com/2026/06/12/new-york-citizens-assemblies-democracy-cuny-hunter" target="_blank">
+        <span class="press-source-badge">New York Focus</span>
+        <div class="press-item-body">
+          <div class="press-item-date">June 12, 2026</div>
+          <div class="press-item-headline">At Hunter College, Students Tackle Garbage — And a New York Citizens Assembly</div>
+        </div>
+        <span class="press-arrow">→</span>
+      </a>
+
+      <!-- Voice of CT — June 12, 2026 -->
+      <a class="press-item" href="https://www.voiceofct.com/news/2026/06/12/melissa-in-the-morning/melissa-in-the-morning-citizens-assembly-assemble/5974" target="_blank">
+        <span class="press-source-badge">Voice of CT</span>
+        <div class="press-item-body">
+          <div class="press-item-date">June 12, 2026</div>
+          <div class="press-item-headline">Melissa in the Morning: Citizens Assembly, Assemble!</div>
+        </div>
+        <span class="press-arrow">→</span>
+      </a>
+
+      <!-- CCM — June 11, 2026 -->
+      <a class="press-item" href="https://www.youtube.com/watch?v=LU1P_OdsNnY" target="_blank">
+        <span class="press-source-badge">CCM</span>
+        <div class="press-item-body">
+          <div class="press-item-date">June 11, 2026</div>
+          <div class="press-item-headline">Connecticut Citizens' Assembly Draws The Lot</div>
+        </div>
+        <span class="press-arrow">→</span>
+      </a>
+
+      <!-- CT Mirror — June 5, 2026 -->
+      <a class="press-item" href="https://ctmirror.org/2026/06/05/a-ct-assembly-for-participatory-budgeting/" target="_blank">
+        <span class="press-source-badge">CT Mirror</span>
+        <div class="press-item-body">
+          <div class="press-item-date">June 5, 2026</div>
+          <div class="press-item-headline">Opinion: A CT assembly for participatory budgeting</div>
+        </div>
+        <span class="press-arrow">→</span>
+      </a>
 
       <!-- The Guardian — May 21, 2026 -->
       <a class="press-item" href="https://www.theguardian.com/us-news/2026/may/21/elected-officials-civic-assemblies-la?CMP=oth_b-aplnews_d-1" target="_blank">
@@ -637,17 +697,7 @@
   <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase-config.js"></script>
 <script>
-  (async () => {
-    const { data: { session } } = await db.auth.getSession();
-    const link = document.getElementById('nav-auth-link');
-    if (session) {
-      link.textContent = 'My Account';
-      link.href = 'dashboard.html';
-    }
-  })();
 
   function toggleMobileNav() {
     document.querySelector('.nav-links').classList.toggle('open');
