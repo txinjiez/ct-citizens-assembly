@@ -1305,14 +1305,12 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="index.html#invitation">Invitation</a></li>
     <li><a href="index.html#timeline">Timeline</a></li>
-    <li><a href="engage.html" style="color:var(--purple);">Engage</a></li>
+    <li><a href="engage.html" class="active">Engage</a></li>
     <li><a href="resources.html">Resources</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="press.html">Press</a></li>
     <li><a href="donors.html">Donors</a></li>
-    <li><a href="login.html" id="nav-auth-link">Login</a></li>
     <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
@@ -1417,18 +1415,7 @@
     });
   });
 
-  // Auth nav state
-  (async () => {
-    const { data: { session } } = await db.auth.getSession();
-    const link = document.getElementById('nav-auth-link');
-    if (session) {
-      link.textContent = 'My Account';
-      link.href = 'dashboard.html';
-    }
-  })();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase-config.js"></script>
 <script>
   function toggleMobileNav() {
     document.querySelector('.nav-links').classList.toggle('open');
