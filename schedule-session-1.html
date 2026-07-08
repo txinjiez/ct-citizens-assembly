@@ -413,16 +413,62 @@
     font-size: 0.95rem;
   }
 
+  /* CONTACT BLOCK */
+  .schedule-contact {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+  }
+
+  .schedule-contact-card {
+    background: linear-gradient(135deg, rgba(248,249,253,0.98), rgba(238,240,248,0.96));
+    border: 1px solid rgba(92,107,192,0.18);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(26,35,126,0.08);
+  }
+
+  .schedule-contact-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 0.45rem;
+  }
+
+  .schedule-contact-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--navy-dark);
+  }
+
+  .schedule-contact a {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .schedule-contact a:hover { text-decoration: underline; }
+
   /* FOOTER */
   footer {
     background: #050d2a;
     color: rgba(255,255,255,0.45);
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem 2rem 2rem;
     font-size: 0.85rem;
   }
 
   footer span { color: var(--yellow); opacity: 0.8; }
+  footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  footer a:hover { text-decoration: underline; }
 
   @media (max-width: 600px) {
     .time-cell { width: 70px; font-size: 0.76rem; }
@@ -533,8 +579,8 @@
           <ul class="speaker-list">
             <li><span class="speaker-name">Kenya Rutland</span>, Lead Facilitator, KJR Consulting</li>
             <li><span class="speaker-name">Sean Scanlon</span>, Connecticut State Comptroller</li>
-            <li><span class="speaker-name">State Rep. Maria Horn</span>, Co-Chair, Finance Revenue &amp; Bonding Committee</li>
-            <li><span class="speaker-name">State Rep. Vincent Candelora</span>, House Republican Leader</li>
+            <li><span class="speaker-name">State Representative Maria Horn</span>, Co-Chair, Finance Revenue &amp; Bonding Committee</li>
+            <li><span class="speaker-name">State Representative Vincent Candelora</span>, House Republican Leader</li>
             <li><span class="speaker-name">Michael E. Morrell</span>, Associate Professor of Political Science, UCONN</li>
             <li><span class="speaker-name">Hélène Landemore</span>, Professor of Political Science, Yale University</li>
           </ul>
@@ -584,11 +630,11 @@
             <div class="sub-label">Session 3B &nbsp;· Plenary</div>
             <div class="activity-title">Local Government and Tax Basics</div>
             <div class="activity-location">OMNI Ballroom</div>
-            <div style="font-size:0.85rem;font-weight:600;color:var(--navy);margin:0.5rem 0 0.2rem;">Presentation: Property Tax Basics</div>
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.5rem 0 0.2rem;"><strong>Presentation:</strong> Property Tax Basics</div>
             <ul class="speaker-list">
               <li><span class="speaker-name">Stephen Ross</span>, Professor of Economics, UCONN</li>
             </ul>
-            <div style="font-size:0.85rem;font-weight:600;color:var(--navy);margin:0.6rem 0 0.2rem;">Panel Discussion: Municipal Finance and State Policy – Cost Pressures</div>
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.6rem 0 0.2rem;"><strong>Panel Discussion:</strong> Municipal Finance and State Policy – Cost Pressures</div>
             <ul class="speaker-list">
               <li><span class="speaker-name">Ben Barnes</span>, Director of Administration &amp; CFO, Stamford; Former Secretary, CT Office of Policy and Management (OPM)</li>
               <li><span class="speaker-name">Vincent Cervoni</span>, Mayor of Wallingford</li>
@@ -736,7 +782,7 @@
         <td class="activity-cell">
           <div class="activity-title">Session 2: The View from Municipalities</div>
           <div class="activity-location">OMNI Ballroom – Plenary</div>
-          <div style="font-size:0.85rem;font-weight:600;color:var(--navy);margin:0.5rem 0 0.2rem;">Panel Discussion</div>
+          <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.5rem 0 0.2rem;"><strong>Panel Discussion</strong></div>
           <ul class="speaker-list">
             <li><span class="speaker-name">Mike Freda</span>, First Selectman, North Haven</li>
             <li><span class="speaker-name">Catherine Iino</span>, Former First Selectwoman, Killingworth</li>
@@ -798,6 +844,13 @@
   </table>
 
 </main>
+
+<section class="schedule-contact">
+  <div class="schedule-contact-card">
+    <span class="schedule-contact-label">Questions</span>
+    <p class="schedule-contact-text">Contact <a href="mailto:info@ct-citizens-assembly.org">info@ct-citizens-assembly.org</a></p>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
