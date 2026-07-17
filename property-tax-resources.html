@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Resource Library — Connecticut Citizens' Assembly</title>
+<title>Property Tax &amp; Mill Rate Resources — Connecticut Citizens' Assembly</title>
 <link rel="icon" type="image/png" href="media/ct-honeycomb.png" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYXQ157GLP"></script>
@@ -106,7 +106,6 @@
     border-bottom: 1px solid var(--gray-mid);
   }
 
-  /* Hex pattern background */
   .page-header::before {
     content: '';
     position: absolute;
@@ -118,7 +117,6 @@
     pointer-events: none;
   }
 
-  /* Decorative hex shapes in page header */
   .page-header-hexes {
     position: absolute;
     inset: 0;
@@ -135,7 +133,7 @@
   .page-header-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto;
   }
 
@@ -266,12 +264,8 @@
     justify-content: center;
     font-size: 1.3rem;
     flex-shrink: 0;
+    color: white;
   }
-
-  .resource-card:nth-child(1) .resource-icon { background: var(--purple); }
-  .resource-card:nth-child(2) .resource-icon { background: var(--magenta); }
-  .resource-card:nth-child(3) .resource-icon { background: var(--orange); }
-  .resource-card:nth-child(4) .resource-icon { background: var(--navy-dark); }
 
   .resource-text h4 {
     font-weight: 700;
@@ -395,7 +389,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img src="media/CTCA-honeycomb.png" alt="Connecticut Citizens' Assembly" />
+    <a href="index.html"><img src="media/CTCA-honeycomb.png" alt="Connecticut Citizens' Assembly" /></a>
   </div>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -412,8 +406,8 @@
     <li class="nav-dropdown">
       <a href="resources.html" class="active" onclick="if(window.innerWidth<=1100){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('open');}">Resources &#9662;</a>
       <ul class="nav-dropdown-menu">
-        <li><a href="resources.html" class="active">Member Resources</a></li>
-        <li><a href="property-tax-resources.html">Property Tax &amp; Mill Rates</a></li>
+        <li><a href="resources.html">Member Resources</a></li>
+        <li><a href="property-tax-resources.html" class="active">Property Tax &amp; Mill Rates</a></li>
         <li><a href="press.html">Media Resources</a></li>
       </ul>
     </li>
@@ -435,109 +429,65 @@
     <div class="ph-hex" style="width:60px;height:69px;background:#6a1b9a;top:80%;left:20%;"></div>
   </div>
   <div class="page-header-content">
-    <!-- <div class="page-header-eyebrow">Downloads</div> -->
-    <h1>Resource <span>Library</span></h1>
-    <p>Access key research, policy briefs, and reports supporting the Connecticut Citizens' Assembly on local public services.</p>
+    <h1>Property Tax &amp; <span>Mill Rate</span> Resources</h1>
+    <p>Official Connecticut data sources on property taxation, municipal mill rates, and town-level fiscal profiles, compiled to support the Assembly's research on local public services.</p>
   </div>
 </div>
 
 <!-- BACK BAR -->
 <div class="back-bar">
-  <a href="index.html">← Back to Home</a>
+  <a href="resources.html">&larr; Back to Resources</a>
 </div>
-
-<!-- WELCOME KIT -->
-<section id="welcome-kit" style="background:var(--off-white);padding:5rem 2rem;border-bottom:1px solid var(--gray-mid);">
-  <div class="container" style="max-width:900px;">
-    <div style="text-align:center;margin-bottom:2rem;">
-      <h2 class="section-title">Member <span>Welcome Kit</span></h2>
-      <p class="section-lead" style="margin:0 auto 1.5rem;">Your guide to the Connecticut Citizens' Assembly — what to expect, how to prepare, and what your role as an assembly member entails.</p>
-      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
-        <a href="media/CCA_WelcomeKit_PE5.pdf" download style="display:inline-block;background:var(--navy-dark);color:white;padding:0.85rem 2rem;border-radius:5px;font-weight:700;font-size:1rem;text-decoration:none;">Download PDF</a>
-      </div>
-    </div>
-    <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(26,35,126,0.1);border:1px solid var(--gray-mid);">
-      <object data="media/CCA_WelcomeKit_PE5.pdf" type="application/pdf" width="100%" height="900" style="display:block;">
-        <iframe
-          src="https://docs.google.com/viewer?url=https://ct-citizens-assembly.org/media/CCA_WelcomeKit_PE5.pdf&embedded=true"
-          width="100%"
-          height="900"
-          style="display:block;border:none;"
-          title="CT Citizens' Assembly Member Welcome Kit">
-          <div style="padding:2rem;text-align:center;background:var(--gray-light);">
-            <p style="color:var(--gray-text);margin-bottom:1rem;">Your browser cannot display the PDF inline.</p>
-            <a href="media/CCA_WelcomeKit_PE5.pdf" download style="background:var(--navy-dark);color:white;padding:0.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:0.9rem;">Download Welcome Kit</a>
-          </div>
-        </iframe>
-      </object>
-    </div>
-  </div>
-</section>
-
-<!-- INVITATION LETTER -->
-<section id="invitation" style="background:var(--white);padding:5rem 2rem;border-bottom:1px solid var(--gray-mid);">
-  <div class="container" style="max-width:900px;">
-    <div style="text-align:center;margin-bottom:2rem;">
-      <h2 class="section-title">Invitation <span>Letter</span></h2>
-      <p class="section-lead" style="margin:0 auto 1.5rem;">The official invitation sent to selected Connecticut residents to participate in the Citizens' Assembly.</p>
-      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
-        <a href="media/invitation-letter.pdf" download style="display:inline-block;background:var(--navy-dark);color:white;padding:0.85rem 2rem;border-radius:5px;font-weight:700;font-size:1rem;text-decoration:none;">Download PDF</a>
-        <a href="https://osc.ct.gov/ctassembly/" target="_blank" rel="noreferrer" style="display:inline-block;background:transparent;color:var(--navy-dark);border:2px solid var(--navy-dark);padding:0.85rem 2rem;border-radius:5px;font-weight:700;font-size:1rem;text-decoration:none;">Verify Invitation</a>
-      </div>
-    </div>
-    <div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(26,35,126,0.1);border:1px solid var(--gray-mid);">
-      <object data="media/invitation-letter.pdf" type="application/pdf" width="100%" height="900" style="display:block;">
-        <iframe
-          src="https://docs.google.com/viewer?url=https://ct-citizens-assembly.org/media/invitation-letter.pdf&embedded=true"
-          width="100%"
-          height="900"
-          style="display:block;border:none;"
-          title="CT Citizens' Assembly Invitation Letter">
-          <div style="padding:2rem;text-align:center;background:var(--gray-light);">
-            <p style="color:var(--gray-text);margin-bottom:1rem;">Your browser cannot display the PDF inline.</p>
-            <a href="media/invitation-letter.pdf" download style="background:var(--navy-dark);color:white;padding:0.6rem 1.4rem;border-radius:4px;text-decoration:none;font-weight:700;font-size:0.9rem;">Download Invitation Letter</a>
-          </div>
-        </iframe>
-      </object>
-    </div>
-  </div>
-</section>
 
 <!-- RESOURCES -->
 <section class="resources-main">
   <div class="container">
 
-    <!-- General Documents -->
-    <div style="margin-bottom:4rem;">
-      <div class="section-eyebrow">Documents</div>
-      <h2 class="section-title">General <span>Resources</span></h2>
-      <div class="resource-grid" style="margin-top:1.5rem;">
-        <a class="resource-card" href="media/CT-Citizens-Assembly-2-Pager.pdf" target="_blank" rel="noopener">
-          <div class="resource-icon">📄</div>
-          <div class="resource-text">
-            <h4>Two-Page Overview of the Assembly</h4>
-            <span>Download PDF</span>
-          </div>
-        </a>
-        <a class="resource-card" href="media/CCA_WelcomeKit_PE5.pdf" target="_blank" rel="noopener">
-          <div class="resource-icon">📋</div>
-          <div class="resource-text">
-            <h4>Member Welcome Kit</h4>
-            <span>Download PDF</span>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- Research Data -->
-    <div style="margin-bottom:4rem;">
+    <div style="margin-bottom:1rem;">
+      <div class="section-eyebrow">State &amp; Municipal Data</div>
       <h2 class="section-title">Property Tax <span>&amp; Mill Rates</span></h2>
-      <div class="resource-grid" style="margin-top:1.5rem;">
-        <a class="resource-card" href="property-tax-resources.html">
-          <div class="resource-icon" style="background:var(--navy-dark);color:white;">🏛️</div>
+      <p class="section-lead">Explore state agency pages, open datasets, and town profile tools covering how Connecticut municipalities set and apply property tax mill rates.</p>
+
+      <div class="resource-grid">
+        <a class="resource-card" href="https://portal.ct.gov/Services/Revenue/Property-Tax" target="_blank" rel="noopener">
           <div class="resource-text">
-            <h4>Property Tax &amp; Mill Rate Resources</h4>
-            <span>State data sources &amp; town profiles</span>
+            <h4>CT Property Tax</h4>
+            <span>portal.ct.gov &mdash; State of Connecticut</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://portal.ct.gov/opm/igpp/publications/mill-rates?language=en_US" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Mill Rates</h4>
+            <span>CT Office of Policy and Management (OPM)</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://data.ct.gov/Local-Government/Mill-Rates-for-FY-2014-2026/emyx-j53e/data_preview" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Mill Rates for FY 2014&ndash;2026</h4>
+            <span>By Municipality &mdash; CT Data</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://profiles.ctdata.org/" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Connecticut Town Profiles</h4>
+            <span>profiles.ctdata.org</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://data.ct.gov/" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Connecticut Open Data</h4>
+            <span>data.ct.gov</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://hub.ccm-ct.org/?param=population" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>CCM Data Hub</h4>
+            <span>Connecticut Conference of Municipalities</span>
           </div>
         </a>
       </div>
@@ -548,7 +498,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+  <p>&#169; 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
 </footer>
 
 <script>

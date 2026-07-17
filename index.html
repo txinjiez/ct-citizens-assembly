@@ -95,6 +95,29 @@
 
   .nav-cta:hover { background: var(--purple) !important; color: var(--white) !important; }
 
+  /* ANNOUNCEMENT BAR */
+  .announcement-bar {
+    margin-top: 70px;
+    background: linear-gradient(to right, #7b2d8b, #c2185b, #e64a19);
+    padding: 0.7rem 2rem;
+    text-align: center;
+  }
+
+  .announcement-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .announcement-bar a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .announcement-bar { padding: 0.6rem 1rem; }
+    .announcement-bar a { font-size: 0.82rem; }
+  }
+
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -1344,6 +1367,7 @@
       <a href="resources.html" onclick="if(window.innerWidth<=1100){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('open');}">Resources &#9662;</a>
       <ul class="nav-dropdown-menu">
         <li><a href="resources.html">Member Resources</a></li>
+        <li><a href="property-tax-resources.html">Property Tax & Mill Rates</a></li>
         <li><a href="press.html">Media Resources</a></li>
       </ul>
     </li>
@@ -1352,6 +1376,11 @@
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
 </nav>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  <a href="engage.html#ice-cream-assembly">🍦 The Great Ice Cream Assembly — Mon, July 27 in New Haven. Come for free ice cream, stay for democracy. Get your ticket &rarr;</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">

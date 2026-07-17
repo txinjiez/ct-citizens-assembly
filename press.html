@@ -119,6 +119,26 @@
       z-index: 99;
     }
     .nav-links.open { display: flex; }
+    .nav-dropdown-menu {
+      display: none !important;
+      position: static;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      min-width: 0;
+      width: 100%;
+      padding: 0.3rem 0 0.3rem 1rem;
+      margin-top: 0.3rem;
+    }
+    .nav-dropdown.open .nav-dropdown-menu {
+      display: block !important;
+    }
+    .nav-dropdown-menu li a {
+      padding: 0.55rem 0;
+      white-space: normal;
+    }
   }
 
   /* COLOR STRIPE */
@@ -445,6 +465,7 @@
       <a href="resources.html" onclick="if(window.innerWidth<=1100){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('open');}">Resources &#9662;</a>
       <ul class="nav-dropdown-menu">
         <li><a href="resources.html">Member Resources</a></li>
+        <li><a href="property-tax-resources.html">Property Tax & Mill Rates</a></li>
         <li><a href="press.html">Media Resources</a></li>
       </ul>
     </li>
