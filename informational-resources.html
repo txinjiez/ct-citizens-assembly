@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Property Tax &amp; Mill Rate Resources — Connecticut Citizens' Assembly</title>
+<title>Informational Resources — Connecticut Citizens' Assembly</title>
 <link rel="icon" type="image/png" href="media/ct-honeycomb.png" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYXQ157GLP"></script>
@@ -227,6 +227,22 @@
     max-width: 680px;
   }
 
+  .subsection-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-top: 2.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .subsection-note {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    max-width: 680px;
+  }
+
   .resource-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -407,7 +423,7 @@
       <a href="resources.html" class="active" onclick="if(window.innerWidth<=1100){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('open');}">Resources &#9662;</a>
       <ul class="nav-dropdown-menu">
         <li><a href="resources.html">Member Resources</a></li>
-        <li><a href="property-tax-resources.html" class="active">Property Tax &amp; Mill Rates</a></li>
+        <li><a href="informational-resources.html" class="active">Informational Resources</a></li>
         <li><a href="press.html">Media Resources</a></li>
       </ul>
     </li>
@@ -429,8 +445,8 @@
     <div class="ph-hex" style="width:60px;height:69px;background:#6a1b9a;top:80%;left:20%;"></div>
   </div>
   <div class="page-header-content">
-    <h1>Property Tax &amp; <span>Mill Rate</span> Resources</h1>
-    <p>Official Connecticut data sources on property taxation, municipal mill rates, and town-level fiscal profiles, compiled to support the Assembly's research on local public services.</p>
+    <h1>Informational <span>Resources</span></h1>
+    <p>Official Connecticut data sources on property taxation and mill rates, education funding, and municipal services and state mandates, compiled to support the Assembly's research on local public services.</p>
   </div>
 </div>
 
@@ -443,12 +459,15 @@
 <section class="resources-main">
   <div class="container">
 
-    <div style="margin-bottom:1rem;">
+    <!-- PROPERTY TAX & MILL RATES -->
+    <div style="margin-bottom:5rem;">
       <div class="section-eyebrow">State &amp; Municipal Data</div>
       <h2 class="section-title">Property Tax <span>&amp; Mill Rates</span></h2>
       <p class="section-lead">Explore state agency pages, open datasets, and town profile tools covering how Connecticut municipalities set and apply property tax mill rates.</p>
 
-      <div class="resource-grid">
+      <h3 class="subsection-title">Mill Rate Data</h3>
+      <p class="subsection-note">These three sources relate directly to mill rates.</p>
+      <div class="resource-grid" style="margin-top:1.5rem;">
         <a class="resource-card" href="https://portal.ct.gov/Services/Revenue/Property-Tax" target="_blank" rel="noopener">
           <div class="resource-text">
             <h4>CT Property Tax</h4>
@@ -469,7 +488,11 @@
             <span>By Municipality &mdash; CT Data</span>
           </div>
         </a>
+      </div>
 
+      <h3 class="subsection-title">General Town &amp; Open Data</h3>
+      <p class="subsection-note">These sources provide more general information and data by town &mdash; not specific to mill rates.</p>
+      <div class="resource-grid" style="margin-top:1.5rem;">
         <a class="resource-card" href="https://profiles.ctdata.org/" target="_blank" rel="noopener">
           <div class="resource-text">
             <h4>Connecticut Town Profiles</h4>
@@ -488,6 +511,178 @@
           <div class="resource-text">
             <h4>CCM Data Hub</h4>
             <span>Connecticut Conference of Municipalities</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div style="margin-bottom:5rem;">
+      <div class="section-eyebrow">Education Funding &amp; Policy</div>
+      <h2 class="section-title">Resources on <span>Education</span> in Connecticut</h2>
+      <p class="section-lead">State agencies, associations, and finance research covering how Connecticut funds and supports public education.</p>
+
+      <div class="resource-grid" style="margin-top:1.5rem;">
+        <a class="resource-card" href="https://ctserc.org/" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>State Education Resource Center (SERC)</h4>
+            <span>ctserc.org</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://goopenct.org/" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>GoOpen Connecticut</h4>
+            <span>Public digital library of open educational resources</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://cea.org/" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Connecticut Education Association (CEA)</h4>
+            <span>cea.org</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.rescalliance.org/" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>RESC Alliance</h4>
+            <span>rescalliance.org</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://portal.ct.gov/SDE" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>CT State Department of Education (CSDE)</h4>
+            <span>portal.ct.gov/SDE</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://public-edsight.ct.gov/?language=en_US" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>CSDE EdSight</h4>
+            <span>Connecticut's official source for education data</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://schoolstatefinance.org/" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>School + State Finance Project</h4>
+            <span>schoolstatefinance.org</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://schoolstatefinance.org/issues/how-ct-funds-education" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>How Connecticut Funds Education</h4>
+            <span>School + State Finance Project</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.cga.ct.gov/ofa/Documents/year/SMF/2026SMF-20251020_Education%20Cost%20Sharing%20(ECS)%20Quick%20Facts%20FY%2026%20(August%202025).pdf" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Education Cost Sharing (ECS) Quick Facts</h4>
+            <span>CGA Office of Fiscal Analysis &mdash; FY26 (PDF)</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- MUNICIPAL SERVICES & STATE MANDATES -->
+    <div>
+      <div class="section-eyebrow">Local Government &amp; State Mandates</div>
+      <h2 class="section-title">Resources on <span>Municipal Services &amp; State Mandates</span></h2>
+      <p class="section-lead">Non-education municipal services, intergovernmental relations, and the state mandates and aid programs that shape local budgets in Connecticut.</p>
+
+      <div class="resource-grid" style="margin-top:1.5rem;">
+        <a class="resource-card" href="https://portal.ct.gov/das?language=en_US" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>CT Department of Administrative Services</h4>
+            <span>portal.ct.gov/das</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://libguides.ctstatelibrary.org/girs/municipalgovt" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Connecticut Municipal Governments &mdash; Home</h4>
+            <span>CT State Library</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://libguides.ctstatelibrary.org/girs/municipalgovt/resources" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Connecticut Municipal Governments &mdash; Other Resources</h4>
+            <span>CT State Library</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://portal.ct.gov/SOTS/Register-Manual/Section-VII/Regional-Councils-of-Governments" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>CT Council of Governments</h4>
+            <span>Regional Councils of Governments &mdash; CT SOTS</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.ccm-ct.org/Advocacy/Research/Research-Library" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>CCM Research Library</h4>
+            <span>Connecticut Conference of Municipalities</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.class-ct.org/about/resources/" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Connecticut Local Administrators of Social Services (CLASS)</h4>
+            <span>class-ct.org</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://ctcost.org/Municipal_Resources" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Municipal Resources</h4>
+            <span>Connecticut Council of Small Towns (COST)</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://portal.ct.gov/opm/root/program-services/programs-and-services?language=en_US" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>OPM Programs &amp; Services &mdash; Tax Relief</h4>
+            <span>CT Office of Policy and Management</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://portal.ct.gov/ACIR/Publications/State-Mandates-on-Municipalities" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>State Mandates on Municipalities</h4>
+            <span>CT.gov &mdash; ACIR Publications</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://portal.ct.gov/acir" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Advisory Commission on Intergovernmental Relations (ACIR)</h4>
+            <span>portal.ct.gov/acir</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://app.powerbigov.us/view?r=eyJrIjoiYWU3OGY4N2MtMzJkNi00ZjMzLTg2OGQtMjk4ODIwOTQ1OGIwIiwidCI6IjNlYzc2NzE0LWIxYjQtNDE4YS04ODMyLTMyYzQ2ZWM4NDIyNiJ9" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Major Sources of State Aid to Towns</h4>
+            <span>Power BI Dashboard</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://portal.ct.gov/opm/igpp/grants/pilot/tiered-payment-in-lieu-of-taxes?language=en_US" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>Tiered Payment in Lieu of Taxes (PILOT)</h4>
+            <span>CT Office of Policy and Management</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://portal.ct.gov/opm/intergovernmental?language=en_US" target="_blank" rel="noopener">
+          <div class="resource-text">
+            <h4>OPM Intergovernmental Policy and Planning Division</h4>
+            <span>CT Office of Policy and Management</span>
           </div>
         </a>
       </div>
