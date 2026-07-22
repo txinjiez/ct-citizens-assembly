@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"/Users/tinazeng/Downloads/CCA_Presenters_0725_V2.pdf\" ./temp_presenters.pdf)",
+      "Bash(pdfimages -j temp_presenters.pdf presenter_img)",
+      "Bash(rm -f presenter_img-*.jpg presenter_img-*.ppm)",
+      "Bash(pdftoppm -png -r 150 temp_presenters.pdf page)",
+      "Bash(sips -c 280 420 -c 340 500 page-2.png --out \"M Randall Collins Jr.jpg\")",
+      "Bash(sips -c 280 420 -c 340 500 page-2.png --out \"Dr Bryan Luizzi.jpg\")"
+    ]
+  }
+}
