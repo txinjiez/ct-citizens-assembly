@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>July 25 Agenda — Connecticut Citizens' Assembly</title>
+<link rel="icon" type="image/png" href="media/ct-honeycomb.png" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CYXQ157GLP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CYXQ157GLP');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1a237e;
+    --navy-dark: #0d1757;
+    --navy-light: #283593;
+    --purple: #7b2d8b;
+    --magenta: #c2185b;
+    --orange: #e64a19;
+    --yellow: #f9a825;
+    --coral: #ef5350;
+    --white: #ffffff;
+    --off-white: #f8f9fd;
+    --gray-light: #eef0f8;
+    --gray-mid: #0b0e20;
+    --gray-text: #5c6bc0;
+    --text: #1a237e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to right, #7b2d8b, #c2185b, #e64a19, #f9a825, #ef5350) 1;
+  }
+
+  .nav-logo img { height: 62px; display: block; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover { color: var(--purple); }
+  .nav-links a.active { color: var(--purple); }
+
+  .nav-cta {
+    background: var(--navy-dark);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover { background: var(--purple) !important; color: var(--white) !important; }
+
+  /* DROPDOWN */
+  .nav-dropdown { position: relative; align-self: stretch; display: flex; align-items: center; }
+  .nav-dropdown > a { display: flex; align-items: center; gap: 0.25rem; }
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid var(--gray-mid);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(26,35,126,0.12);
+    min-width: 160px;
+    z-index: 200;
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu li a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.88rem;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .nav-dropdown-menu li a:hover,
+  .nav-dropdown-menu li a.active { color: var(--purple); background: var(--gray-light); }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--navy);
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 1100px) {
+    .nav-hamburger { display: block; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.5rem 2rem;
+      gap: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border-top: 3px solid var(--purple);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-dropdown-menu {
+      display: none !important;
+      position: static;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      min-width: 0;
+      width: 100%;
+      padding: 0.3rem 0 0.3rem 1rem;
+      margin-top: 0.3rem;
+    }
+    .nav-dropdown.open .nav-dropdown-menu {
+      display: block !important;
+    }
+    .nav-dropdown-menu li a {
+      padding: 0.55rem 0;
+      white-space: normal;
+    }
+  }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 9rem 2rem 5rem;
+    background: var(--navy-dark);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .page-eyebrow {
+    display: inline-block;
+    background: rgba(249,168,37,0.18);
+    border: 1px solid rgba(249,168,37,0.4);
+    color: var(--yellow);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.2rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
+  }
+
+  .page-header h1 span { color: var(--yellow); }
+
+  .page-header p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin-top: 0.5rem;
+  }
+
+  /* COLOR STRIPE */
+  .color-stripe { display: flex; height: 5px; }
+  .color-stripe span { flex: 1; }
+
+  /* SCHEDULE MAIN */
+  .schedule-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  /* VENUES */
+  .venues {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+
+  .venue-card {
+    flex: 1;
+    min-width: 240px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .venue-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .venue-name {
+    font-weight: 700;
+    color: var(--navy-dark);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .venue-address {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  /* DAY HEADER */
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .day-header:first-of-type { margin-top: 0; }
+
+  .day-badge {
+    background: var(--purple);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+  }
+
+  .day-divider {
+    flex: 1;
+    height: 1px;
+    background: var(--gray-mid);
+  }
+
+  /* SCHEDULE TABLE */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+
+  .schedule-table tr {
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .schedule-table tr:last-child { border-bottom: none; }
+
+  .schedule-table tr.break-row { background: var(--gray-light); }
+  .schedule-table tr.logistics-row { opacity: 0.75; }
+
+  .time-cell {
+    width: 90px;
+    padding: 1rem 1rem 1rem 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--purple);
+    letter-spacing: 0.03em;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  .activity-cell {
+    padding: 1rem 0;
+    vertical-align: top;
+  }
+
+  .activity-title {
+    font-weight: 700;
+    color: var(--navy-dark);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .activity-plain {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  .activity-location {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    margin-top: 0.2rem;
+  }
+
+  .speaker-list {
+    list-style: none;
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+  }
+
+  .speaker-list li {
+    margin-bottom: 0.3rem;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  .speaker-name {
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .sub-session {
+    margin-bottom: 1.2rem;
+  }
+
+  .sub-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 0.3rem;
+  }
+
+  .moderated-by {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    margin-top: 0.4rem;
+  }
+
+  /* SPEAKER BIOS */
+  .speaker-bios {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--gray-mid);
+  }
+
+  .speaker-bios h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+    margin-bottom: 1.2rem;
+  }
+
+  .speaker-bio {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+    align-items: start;
+  }
+
+  .speaker-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .speaker-info {
+    flex: 1;
+  }
+
+  .speaker-name {
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--navy-dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .speaker-title {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    margin-bottom: 0.6rem;
+  }
+
+  .speaker-bio p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  .speaker-bio p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* CONTACT BLOCK */
+  .schedule-contact {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--gray-mid);
+    text-align: center;
+  }
+
+  .schedule-contact-card {
+    padding: 1.5rem;
+  }
+
+  .schedule-contact-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 0.5rem;
+  }
+
+  .schedule-contact-text {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+  }
+
+  .schedule-contact a {
+    color: var(--purple);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .schedule-contact a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: #050d2a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 1.5rem 2rem 2rem;
+    font-size: 0.85rem;
+  }
+
+  footer span { color: var(--yellow); opacity: 0.8; }
+  footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .time-cell { width: 70px; font-size: 0.76rem; }
+    .activity-title { font-size: 0.9rem; }
+    nav { padding: 0 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="index.html"><img src="media/CTCA-honeycomb.png" alt="Connecticut Citizens' Assembly" /></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="about.html" onclick="if(window.innerWidth<=1100){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('open');}">About &#9662;</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="about.html">Overview</a></li>
+        <li><a href="index.html#timeline">Timeline</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="donors.html">Donors</a></li>
+      </ul>
+    </li>
+    <li><a href="engage.html">Engage</a></li>
+    <li class="nav-dropdown">
+      <a href="resources.html" onclick="if(window.innerWidth<=1100){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('open');}">Resources &#9662;</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="resources.html">Member Resources</a></li>
+        <li><a href="informational-resources.html">Informational Resources</a></li>
+        <li><a href="press.html">Media Resources</a></li>
+      </ul>
+    </li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-content">
+    <div class="page-eyebrow">Connecticut Citizens' Assembly</div>
+    <h1>July 25 <span>Agenda</span></h1>
+    <p>Henry R. Luce Hall, Yale University &nbsp;·&nbsp; New Haven, CT</p>
+  </div>
+</div>
+
+<!-- COLOR STRIPE -->
+<div class="color-stripe">
+  <span style="background:#7b2d8b;"></span>
+  <span style="background:#c2185b;"></span>
+  <span style="background:#e64a19;"></span>
+  <span style="background:#f9a825;"></span>
+  <span style="background:#ef5350;"></span>
+</div>
+
+<!-- SCHEDULE MAIN -->
+<main class="schedule-main">
+
+  <!-- VENUES -->
+  <div class="venues">
+    <div class="venue-card">
+      <div>
+        <div class="venue-name">Henry R. Luce Hall</div>
+        <div class="venue-address">34 Hillhouse Avenue<br>New Haven, CT &nbsp;·&nbsp; Yale University</div>
+      </div>
+    </div>
+    <div class="venue-card">
+      <div>
+        <div class="venue-name">Parking</div>
+        <div class="venue-address">Prospect Sachem Garage<br>200 Prospect Street (behind Ingalls Ice Rink)<br>Free parking on weekends; EV charging available</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-header">
+    <span class="day-badge">Day 1</span>
+    <div class="day-title">Saturday, July 25, 2026</div>
+    <div class="day-divider"></div>
+  </div>
+
+  <table class="schedule-table">
+    <tbody>
+
+      <tr class="logistics-row">
+        <td class="time-cell">7:30 AM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Parking at the Prospect Sachem Garage on the Yale Campus</div>
+          <div class="activity-location">Entrance at 200 Prospect Street (behind the Ingalls Ice Rink). Free parking with open gate on weekends; EV charging available</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">8:00 AM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Arrival, Check-in, and Breakfast</div>
+          <div class="activity-location">Luce Hall Common Room, 2nd Floor</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">9:00 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 1: Welcome &amp; Governance Update</div>
+          <div class="activity-location">Luce Auditorium, Room 101</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span>, Lead Facilitator, KJR Consulting</li>
+            <li><span class="speaker-name">Hélène Landemore</span> (Remote), Yale Professor of Political Science</li>
+            <li><span class="speaker-name">GryLin Wilkens-Plumley</span> &amp; Citizens' Governance Committee (CGC)</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr class="break-row">
+        <td class="time-cell">10:00 AM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Break</div>
+          <div class="activity-location">Luce Hall Common Room, 2nd Floor</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">10:25 AM</td>
+        <td class="activity-cell">
+
+          <div class="sub-session">
+            <div class="sub-label">Group 1 · Local Revenue &amp; K-12 Education</div>
+            <div class="activity-title">Sessions 2-3: Subgroup Presentations &amp; Panel Discussions</div>
+            <div class="activity-location">Luce Auditorium 101</div>
+
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.8rem 0 0.2rem;"><strong>Overview:</strong> Understanding the K-12 Education Finance System (10:25-11:25 AM)</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Erika Haynes</span> &amp; <span class="speaker-name">Melanie Strout</span>, School + State Finance Project</li>
+            </ul>
+
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.8rem 0 0.2rem;"><strong>Panel Discussion:</strong> Perspectives on School Funding (11:25 AM-12:30 PM)</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Lunda Asmani</span> (Remote), CFO, Norwalk Public Schools, CT</li>
+              <li><span class="speaker-name">Leslie Blatteau</span>, President, New Haven Federation of Teachers, Local 933</li>
+              <li><span class="speaker-name">Michael Strambler</span>, Associate Professor of Psychiatry and Director, Child Wellbeing and Education Research, Yale University; Member, Woodbridge Board of Education</li>
+            </ul>
+            <div class="moderated-by">Moderator: <strong>Dr. Bryan Luizzi</strong>, Superintendent of Schools, New Canaan, CT</div>
+          </div>
+
+          <div class="sub-session" style="margin-top:2rem;">
+            <div class="sub-label">Group 2 · Non-Educational Services &amp; Mandates</div>
+            <div class="activity-location">Luce 203</div>
+
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.8rem 0 0.2rem;"><strong>Presentation:</strong> Mandates 101 (10:25-10:55 AM)</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Randy Collins</span>, Associate Director of Public Policy &amp; Advocacy, CCM</li>
+            </ul>
+
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.8rem 0 0.2rem;"><strong>Panel Discussion:</strong> Mandates &amp; Municipal Budgets (10:55 AM-12:00 PM)</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Mary Calorio</span>, Town Administrator, Northeastern Connecticut Council of Governments (NECCOG)</li>
+              <li><span class="speaker-name">Luke Strunk</span>, Workers' Compensation Executive Committee, Connecticut Bar Association</li>
+            </ul>
+            <div class="moderated-by">Moderator: <strong>Matt Hart</strong>, Executive Director, Capitol Region Council of Governments</div>
+
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.8rem 0 0.2rem;"><strong>Presentation:</strong> Mandates &amp; Municipal Budgets Continued (12:00-12:30 PM)</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Adam Chapdeline</span> (Remote), Executive Director &amp; CEO, Massachusetts Municipal Association (MMA)</li>
+            </ul>
+          </div>
+
+        </td>
+      </tr>
+
+      <tr class="logistics-row">
+        <td class="time-cell">12:30 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Lunch</div>
+          <div class="activity-location">Luce Hall Common Room &amp; Classrooms, 2nd Floor</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">1:30 PM</td>
+        <td class="activity-cell">
+
+          <div class="sub-session">
+            <div class="sub-label">Group 1 · Local Revenue &amp; K-12 Education</div>
+            <div class="activity-title">Session 4: Subgroup Presentations</div>
+            <div class="activity-location">Luce 203</div>
+
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.4rem 0 0.2rem;"><strong>Presentation:</strong> Education Service Delivery &amp; Structural Tradeoffs</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Jeanette Luna</span> &amp; <span class="speaker-name">Amber Martin</span>, School + State Finance Project</li>
+            </ul>
+          </div>
+
+          <div class="sub-session" style="margin-top:1.2rem;">
+            <div class="sub-label">Group 2 · Non-Educational Services &amp; Mandates</div>
+            <div class="activity-location">Luce Auditorium 101</div>
+
+            <div style="font-size:0.95rem;font-weight:700;color:var(--navy);margin:0.4rem 0 0.2rem;"><strong>Panel Discussion:</strong> Collective Bargaining and Service Sharing</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Jonathan Luiz</span>, Town Manager, Glastonbury, CT</li>
+              <li><span class="speaker-name">Adam Marchand</span>, Chief Steward at Local 34, Yale University and New Haven Alderman, Ward 25</li>
+              <li><span class="speaker-name">Mike Rose</span>, Managing Partner &amp; Employment Litigator, Rose Kallor, LLP</li>
+            </ul>
+            <div class="moderated-by">Moderator: <strong>Joe Aresimowicz</strong>, Former Speaker, CT House of Representatives</div>
+          </div>
+
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">2:30 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 5: Subgroup Dialogue with Experts</div>
+          <div class="activity-location">Group 1: Luce 203 &nbsp;·&nbsp; Group 2: Luce 202</div>
+        </td>
+      </tr>
+
+      <tr class="break-row">
+        <td class="time-cell">3:15 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Break</div>
+          <div class="activity-location">Luce Hall Common Room, 2nd Floor</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">3:40 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 6: Subgroup Report Outs</div>
+          <div class="activity-location">Luce Auditorium, Room 101 (Plenary)</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">4:20 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 7: CGC Update and Selection for Weekend 3</div>
+          <div class="activity-location">Luce Auditorium (Plenary)</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">4:40 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Wrap-Up &amp; Participant Feedback</div>
+          <div class="activity-location">Luce Auditorium (Plenary)</div>
+        </td>
+      </tr>
+
+      <tr class="logistics-row">
+        <td class="time-cell">5:00 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Adjourn</div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</main>
+
+<!-- SPEAKER BIOS -->
+<section class="speaker-bios">
+  <div class="schedule-main">
+    <h2>Speakers & Presenters</h2>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Lunda Headshot- V2.png" alt="Lunda Asmani" class="speaker-photo">
+      <div class="speaker-info">
+        <div class="speaker-name">Lunda Asmani</div>
+        <div class="speaker-title">Chief Financial Officer, Norwalk Public Schools</div>
+        <p>Lunda Asmani is the Chief Financial Officer for Norwalk Public Schools in Connecticut, where he oversees the district's financial and business operations, including long-range planning, budgeting, fund accounting, and audit functions for a $400 million operating, grant, and capital budget. With nearly 20 years of local government finance experience, he is recognized as a national and state leader in public finance. He previously served as Chief Financial Officer for the Town of New Canaan and Director of Management and Budget for the City of Norwalk. Lunda is the Past President of the Government Finance Officers Association (GFOA) of the United States & Canada and a Past President of the Connecticut GFOA and Kansas GFOA. He is a GFOA Certified Public Finance Officer and holds a Master of Public Administration and a bachelor's degree in Urban Planning and Economics.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Erika Haynes 2024 Headshot.jpg" alt="Erika Haynes" class="speaker-photo">
+      <div class="speaker-info">
+        <div class="speaker-name">Erika Haynes</div>
+        <div class="speaker-title">Chief of Engagement & Development, School + State Finance Project</div>
+        <p>With decades of experience in nonprofit management, community leadership and engagement, and navigating Connecticut's public school systems, Erika Haynes brings an important perspective to the work of the School and State Finance Project. As Chief of Engagement & Development, Erika leads the organization's statewide engagement strategy, building meaningful relationships with communities, key stakeholders, and partners across Connecticut. She works with elected officials and community members to deepen understanding of the state's school finance system and its impact on local communities by offering presentations, workshops, and opportunities for civic learning and participation.</p>
+        <p>Erika's passion for advocating for students started long before her role at the School and State Finance Project. As a parent, Erika experienced the full array of Connecticut's public education system. Her children attended local public schools and magnet schools, and she also homeschooled for a period of time. She also served on her community's School Readiness Council and town council, and previously was an adjunct professor at The Hartt School at the University of Hartford, where she led the nonprofit component for Performance Arts Management and Music Management majors.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Jeanette Luna Website 2025.jpg" alt="Jeanette Luna" class="speaker-photo">
+      <div class="speaker-info">
+        <div class="speaker-name">Jeanette Luna</div>
+        <div class="speaker-title">Senior Research & Policy Analyst, School + State Finance Project</div>
+        <p>A former teacher with a dedication to creating an equitable education system for all students, Jeanette Luna is an experienced Senior Research & Policy Analyst with expertise in quantitative and qualitative education research. As part of the organization's Data and Policy team, Jeanette uses her research and analytical skills to help craft and advance policy proposals for more equitable, transparent, and student-centered education funding. Her work includes reviewing academic and policy research, writing reports and policy briefings, and executing and communicating independent, nonpartisan analyses.</p>
+        <p>Prior to joining the School and State Finance Project, Jeanette served as a Research and Operations Associate for the Thomas B. Fordham Institute, a nonprofit education policy think tank. Before entering the education policy and research world, Jeanette spent six years in public schools in Connecticut, including five years as a physics and math teacher at Achievement First Hartford Academy and one year in Branford Public Schools.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Amber Martin 2024 Headshot.jpg" alt="Amber Martin" class="speaker-photo">
+      <div class="speaker-info">
+        <div class="speaker-name">Amber Martin</div>
+        <div class="speaker-title">Director of Research & Policy, School + State Finance Project</div>
+        <p>Specializing in qualitative and quantitative research, Amber Martin co-leads the School and State Finance Project's policy development and data analysis work. As Director of Research & Policy, Amber oversees the organization's research on education finance issues and manages the drafting of reports, policy briefings, and other informational materials for a range of audiences. Using her research work and expertise in data analysis, Amber helps craft policy recommendations to address educational inequities, funding disparities, and other issues impacting Connecticut's public school students.</p>
+        <p>In collaboration with the Director of Data & Analysis, Amber also guides the creation of custom data and policy analyses for policymakers and other stakeholders, and leads the organization's consulting work to provide partners with the skills, knowledge, and experience they need to reach their goals. Before joining the School and State Finance Project, Amber served as a policy analyst for the Rhode Island Public Expenditure Council (RIPEC), where she led a variety of functions including conducting data collection and maintaining state and municipal finance databases, designing and preparing revenue and expenditure reports and budget impact analyses and researching and producing policy reports.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Melanie Strout 2024 Headshot.jpg" alt="Melanie Strout" class="speaker-photo">
+      <div class="speaker-info">
+        <div class="speaker-name">Melanie Strout</div>
+        <div class="speaker-title">Engagement Manager, School + State Finance Project</div>
+        <p>With over a decade of experience in civic engagement, program management, and community development, Melanie Strout uses her knowledge and expertise to empower parents, build community knowledge, and help individuals make their voices heard on issues impacting students and schools. As Engagement Manager, Melanie works in cities and towns across the state helping community members and organizations better understand Connecticut's school finance system, and equipping them with the tools, knowledge, and resources to take action. Along with building and maintaining relationships with parents, community leaders, and other education stakeholders, Melanie helps craft and execute the organization's community engagement strategies and works to develop partnerships across sectors aimed at eliminating education funding inequities.</p>
+        <p>Prior to joining the School and State Finance Project, Melanie held a number of leadership positions focused on education and engaging communities, including serving as the Director of Civic Engagement for the University of Bridgeport, where she managed the university's community partnerships, oversaw its community work study program, established a campus food pantry, and implemented initiatives to increase student engagement in civic education programs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="schedule-contact">
+  <div class="schedule-main">
+    <div class="schedule-contact-card">
+      <span class="schedule-contact-label">Questions</span>
+      <p class="schedule-contact-text">Contact <a href="mailto:ctca.concierge@gmail.com">ctca.concierge@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMobileNav() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
