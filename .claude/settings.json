@@ -6,7 +6,22 @@
       "Bash(rm -f presenter_img-*.jpg presenter_img-*.ppm)",
       "Bash(pdftoppm -png -r 150 temp_presenters.pdf page)",
       "Bash(sips -c 280 420 -c 340 500 page-2.png --out \"M Randall Collins Jr.jpg\")",
-      "Bash(sips -c 280 420 -c 340 500 page-2.png --out \"Dr Bryan Luizzi.jpg\")"
+      "Bash(sips -c 280 420 -c 340 500 page-2.png --out \"Dr Bryan Luizzi.jpg\")",
+      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/schedule-session-3.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --window-size=390,844 --screenshot=/private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/resources_mobile.png file:///Users/tinazeng/Documents/GitHub/ct-citizens-assembly/resources.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --window-size=390,900 --screenshot=/private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/resources_open.png file:///private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_resources.html)",
+      "Bash(perl -0pi -e 's/<ul class=\"nav-links\">/<ul class=\"nav-links open\">/' /private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_fixed_schedule2.html)",
+      "Bash(perl -0pi -e 's/<li class=\"nav-dropdown\">\\\\s*<a href=\"about\\\\.html\"/<li class=\"nav-dropdown open\">\\\\n      <a href=\"about.html\"/' /private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_fixed_schedule2.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --window-size=390,900 --screenshot=/private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/schedule2_fixed_open.png file:///private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_fixed_schedule2.html)",
+      "Bash(rm -f /private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_*.html /private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/*.png)",
+      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/schedule-session-1.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --window-size=390,900 --screenshot=/private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/about_open.png file:///private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_about.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --window-size=1000,700 --screenshot=/private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/about_open_1000.png file:///private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_about.html)",
+      "Bash(perl -0pi -e 's/<ul class=\"nav-links\">/<ul class=\"nav-links open\">/' /private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_fixed_index.html)",
+      "Bash(perl -0pi -e 's/<li class=\"nav-dropdown\">\\\\s*<a href=\"resources\\\\.html\"/<li class=\"nav-dropdown open\">\\\\n      <a href=\"resources.html\"/' /private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_fixed_index.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --window-size=1000,700 --screenshot=/private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/index_fixed_1000.png file:///private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_fixed_index.html)",
+      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/index.html)",
+      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/about.html)"
     ]
   }
 }
