@@ -21,7 +21,12 @@
       "Bash(perl -0pi -e 's/<li class=\"nav-dropdown\">\\\\s*<a href=\"resources\\\\.html\"/<li class=\"nav-dropdown open\">\\\\n      <a href=\"resources.html\"/' /private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_fixed_index.html)",
       "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --window-size=1000,700 --screenshot=/private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/index_fixed_1000.png file:///private/tmp/claude-501/-Users-tinazeng-Documents-GitHub-ct-citizens-assembly/0c6aa70e-5482-4d3b-b9e8-906a62311c4f/scratchpad/test_fixed_index.html)",
       "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/index.html)",
-      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/about.html)"
+      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/about.html)",
+      "Bash(cp \"/Users/tinazeng/Downloads/CCA_Presenters_080826_Final-upated.pdf\" ./aug8_presenters.pdf)",
+      "Bash(pdftoppm -png -r 150 aug8_presenters.pdf aug8page)",
+      "Bash(pdftoppm -png -r 150 -f 1 -l 4 aug8_presenters.pdf aug8page)",
+      "Bash(pdftoppm -png -r 150 -f 4 -l 4 aug8_presenters.pdf aug8page)",
+      "Bash(rm -f _preview_knopp.jpg _test_knopp.jpg aug8page-*.png aug8_presenters.pdf)"
     ]
   }
 }

@@ -400,6 +400,68 @@
     margin-bottom: 0.3rem;
   }
 
+  /* SPEAKER BIOS */
+  .speaker-bios {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--gray-mid);
+  }
+
+  .speaker-bios h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+    margin-bottom: 1.2rem;
+  }
+
+  .speaker-bio {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+    align-items: start;
+  }
+
+  .speaker-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+  }
+
+  .speaker-info {
+    flex: 1;
+  }
+
+  .speaker-bio .speaker-name {
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--navy-dark);
+    margin-bottom: 0.2rem;
+    display: block;
+  }
+
+  .speaker-title {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    margin-bottom: 0.6rem;
+  }
+
+  .speaker-bio p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  .speaker-bio p:last-child {
+    margin-bottom: 0;
+  }
+
   /* CONTACT BLOCK */
   .schedule-contact {
     margin-top: 1rem;
@@ -497,7 +559,7 @@
   <div class="page-header-content">
     <div class="page-eyebrow">Connecticut Citizens' Assembly</div>
     <h1>August 8 <span>Agenda</span></h1>
-    <p>Virtual Session via Zoom &nbsp;·&nbsp; Draft Agenda, Subject to Change</p>
+    <p>Virtual Session via Zoom</p>
   </div>
 </div>
 
@@ -527,7 +589,7 @@
         <td class="time-cell">8:30 AM</td>
         <td class="activity-cell">
           <div class="activity-plain">Log into Zoom Meeting (Check-in from Zoom waiting room)</div>
-          <div class="activity-location">Tech Check: After being admitted to the meeting, change your name to: CIT – First Name + Last Name Initial</div>
+          <div class="activity-location">Tech Check: After being admitted to the meeting, change your name to: CIT – First Name + Last Name Initial (e.g., CIT – Maria R.)</div>
         </td>
       </tr>
 
@@ -535,6 +597,9 @@
         <td class="time-cell">9:00 AM</td>
         <td class="activity-cell">
           <div class="activity-title">Session 1: Welcome, Icebreaker &amp; Plan for the Day</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Heidi Hanson</span>, Lead Facilitator, KJR Consulting</li>
+          </ul>
         </td>
       </tr>
 
@@ -550,7 +615,8 @@
         <td class="activity-cell">
           <div class="activity-title">Session 3: Presentation on Fiscal Guardrails &amp; State Investment Controls</div>
           <ul class="speaker-list">
-            <li>Presenters TBA</li>
+            <li><span class="speaker-name">Chris Davis</span>, Senior Vice President of Public Policy, Connecticut Business &amp; Industry Association (CBIA)</li>
+            <li><span class="speaker-name">Alex Knopp</span>, Former Mayor of Norwalk, Former State Representative in the CT General Assembly, and member of the Property Tax Working Group</li>
           </ul>
         </td>
       </tr>
@@ -570,14 +636,19 @@
           <div class="sub-session" style="margin-top:0.8rem;">
             <div class="sub-label">Panel 1 · Special Education</div>
             <ul class="speaker-list">
-              <li>Panelists &amp; Moderator TBA</li>
+              <li><span class="speaker-name">Dr. Maureen Brummett</span> (Moderator), Superintendent of Schools, Newington</li>
+              <li><span class="speaker-name">Aimee Turner</span>, Assistant Superintendent for Special Education, Wallingford; President of ConnCASE</li>
+              <li><span class="speaker-name">Andrew Feinstein, Esq.</span>, Principal Attorney, Feinstein Education Law Group; Board Member, Council of Parent Attorneys and Advocates (COPAA)</li>
             </ul>
           </div>
 
           <div class="sub-session">
             <div class="sub-label">Panel 2 · Property Tax Exemptions</div>
             <ul class="speaker-list">
-              <li>Panelist &amp; Moderator TBA</li>
+              <li><span class="speaker-name">Dan Haar</span> (Moderator), Senior Editor &amp; Columnist, CT Insider</li>
+              <li><span class="speaker-name">Gian-Carl Casa</span>, President &amp; CEO of CT Community Nonprofit Alliance ("The Alliance")</li>
+              <li><span class="speaker-name">Justin Elicker</span>, Mayor of New Haven</li>
+              <li><span class="speaker-name">Jennifer Lineaweaver</span>, Director of Assessment, Stonington</li>
             </ul>
           </div>
         </td>
@@ -631,6 +702,117 @@
   </table>
 
 </main>
+
+<!-- SPEAKER BIOS -->
+<section class="speaker-bios">
+  <div class="schedule-main">
+    <h2>Speakers &amp; Presenters</h2>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Dr Maureen Brummett.jpg" alt="Dr. Maureen Brummett" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Dr. Maureen Brummett</span>
+        <div class="speaker-title">Superintendent, Newington</div>
+        <p>Dr. Maureen Brummett has been Superintendent in Newington Public Schools since 2019. She also served as Superintendent in Plainville Community Schools from 2016-2019. During her 19 year tenure in Plainville, Dr. Brummett also served as Assistant Superintendent, Director of Special Education and Assistant Director of Special Education. Dr. Brummett has been a staunch advocate for expanding access to early childhood education and ensuring all students receive high quality Tier 1 instruction.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Gian-Carl Casa.jpg" alt="Gian-Carl Casa" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Gian-Carl Casa</span>
+        <div class="speaker-title">President and CEO, The Alliance</div>
+        <p>In 2016 Gian-Carl Casa was selected as the first President and CEO of the CT Community Nonprofit Alliance ("The Alliance"), the statewide association of nonprofit organizations across Connecticut. He has led efforts that have made The Alliance recognized as the voice of community nonprofits and as leading advocates on their behalf, while providing a host of other association services.</p>
+        <p>From 2011-2016 he was Undersecretary for Legislative Affairs at the state Office of Policy and Management. During tough economic times he was responsible for budget-related and other legislation, managed requests for state bond funding and oversaw OPM's communications.</p>
+        <p>Before that he worked for over two decades at the Connecticut Conference of Municipalities, most recently as Director of Public Policy and Advocacy, where he helped build the organization's grassroots and state capitol lobbying capacity.</p>
+        <p>He has a BA and MA in Political Science from the Maxwell School of Citizenship and Public Affairs at Syracuse University. He lives in New Haven.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Chris Davis.jpg" alt="Chris Davis" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Chris Davis</span>
+        <div class="speaker-title">Senior Vice President of Public Policy, CBIA</div>
+        <p>Chris Davis leads CBIA's advocacy team of in-house and contract lobbyists at the state Capitol. He oversees the planning and execution of public policy strategy and initiatives to strengthen CBIA's mission to boost CT's economic competitiveness and growth while providing opportunities for all residents.</p>
+        <p>Davis previously represented the General Assembly's 57th House District from 2011 to 2021, serving as assistant leader and ranking member of the key Finance, Revenue, and Bonding Committee.</p>
+        <p>Known for his willingness to work collaboratively in a bipartisan manner to achieve meaningful policy reforms throughout his tenure in the legislature, Davis was one of the architects of the 2017 bipartisan fiscal reforms that led to the state's current fiscal strength.</p>
+        <p>Prior to CBIA, Davis served as manager of public affairs for the Connecticut Lottery Corporation, overseeing the quasi-public agency's government affairs and public relations activities.</p>
+        <p>Davis earned both his bachelor's and master's degrees in political science from UCONN, and has previously served as a professor of political science at the University of Bridgeport. Davis resides in Ellington with his wife and daughter.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Justin Elicker.jpg" alt="Justin Elicker" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Justin Elicker</span>
+        <div class="speaker-title">Mayor of New Haven</div>
+        <p>Justin Elicker is the 51st elected mayor of New Haven and committed to building a city where every New Haven resident has the opportunity to thrive. First sworn into office in January 2020, Mayor Elicker led the city through the COVID-19 pandemic and has worked in partnership with the New Haven Board of Alders and New Haven residents to confront many of the city's long-term, systemic challenges, with a particular focus on advancing inclusive economic growth; stabilizing our city's finances and long-term financial health; tackling gun violence and reimagining our approach to public safety; building more affordable housing; and supporting our children, youth and families with stronger schools and new programs.</p>
+        <p>A lifelong public servant, prior to being elected mayor, Elicker served on the New Haven Board of Alders, as executive director of the New Haven Land Trust, in the U.S. Foreign Services, and as a teacher for elementary and high school students and an adjunct professor of education policy at Southern Connecticut State University.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Andrew Feinstein.jpg" alt="Andrew Feinstein, Esq." class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Andrew Feinstein, Esq.</span>
+        <div class="speaker-title">Principal Attorney, Feinstein Education Law Group</div>
+        <p>Andy Feinstein has represented children with disabilities and their families pursuing appropriate educational programs for the past thirty years, first in Hartford with Attorney David C. Shaw, from 2008 to 2015, as a solo practitioner in Mystic, Connecticut, and, since July 1, 2015, as the owner of Feinstein Education Law Group, LLC.</p>
+        <p>He is a founder, the treasurer and Government Relations Committee chair of Special Education Equity for Kids in Connecticut (SEEK-CT). He serves on the Board and as co-chair of the Government Relations Committee for the Council of Parent Attorneys and Advocates (COPAA), the preeminent national special education advocacy organization. He is one of the Chairs of the Legislative Task Force on Special Education Services and Funding, a member of the Hate Crimes Advisory Council, a member of the Social Emotional Learning Collaborative, and a member of the Discipline Collaborative. He has argued a number of cases on behalf of COPAA before the Second Circuit Court of Appeals.</p>
+        <p>He serves as an adjunct professor of special education at Central Connecticut State University, teaching both special education teachers and administrators. Attorney Feinstein graduated from Wesleyan University in 1972 and the New York University School of Law in 1975. Andy lives in Mystic with his wife Liz Bochain and their grandson Jacob.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Dan Haar.jpg" alt="Dan Haar" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Dan Haar</span>
+        <div class="speaker-title">Senior Editor and Columnist, CT Insider</div>
+        <p>Dan Haar is columnist and senior editor at Hearst Connecticut Media Group, which includes 10 daily newspapers, Connecticut magazine, 22 weeklies and numerous websites including CT Insider statewide. He also appears weekly on WFSB-TV for commentary and frequently speaks and moderates at public events. As a columnist he focuses on the intersection of economics, business, politics and policy in the lives of residents.</p>
+        <p>He was previously at The Hartford Courant in numerous roles including business editor and metro columnist. He started his career at The Courant as a photographer. Dan has won numerous national and regional awards as a photographer, writer and editor. He graduated from Wesleyan University with a B.A. in government and lives in West Hartford.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Heidi Hanson.jpg" alt="Heidi Hanson" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Heidi Hanson</span>
+        <div class="speaker-title">V.P. Client Engagements, KJR Consulting (Lead Facilitator for the August 8 Assembly)</div>
+        <p>Heidi is a seasoned learning and change leader who helps organizations build high-performing leaders, teams, and inclusive workplace cultures. With over 25 years of experience, she designs dynamic learning experiences and partners with clients across sectors to align people, processes, and strategy for lasting impact. Certified in multiple tools and methodologies, she brings a thoughtful, customized approach to every engagement.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Alex Knopp.jpg" alt="Alex Knopp" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Alex Knopp</span>
+        <div class="speaker-title">Former CT State Representative and Mayor of Norwalk</div>
+        <p>Alex Knopp served two terms as Mayor of Norwalk after serving fifteen years as a State Representative in the Connecticut General Assembly. While in the legislature, Knopp co-chaired the Government Administration and Elections Committee and was a member of the Finance Committee. An attorney, he has expertise in state and local governance and in taxation and budgeting. Knopp is a member of the Property Tax Working Group.</p>
+        <p>He is a former visiting clinical lecturer at the Yale Law School; president of the Norwalk Public Library; and is a member of the board of Connecticut Common Cause. He is the author of two recent White Papers on the Fiscal Guardrails: "Re-Examine the Budget Guardrails and Rebalance Connecticut's State-Local Fiscal System (March, 2023)" and "Are Connecticut's 'Budget Guardrails' Unconstitutional? (January, 2025)." He can be reached at: <a href="mailto:alex.knopp20@gmail.com">alex.knopp20@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Jennifer Lineaweaver.jpg" alt="Jennifer Lineaweaver" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Jennifer Lineaweaver</span>
+        <div class="speaker-title">Director of Assessment, Stonington</div>
+        <p>Jennifer Lineaweaver began in the assessment field in 2004 as the shared assistant between the Tax Collector and Assessor's Office in Sterling, Connecticut. Within a year, she became Assessor of the Town. Over the course of her career, she has worked in a wide range of municipalities such as Sterling, Canterbury, East Hartford and Groton. She is currently the Director of Assessment in Stonington.</p>
+        <p>Jennifer has played an active role in the Connecticut Association of Assessing Officers, chairing the Legislative Committee on and off since 2018, teaching CCMA Course IB, serving as Head Moderator and currently as President of the Association.</p>
+      </div>
+    </div>
+
+    <div class="speaker-bio">
+      <img src="media/speakers/Aimee Turner.jpg" alt="Aimee Turner" class="speaker-photo">
+      <div class="speaker-info">
+        <span class="speaker-name">Aimee Turner</span>
+        <div class="speaker-title">Assistant Superintendent for Special Education, Wallingford</div>
+        <p>Aimee Turner has spent the last 29 years as a special education teacher and administrator in Connecticut. As a leader she is dedicated to advocating for students and families to ensure they are afforded the tools and services they require to access the educational environment, feel safe, and achieve their personal best. Equally important to her is the desire to ensure families have the knowledge and resources to advocate for their children. As a parent of an adult son with dyslexia, Aimee is invested in promoting advocacy and education. As President of ConnCASE, a Connecticut-based association for Special Education Administrators with over 200 members, Aimee is dedicated to improving the quality of special education in Connecticut.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section class="schedule-contact">
