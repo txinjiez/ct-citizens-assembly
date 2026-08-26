@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>August 29–30 Agenda — Connecticut Citizens' Assembly</title>
+<link rel="icon" type="image/png" href="media/ct-honeycomb.png" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CYXQ157GLP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CYXQ157GLP');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1a237e;
+    --navy-dark: #0d1757;
+    --navy-light: #283593;
+    --purple: #7b2d8b;
+    --magenta: #c2185b;
+    --orange: #e64a19;
+    --yellow: #f9a825;
+    --coral: #ef5350;
+    --white: #ffffff;
+    --off-white: #f8f9fd;
+    --gray-light: #eef0f8;
+    --gray-mid: #c5cae9;
+    --gray-text: #5c6bc0;
+    --text: #1a237e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to right, #7b2d8b, #c2185b, #e64a19, #f9a825, #ef5350) 1;
+  }
+
+  .nav-logo img { height: 62px; display: block; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover { color: var(--purple); }
+  .nav-links a.active { color: var(--purple); }
+
+  .nav-cta {
+    background: var(--navy-dark);
+    color: var(--white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    white-space: nowrap;
+  }
+
+  .nav-cta:hover { background: var(--purple) !important; color: var(--white) !important; }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--navy);
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 1100px) {
+    .nav-hamburger { display: block; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0; right: 0;
+      background: white;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.5rem 2rem;
+      gap: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border-top: 3px solid var(--purple);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-dropdown-menu {
+      display: none !important;
+      position: static;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      min-width: 0;
+      width: 100%;
+      padding: 0.3rem 0 0.3rem 1rem;
+      margin-top: 0.3rem;
+    }
+    .nav-dropdown.open .nav-dropdown-menu {
+      display: block !important;
+    }
+    .nav-dropdown-menu li a {
+      padding: 0.55rem 0;
+      white-space: normal;
+    }
+  }
+
+  /* DROPDOWN */
+  .nav-dropdown { position: relative; align-self: stretch; display: flex; align-items: center; }
+  .nav-dropdown > a { display: flex; align-items: center; gap: 0.25rem; }
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid var(--gray-mid);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(26,35,126,0.12);
+    min-width: 160px;
+    z-index: 200;
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu li a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.88rem;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .nav-dropdown-menu li a:hover,
+  .nav-dropdown-menu li a.active { color: var(--purple); background: var(--gray-light); }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 9rem 2rem 5rem;
+    background: var(--navy-dark);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .page-header-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .page-eyebrow {
+    display: inline-block;
+    background: rgba(249,168,37,0.18);
+    border: 1px solid rgba(249,168,37,0.4);
+    color: var(--yellow);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.2rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 0.8rem;
+  }
+
+  .page-header h1 span { color: var(--yellow); }
+
+  .page-header p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.75;
+    margin-top: 0.5rem;
+  }
+
+  /* COLOR STRIPE */
+  .color-stripe { display: flex; height: 5px; }
+  .color-stripe span { flex: 1; }
+
+  /* MAIN */
+  .schedule-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  /* VENUES */
+  .venues {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+
+  .venue-card {
+    flex: 1;
+    min-width: 240px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .venue-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .venue-name {
+    font-weight: 700;
+    color: var(--navy-dark);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .venue-address {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  /* DAY HEADER */
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .day-header:first-of-type { margin-top: 0; }
+
+  .day-badge {
+    background: var(--purple);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--navy-dark);
+  }
+
+  .day-divider {
+    flex: 1;
+    height: 1px;
+    background: var(--gray-mid);
+  }
+
+  /* SCHEDULE TABLE */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+
+  .schedule-table tr {
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .schedule-table tr:last-child { border-bottom: none; }
+
+  .schedule-table tr.break-row { background: var(--gray-light); }
+  .schedule-table tr.logistics-row { opacity: 0.75; }
+
+  .time-cell {
+    width: 90px;
+    padding: 1rem 1rem 1rem 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--purple);
+    letter-spacing: 0.03em;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  .activity-cell {
+    padding: 1rem 0;
+    vertical-align: top;
+  }
+
+  .activity-title {
+    font-weight: 700;
+    color: var(--navy-dark);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .activity-location {
+    font-size: 0.78rem;
+    color: var(--gray-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .activity-plain {
+    font-size: 0.95rem;
+    color: var(--navy-dark);
+    line-height: 1.5;
+  }
+
+  .speaker-list {
+    list-style: none;
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .speaker-list li {
+    font-size: 0.87rem;
+    color: var(--gray-text);
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .speaker-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--purple);
+    font-weight: 700;
+  }
+
+  .speaker-name { font-weight: 700; color: var(--navy); }
+
+  .sub-session {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--gray-mid);
+  }
+
+  .sub-session:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .sub-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    margin-bottom: 0.3rem;
+  }
+
+  .moderated-by {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    margin-top: 0.35rem;
+    font-style: italic;
+  }
+
+  .moderated-by strong { color: var(--navy); font-style: normal; }
+
+  /* SPECIAL ROWS */
+  .dinner-row .activity-cell { color: var(--navy-dark); }
+  .dinner-title {
+    font-weight: 700;
+    color: var(--navy-dark);
+    font-size: 0.95rem;
+  }
+
+  /* CONTACT BLOCK */
+  .schedule-contact {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+  }
+
+  .schedule-contact-card {
+    background: linear-gradient(135deg, rgba(248,249,253,0.98), rgba(238,240,248,0.96));
+    border: 1px solid rgba(92,107,192,0.18);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(26,35,126,0.08);
+  }
+
+  .schedule-contact-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 0.45rem;
+  }
+
+  .schedule-contact-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--navy-dark);
+  }
+
+  .schedule-contact a {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .schedule-contact a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: #050d2a;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 1.5rem 2rem 2rem;
+    font-size: 0.85rem;
+  }
+
+  footer span { color: var(--yellow); opacity: 0.8; }
+  footer a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .time-cell { width: 70px; font-size: 0.76rem; }
+    .activity-title { font-size: 0.9rem; }
+    nav { padding: 0 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="index.html"><img src="media/CTCA-honeycomb.png" alt="Connecticut Citizens' Assembly" /></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="about.html" onclick="if(window.innerWidth<=1100){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('open');}">About &#9662;</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="about.html">Overview</a></li>
+        <li><a href="index.html#timeline">Timeline</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="donors.html">Donors</a></li>
+      </ul>
+    </li>
+    <li><a href="engage.html">Engage</a></li>
+    <li class="nav-dropdown">
+      <a href="resources.html" onclick="if(window.innerWidth<=1100){event.preventDefault();this.closest('.nav-dropdown').classList.toggle('open');}">Resources &#9662;</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="resources.html">Member Resources</a></li>
+        <li><a href="informational-resources.html">Informational Resources</a></li>
+        <li><a href="press.html">Media Resources</a></li>
+      </ul>
+    </li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Support the Assembly</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-content">
+    <div class="page-eyebrow">Connecticut Citizens' Assembly</div>
+    <h1>August 29–30 <span>Weekend Agenda</span></h1>
+    <p>New Haven, CT &nbsp;·&nbsp; Saturday &amp; Sunday</p>
+  </div>
+</div>
+<div class="color-stripe">
+  <span style="background:#7b2d8b;"></span>
+  <span style="background:#c2185b;"></span>
+  <span style="background:#e64a19;"></span>
+  <span style="background:#f9a825;"></span>
+  <span style="background:#ef5350;"></span>
+</div>
+
+<!-- SCHEDULE MAIN -->
+<main class="schedule-main">
+
+  <!-- VENUES -->
+  <div class="venues">
+    <div class="venue-card">
+      <div>
+        <div class="venue-name">OMNI New Haven Hotel</div>
+        <div class="venue-address">155 Temple Street, New Haven, CT</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-header">
+    <span class="day-badge">Day 1</span>
+    <div class="day-title">Saturday, August 29, 2026</div>
+    <div class="day-divider"></div>
+  </div>
+
+  <table class="schedule-table">
+    <tbody>
+
+      <tr>
+        <td class="time-cell">8:00 AM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Breakfast Buffet</div>
+          <div class="activity-location">OMNI Hotel Ballroom Area C&amp;D</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">9:00 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 1: Welcome &amp; Framing</div>
+          <div class="activity-location">Plenary · OMNI Hotel Ballroom A&amp;B</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span>, Lead Facilitator, KJR Consulting</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">9:20 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 2: Citizen Governance Committee (CGC) Update</div>
+          <div class="activity-location">Plenary</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Gryffin Wilkens-Plumley</span> and the current CGC</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">9:35 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 3: Property Tax Drivers Recap</div>
+          <div class="activity-location">Plenary</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Joe DeLong</span>, Director &amp; CEO, Connecticut Conference of Municipalities</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">10:35 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 4: AI Usage Overview</div>
+          <div class="activity-location">Plenary</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Hélène Landemore</span>, Yale University</li>
+            <li><span class="speaker-name">Sulekha Kishore</span>, Massachusetts Institute of Technology (MIT)</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr class="break-row">
+        <td class="time-cell">10:55 AM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Break</div>
+          <div class="activity-location">OMNI Hotel Ballroom Area D</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">11:10 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 5: Property Tax Driver Reform Ideation</div>
+          <div class="activity-location">OMNI Ballroom &amp; Temple Room</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span> and the KJR Facilitation Team</li>
+          </ul>
+          <div class="activity-plain" style="margin-top:0.4rem;font-size:0.87rem;">Subgroups will begin the process of deliberating reform ideas in small groups.</div>
+        </td>
+      </tr>
+
+      <tr class="logistics-row">
+        <td class="time-cell">12:30 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Lunch</div>
+          <div class="activity-location">OMNI Hotel Ballroom Area C&amp;D</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">CGC Office Hours</span>: Questions/issues regarding Citizen governance. Weekend 4 motions must be submitted by end-of-day on Saturday.</li>
+            <li><span class="speaker-name">Landemore-Kishore Office Hours</span>: Questions regarding AI usage</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">1:30 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 5: Reform Ideation Continued</div>
+          <div class="activity-location">OMNI Ballroom &amp; Temple Room</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span> and the KJR Facilitation Team</li>
+          </ul>
+          <div class="activity-plain" style="margin-top:0.4rem;font-size:0.87rem;">Subgroups engage in a gallery walk of the reform ideas documented by each group.</div>
+        </td>
+      </tr>
+
+      <tr class="break-row">
+        <td class="time-cell">2:45 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Break</div>
+          <div class="activity-location">OMNI Hotel Ballroom D</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">3:00 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 6: Property Tax Driver Reform Ideation Report Out</div>
+          <div class="activity-location">Plenary</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span>, Lead Facilitator, KJR Consulting</li>
+            <li>Subgroup Representatives</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">3:40 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 7: Property Tax Driver Reform Assembly Review &amp; Input</div>
+          <div class="activity-location">Plenary</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span> and the KJR Facilitation Team</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">4:25 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 8: Debrief &amp; End-of-Day Recap</div>
+          <div class="activity-location">Plenary</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span>, Lead Facilitator, KJR Consulting</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr class="logistics-row">
+        <td class="time-cell">5:10 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Adjourn for the Day &amp; Hotel Check-in (for those staying overnight)</div>
+        </td>
+      </tr>
+
+      <tr class="dinner-row">
+        <td class="time-cell">6:30 –<br>8:30 PM</td>
+        <td class="activity-cell">
+          <div class="dinner-title">Assembly Dinner (optional)</div>
+          <div class="activity-location">OMNI Ballroom Area C&amp;D</div>
+          <div class="activity-plain" style="font-size:0.87rem;">Buffet dinner served at 6:30 PM; dessert &amp; coffee/tea served at 7:30 PM</div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- DAY 2 -->
+  <div class="day-header">
+    <span class="day-badge" style="background:var(--magenta);">Day 2</span>
+    <div class="day-title">Sunday, August 30, 2026</div>
+    <div class="day-divider"></div>
+  </div>
+
+  <table class="schedule-table">
+    <tbody>
+
+      <tr>
+        <td class="time-cell">8:00 AM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Breakfast Buffet</div>
+          <div class="activity-location">OMNI Hotel Ballroom Area C&amp;D</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">9:00 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 1: Welcome &amp; Overnight Recap</div>
+          <div class="activity-location">Plenary · OMNI Hotel Ballroom A&amp;B</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">9:20 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 2: The Legislative Process</div>
+          <div class="activity-location">Plenary</div>
+          <div class="moderated-by" style="margin-top:0;margin-bottom:0.5rem;">Moderator: <strong>Sean Scanlon</strong>, State of Connecticut Comptroller</div>
+
+          <div class="sub-session">
+            <div class="sub-label">Panel 1</div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);margin-bottom:0.3rem;">"Looking Back" on Previous Efforts to Reform the CT Property Tax System and Past Roadblocks to Reform</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Martin Looney</span>, Senate President</li>
+              <li><span class="speaker-name">John McKinney</span>, Former Senate GOP Leader</li>
+            </ul>
+          </div>
+
+          <div class="sub-session">
+            <div class="sub-label">Panel 2</div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--navy-dark);margin-bottom:0.3rem;">"Looking Forward" to How Legislative Leaders Navigate Finding Consensus on Tough Issues</div>
+            <ul class="speaker-list">
+              <li><span class="speaker-name">Jason Rojas</span>, House Majority Leader</li>
+              <li><span class="speaker-name">Vin Candelora</span>, House Minority Leader</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">10:20 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 3: Assembly Decision-Making Parameters</div>
+          <div class="activity-location">Plenary</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Hélène Landemore</span>, Yale University</li>
+            <li><span class="speaker-name">Michael Morrell</span>, University of Connecticut</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr class="break-row">
+        <td class="time-cell">10:50 AM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Break</div>
+          <div class="activity-location">OMNI Hotel Ballroom Area C&amp;D</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">11:10 AM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 4: "Is This Us?" Review</div>
+          <div class="activity-location">Plenary · OMNI Hotel Ballroom A&amp;B</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span> and the KJR Facilitation Team</li>
+          </ul>
+          <div class="activity-plain" style="margin-top:0.4rem;font-size:0.87rem;">Time for citizens to digest and discuss the reports, debate proposed reform ideas, and indicate support or opposition to each reform idea prioritized on Saturday.</div>
+        </td>
+      </tr>
+
+      <tr class="logistics-row">
+        <td class="time-cell">12:30 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Lunch</div>
+          <div class="activity-location">OMNI Hotel Ballroom Area C&amp;D</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">CGC Office Hours</span>: Questions/suggestions only; no motions</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">1:15 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 4: "Is This Us?" Continued</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span> and the KJR Facilitation Team</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr class="break-row">
+        <td class="time-cell">3:00 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Break</div>
+          <div class="activity-location">OMNI Hotel Ballroom C&amp;D</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">3:15 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 4: "Is This Us?" Continued</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span> and the KJR Facilitation Team</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">4:15 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 5: Motions &amp; CGC Selection for Weekend 5</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Gryffin Wilkens-Plumley</span> and the CGC</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="time-cell">4:45 PM</td>
+        <td class="activity-cell">
+          <div class="activity-title">Session 6: Recap and Preview of Next Steps</div>
+          <ul class="speaker-list">
+            <li><span class="speaker-name">Kenya Rutland</span>, Lead Facilitator, KJR Consulting</li>
+          </ul>
+        </td>
+      </tr>
+
+      <tr class="logistics-row">
+        <td class="time-cell">5:00 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">Adjourn</div>
+        </td>
+      </tr>
+
+      <tr class="logistics-row">
+        <td class="time-cell">5:30 –<br>6:30 PM</td>
+        <td class="activity-cell">
+          <div class="activity-plain">CGC Debrief Meeting</div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</main>
+
+<section class="schedule-contact">
+  <div class="schedule-contact-card">
+    <span class="schedule-contact-label">Questions</span>
+    <p class="schedule-contact-text">Contact <a href="mailto:ctca.concierge@gmail.com">ctca.concierge@gmail.com</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Connecticut Citizens' Assembly</span>. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMobileNav() {
+    document.querySelector('.nav-links').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

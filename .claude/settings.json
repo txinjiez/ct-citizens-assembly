@@ -26,7 +26,8 @@
       "Bash(pdftoppm -png -r 150 aug8_presenters.pdf aug8page)",
       "Bash(pdftoppm -png -r 150 -f 1 -l 4 aug8_presenters.pdf aug8page)",
       "Bash(pdftoppm -png -r 150 -f 4 -l 4 aug8_presenters.pdf aug8page)",
-      "Bash(rm -f _preview_knopp.jpg _test_knopp.jpg aug8page-*.png aug8_presenters.pdf)"
+      "Bash(rm -f _preview_knopp.jpg _test_knopp.jpg aug8page-*.png aug8_presenters.pdf)",
+      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/resources.html /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/schedule-session-4.html)"
     ]
   }
 }
