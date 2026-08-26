@@ -27,7 +27,9 @@
       "Bash(pdftoppm -png -r 150 -f 1 -l 4 aug8_presenters.pdf aug8page)",
       "Bash(pdftoppm -png -r 150 -f 4 -l 4 aug8_presenters.pdf aug8page)",
       "Bash(rm -f _preview_knopp.jpg _test_knopp.jpg aug8page-*.png aug8_presenters.pdf)",
-      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/resources.html /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/schedule-session-4.html)"
+      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/resources.html /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/schedule-session-4.html)",
+      "Bash(cp '/Users/tinazeng/Downloads/AUG 8 Session - K-12 Education Panel Transcript - Special Education.pdf' ./CCA_AUG8_Transcript_SpecialEducation_Panel.pdf)",
+      "Bash(cp '/Users/tinazeng/Downloads/AUG 8 Session - Local Revenue Panel Transcript - Property Tax Exemptions.pdf' ./CCA_AUG8_Transcript_PropertyTaxExemptions_Panel.pdf)"
     ]
   }
 }
