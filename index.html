@@ -101,6 +101,18 @@
     background: linear-gradient(to right, #7b2d8b, #c2185b, #e64a19);
     padding: 0.7rem 2rem;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  .announcement-bar span {
+    color: white;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
   }
 
   .announcement-bar a {
@@ -113,10 +125,180 @@
 
   .announcement-bar a:hover { text-decoration: underline; }
 
-  @media (max-width: 768px) {
-    .announcement-bar { padding: 0.6rem 1rem; }
-    .announcement-bar a { font-size: 0.82rem; }
+  .announcement-btn {
+    display: inline-block;
+    background: white;
+    color: var(--navy-dark) !important;
+    padding: 0.45rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
   }
+
+  .announcement-btn:hover { background: var(--yellow); text-decoration: none !important; }
+
+  @media (max-width: 768px) {
+    .announcement-bar { padding: 0.8rem 1rem; }
+    .announcement-bar span, .announcement-bar a { font-size: 0.82rem; }
+  }
+
+  /* REPORT SECTION */
+  .report-section {
+    padding: 4.5rem 2rem;
+    background: var(--navy-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .report-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .report-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .report-eyebrow {
+    display: inline-block;
+    background: rgba(249,168,37,0.18);
+    border: 1px solid rgba(249,168,37,0.4);
+    color: var(--yellow);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.2rem;
+  }
+
+  .report-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .report-section h2 span { color: var(--yellow); }
+
+  .report-section > .report-inner > p {
+    color: rgba(255,255,255,0.72);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+
+  .report-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .report-card-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 0.6rem;
+  }
+
+  .report-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.6rem;
+  }
+
+  .report-card p {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .report-watch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--coral);
+    color: white;
+    padding: 0.85rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .report-watch-btn:hover { background: #d32f2f; }
+
+  .report-notice {
+    background: rgba(249,168,37,0.1);
+    border: 1px dashed rgba(249,168,37,0.5);
+    border-radius: 12px;
+    padding: 1.4rem 1.6rem;
+    text-align: center;
+  }
+
+  .report-notice-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 0.5rem;
+  }
+
+  .report-notice-text {
+    color: white;
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .report-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--yellow);
+    color: var(--navy-dark);
+    padding: 0.85rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .report-download-btn:hover { background: #ffc947; }
+
+  .report-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: rgba(255,255,255,0.75);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .report-link:hover { color: white; text-decoration: underline; }
 
   /* HERO */
   .hero {
@@ -1392,10 +1574,17 @@
       </ul>
     </li>
     <li><a href="press.html">Press</a></li>
+    <li><a href="report.html">Report</a></li>
     <li><a href="#contact" class="nav-cta">Support the Assembly</a></li>
   </ul>
   <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">&#9776;</button>
 </nav>
+
+<!-- ANNOUNCEMENT BAR: PRESS CONFERENCE -->
+<div class="announcement-bar">
+  <span>📢 Virtual Press Conference — Monday, October 26 at 2:00 PM ET: the Assembly announces its final property tax recommendations.</span>
+  <a class="announcement-btn" href="https://youtube.com/live/NPp-IzmT7-0?feature=share" target="_blank" rel="noopener">▶ Watch Live</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1425,25 +1614,36 @@
   </div> -->
 </section>
 
-<!-- STAT BAR -->
-<div class="stat-bar">
-  <!-- <div class="stat-item">
-    <span class="stat-num">169</span>
-    <span class="stat-label">Connecticut Towns</span>
-  </div> -->
-  <div class="stat-item">
-    <span class="stat-num">100</span>
-    <span class="stat-label">Assembly Members</span>
+<!-- FINAL REPORT -->
+<section class="report-section" id="report">
+  <div class="report-inner">
+    <!-- <div class="report-eyebrow">Final Recommendations</div> -->
+    <h2>The Assembly's Final Report</h2>
+    <!-- <p>The Connecticut Citizens' Assembly on Property Taxes will hold a virtual press conference on Monday, October 26, at 2 p.m., where media will hear directly from members of the Assembly as they announce and discuss the Assembly's final recommendations for Connecticut's property tax system. The recommendations are the culmination of a deliberative process that brought together a representative group of Connecticut residents to examine the state's property tax system, consider its challenges, and develop potential reforms for consideration by policymakers and the public.</p> -->
+
+    <div class="report-card">
+      <div class="report-card-label">Press Conference</div>
+      <div class="report-card-title">Monday, October 26, 2026 &middot; 2:00 PM Eastern &middot; Virtual</div>
+      <p>Watch live as Assembly members announce and discuss the final recommendations for reforming Connecticut's property tax system.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a class="report-watch-btn" href="https://youtube.com/live/NPp-IzmT7-0?feature=share" target="_blank" rel="noopener">▶ Watch the Press Conference Live</a>
+        <!-- RELEASED: Final report PDF published Oct 26, 2026, 2:00 PM ET -->
+        <a class="report-download-btn" href="media/CTCA-Final-Report.pdf" download>⬇ Download the Final Report (PDF)</a>
+      </div>
+
+      <!-- RECORDING PLACEHOLDER — add once the press conference recording link is available.
+           Replace PLACEHOLDER_RECORDING_URL below and uncomment to publish.
+      <div style="margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,0.14);">
+        <a class="report-link" href="PLACEHOLDER_RECORDING_URL" target="_blank" rel="noopener">▶ Watch the Recording →</a>
+      </div>
+      -->
+    </div>
+
+    <div style="margin-top:0.75rem;">
+      <a class="report-link" href="report.html">View the Full Report Page →</a>
+    </div>
   </div>
-  <div class="stat-item">
-    <span class="stat-num">6</span>
-    <span class="stat-label">Assembly Sessions</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">1</span>
-    <span class="stat-label">Shared Goal</span>
-  </div>
-</div>
+</section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
@@ -1547,11 +1747,11 @@
             <div style="font-size:0.68rem;font-weight:700;color:#0d1757;text-align:center;line-height:1.3;">Virtual<br>Online</div>
           </div>
 
-          <!-- Oct 8 -->
+          <!-- Oct 10 -->
           <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;width:80px;">
             <div style="width:56px;height:56px;border-radius:50%;background:#e64a19;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;position:relative;z-index:1;box-shadow:0 2px 8px rgba(230,74,25,0.35);">
               <span style="font-size:0.6rem;font-weight:700;opacity:0.85;text-transform:uppercase;letter-spacing:0.05em;">Oct</span>
-              <span style="font-size:1rem;">8</span>
+              <span style="font-size:1rem;">10</span>
             </div>
             <div style="font-size:0.68rem;font-weight:700;color:#0d1757;text-align:center;line-height:1.3;">Virtual<br>Online</div>
           </div>

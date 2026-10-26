@@ -33,7 +33,8 @@
       "WebFetch(domain:theday.com)",
       "Bash(curl -s -A \"Mozilla/5.0 \\(compatible; Googlebot/2.1; +http://www.google.com/bot.html\\)\" \"https://theday.com/news/910669/the-most-dysfunctional-tax/\")",
       "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/index.html /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/press.html /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/informational-resources.html)",
-      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/resources.html /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/informational-resources.html)"
+      "Bash(open /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/resources.html /Users/tinazeng/Documents/GitHub/ct-citizens-assembly/informational-resources.html)",
+      "mcp__claude-in-chrome__tabs_context_mcp"
     ]
   }
 }
